@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+}
+
+
+input{
+    outline: none;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 15%;
+}
+
+#formLogin{
+    border: 1px solid #262626;
+}
+
+.loginGroup{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+}
