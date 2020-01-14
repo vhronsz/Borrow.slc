@@ -1,0 +1,17 @@
+#reader{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+#message{
+    color: #5cb85c;
+}
+
+
+#center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

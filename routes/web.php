@@ -26,14 +26,21 @@ Route::group(["prefix"=>"auth"],function(){
 });
 
 
-
 Route::group(['prefix'=>'testing'],function (){
+
     Route::get('qr', function () {
-//        \QrCode::size(500)
-//            ->format('png')
-//            ->generate('messier.slc/');
-        return view('testing\qrtesting',["name"=>"Tesating","kunci"=>"biji"]);
+        return view('testing\qrtesting',["name"=>"Tesating","kunci"=>"Sambala"]);
     });
+
+    Route::get("qrscan",function(){
+        return view("testing/QrScanner",["Testing"=>"Nama"]);
+    });
+
+    Route::get("qrscan2",function(){
+        return view("testing/QrScanner2",["Testing"=>"Nama"]);
+    });
+
+    Route::get("a","TestingController@a");
 });
 
 

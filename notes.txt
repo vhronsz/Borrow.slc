@@ -1,0 +1,22 @@
+
+form pinjam ruang :
+ - bikin qr ama send wa dan email 
+ - bikin form buat request inet, kalo centang dia disable
+ - kirim email ikut lama 
+ - WA, buka tab baru, buat send (kirim ke 700 buat send ke pengguna transaksi)
+ -
+
+pengembalian kunci dan pengambilan 
+ - scan qr di page check in 
+ - qr isi web yang buat ubah status
+
+Monitoring : 
+ ada 3 status :
+  - dipinjam 
+  - sedang dipakai selanjutnya masih mkai
+  - tidak ada transaksi 
+
+//Notes rombakan baru 
+Flow aplikasi 
+scan qr status ruangan diubah, paling erdnya nyesuaiin 
+sama buat ruang req tambah reason buat nyalain inet
