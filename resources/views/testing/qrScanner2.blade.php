@@ -9,9 +9,9 @@
 </head>
 <body>
 
-<div class="col-md-6">
+<div class="col-md-6" style="margin-left: 35%;margin-right: 35%;margin-top: 10%">
     <div class="well" style="position: relative;display: inline-block;">
-        <canvas width="320px" height="240px" id="webcodecam-canvas"></canvas>
+        <canvas width="320px" height="240px" id="webcodecam-canvas" style="width: 400px;height: 320px"></canvas>
         <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
         <div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
         <div class="scanner-laser laser-rightTop" style="opacity: 0.5;"></div>
@@ -19,7 +19,7 @@
     </div>
 
 </div>
-<div class="col-md-6" >
+<div class="col-md-6" style="margin: 20%">
     <select class="form-control" id="camera-select"></select>
     <div class="form-group" style="display: none">
         <button title="Decode Image" class="btn btn-default btn-sm" id="decode-img" type="button" data-toggle="tooltip"><span class="glyphicon glyphicon-upload"></span></button>
@@ -30,7 +30,7 @@
     </div>
 </div>
 
-<div class="thumbnail" id="result">
+<div class="thumbnail" id="result" style="margin: 20px">
     <div class="well" style="display: none;">
         <img width="320" height="240" id="scanned-img" src="">
     </div>
@@ -55,9 +55,10 @@
             url : "/testing/a",
             data: {data:code},
             success: function(data) {
+                if(data.status === true){
+                    $(location).attr('href',"{{url("/master")}}");
+                }
                 console.log(data);
-                    // location.reload();
-                    // $(location).attr('href', data);
             },
             error : function (data) {
             }
@@ -87,6 +88,7 @@
         var args = {
             //Set Camera Brightness
             autoBrightnessValue: 100,
+            zoom:-0, //-1 for optimized zoom
             //For Result Processing
             resultFunction: function(res) {
                 [].forEach.call(scannerLaser, function(el) {
@@ -131,6 +133,7 @@
         window.addEventListener("load",function(){
             decoder.play();
         });
+
         grabImg.addEventListener("click", function() {
             if (!decoder.isInitialized()) {
                 return;
@@ -138,29 +141,6 @@
             var src = decoder.getLastImageSrc();
             scannedImg.setAttribute("src", src);
         }, false);
-
-        Page.changeZoom = function(a) {
-            if (decoder.isInitialized()) {
-                var value = typeof a !== "undefined" ? parseFloat(a.toPrecision(2)) : zoom.value / 10;
-                // zoomValue[txt] = zoomValue[txt].split(":")[0] + ": " + value.toString();
-                decoder.options.zoom = value;
-                if (typeof a != "undefined") {
-                    // zoom.value = a * 10;
-                }
-            }
-        };
-        var getZomm = setInterval(function() {
-            var a;
-            try {
-                a = decoder.getOptimalZoom();
-            } catch (e) {
-                a = 0;
-            }
-            if (!!a && a !== 0) {
-                Page.changeZoom(a);
-                clearInterval(getZomm);
-            }
-        }, 500);
 
         document.querySelector("#camera-select").addEventListener("change", function() {
             if (decoder.isInitialized()) {
@@ -253,4 +233,27 @@
         //     Page.decodeLocalImage();
         // }, false);
 
+            //Set zoom value di page
+        // Page.changeZoom = function(a) {
+        //     if (decoder.isInitialized()) {
+        //         var value = typeof a !== "undefined" ? parseFloat(a.toPrecision(2)) : zoom.value / 10;
+        //         // zoomValue[txt] = zoomValue[txt].split(":")[0] + ": " + value.toString();
+        //         decoder.options.zoom = value;
+        //         if (typeof a != "undefined") {
+        //             // zoom.value = a * 10;
+        //         }
+        //     }
+        // };
+        // var getZomm = setInterval(function() {
+        //     var a;
+        //     try {
+        //         a = decoder.getOptimalZoom();
+        //     } catch (e) {
+        //         a = 0;
+        //     }
+        //     if (!!a && a !== 0) {
+        //         Page.changeZoom(a);
+        //         clearInterval(getZomm);
+        //     }
+        // }, 500);
 --}}
