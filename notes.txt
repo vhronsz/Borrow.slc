@@ -20,3 +20,15 @@ Monitoring :
 Flow aplikasi 
 scan qr status ruangan diubah, paling erdnya nyesuaiin 
 sama buat ruang req tambah reason buat nyalain inet
+
+
+//Status 14/01/2020
+Room
+====
+- Scan - Done
+- Manage_Room_Form - Insert to Blade
+- Backend - On Process
+
+Tools
+=====
+- Form - To be Make

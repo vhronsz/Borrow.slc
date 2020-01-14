@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79213623-0e3d-4e2e-81fe-62ae89d17611" name="Default Changelist" comment="Qr sudah bisa buka halaman lain, QR sudah beanyak dibeersihkan">
+    <list default="true" id="79213623-0e3d-4e2e-81fe-62ae89d17611" name="Default Changelist" comment="Qr : Wait for backend , Ui for Qr&#10;Manage Tools : Form &#10;Room Borrowing : Make form to blade">
+      <change afterPath="$PROJECT_DIR$/BorrowslcERD.vsdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Asset/Binus.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TestingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/notes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/qrcode/option2/js/webcodecamjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/qrcode/option2/js/webcodecamjs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/testing/qrScanner2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/testing/qrScanner2.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php" afterDir="false" />
@@ -48,14 +51,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/testing/qrScanner2.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+            <state relative-caret-position="221">
+              <caret line="91" column="37" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="37" />
               <folding>
+                <element signature="e#332#390#0#HTML" expanded="true" />
                 <element signature="e#414#466#0#HTML" expanded="true" />
-                <element signature="e#533#567#0#HTML" expanded="true" />
+                <element signature="e#482#516#0#HTML" expanded="true" />
                 <element signature="e#939#958#0#HTML" expanded="true" />
                 <element signature="e#1031#1052#0#HTML" expanded="true" />
                 <element signature="e#1007#1920#0#HTML" />
@@ -63,6 +67,15 @@
                 <element signature="e#6344#6382#0#HTML" />
                 <element signature="e#6438#6533#0#HTML" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/notes.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -148,6 +161,7 @@
         <option value="$PROJECT_DIR$/public/qrcode/option2/js/webcodecamjs.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TestingController.php" />
         <option value="$PROJECT_DIR$/resources/views/testing/qrScanner2.blade.php" />
+        <option value="$PROJECT_DIR$/notes.txt" />
       </list>
     </option>
   </component>
@@ -262,37 +276,6 @@
               <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
               <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="qrcode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="qrcode" type="462c0819:PsiDirectoryNode" />
-              <item name="option2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="qrcode" type="462c0819:PsiDirectoryNode" />
-              <item name="option2" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -370,7 +353,7 @@
       <workItem from="1578467290391" duration="3519000" />
       <workItem from="1578623515108" duration="4596000" />
       <workItem from="1578828181164" duration="96000" />
-      <workItem from="1578972121311" duration="20179000" />
+      <workItem from="1578972121311" duration="21549000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1574998364228</created>
@@ -383,7 +366,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79582000" />
+    <option name="totallyTimeSpent" value="80952000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -418,7 +401,8 @@
     <MESSAGE value="Test" />
     <MESSAGE value="Qr sudah bisa buka halaman lain" />
     <MESSAGE value="Qr sudah bisa buka halaman lain, QR sudah beanyak dibeersihkan" />
-    <option name="LAST_COMMIT_MESSAGE" value="Qr sudah bisa buka halaman lain, QR sudah beanyak dibeersihkan" />
+    <MESSAGE value="Qr : Wait for backend , Ui for Qr&#10;Manage Tools : Form &#10;Room Borrowing : Make form to blade" />
+    <option name="LAST_COMMIT_MESSAGE" value="Qr : Wait for backend , Ui for Qr&#10;Manage Tools : Form &#10;Room Borrowing : Make form to blade" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
@@ -759,11 +743,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/testing/qrScanner2.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+        <state relative-caret-position="221">
+          <caret line="91" column="37" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="37" />
           <folding>
+            <element signature="e#332#390#0#HTML" expanded="true" />
             <element signature="e#414#466#0#HTML" expanded="true" />
-            <element signature="e#533#567#0#HTML" expanded="true" />
+            <element signature="e#482#516#0#HTML" expanded="true" />
             <element signature="e#939#958#0#HTML" expanded="true" />
             <element signature="e#1031#1052#0#HTML" expanded="true" />
             <element signature="e#1007#1920#0#HTML" />
@@ -771,6 +756,13 @@
             <element signature="e#6344#6382#0#HTML" />
             <element signature="e#6438#6533#0#HTML" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
         </state>
       </provider>
     </entry>

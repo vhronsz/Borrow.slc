@@ -56,9 +56,11 @@
             data: {data:code},
             success: function(data) {
                 if(data.status === true){
-                    $(location).attr('href',"{{url("/master")}}");
+                    {{--$(location).attr('href',"{{url("/master")}}");--}}
                 }
-                console.log(data);
+                else{
+                    alert("Making new user");
+                }
             },
             error : function (data) {
             }
@@ -88,7 +90,7 @@
         var args = {
             //Set Camera Brightness
             autoBrightnessValue: 100,
-            zoom:-0, //-1 for optimized zoom
+            zoom:-0, //-1 for optimized zoom,0-x to zoom camera
             //For Result Processing
             resultFunction: function(res) {
                 [].forEach.call(scannerLaser, function(el) {
@@ -96,6 +98,7 @@
                 scannedImg.src = res.imgData;
                 CallAjaxLoginQr(res.code);
                 scannedQR[txt] = res.format + ": " + res.code;
+                alert(scannedImg.src);
             },
             getDevicesError: function(error) {
                 var p, message = "Error detected with the following parameters:\n";
