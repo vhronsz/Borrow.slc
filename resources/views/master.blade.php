@@ -13,7 +13,9 @@
             <div id="LogoBinusTerlope">
                 <img src="{{asset("../Asset/Binus.png")}}" alt="">
             </div>
-
+            <div>
+                Borrow
+            </div>
         </div>
     @show
     @yield("nav_bar")
