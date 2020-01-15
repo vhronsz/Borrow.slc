@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79213623-0e3d-4e2e-81fe-62ae89d17611" name="Default Changelist" comment="Borrow Form Done">
-      <change afterPath="$PROJECT_DIR$/~$$BorrowslcERD.~vsdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_27_190436_create_rooms_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_27_190436_create_rooms_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_27_202849_create_header_room_transactions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_27_202849_create_header_room_transactions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_27_202915_create_detail_room_transactions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_27_202915_create_detail_room_transactions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/notes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/testing/qrScanner2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/testing/qrScanner2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,11 +26,36 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/testing/qrScanner2.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="85">
+              <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
+              <folding>
+                <element signature="e#73#132#0#HTML" expanded="true" />
+                <element signature="e#165#192#0#HTML" expanded="true" />
+                <element signature="e#280#301#0#HTML" expanded="true" />
+                <element signature="e#414#463#0#HTML" expanded="true" />
+                <element signature="e#533#567#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/notes.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/Master.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="782">
+              <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -102,7 +119,6 @@
         <option value="$PROJECT_DIR$/resources/views/login.blade.php" />
         <option value="$PROJECT_DIR$/public/qrcode/option2/css/style.css" />
         <option value="$PROJECT_DIR$/public/qrcode/option2/js/webcodecamjs.js" />
-        <option value="$PROJECT_DIR$/notes.txt" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TestingController.php" />
         <option value="$PROJECT_DIR$/resources/views/Header.blade.php" />
         <option value="$PROJECT_DIR$/public/css/Header.css" />
@@ -117,13 +133,14 @@
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_27_190436_create_rooms_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_27_202849_create_header_room_transactions_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/testing/qrScanner2.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/AddBorrow_Request.php" />
         <option value="$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_27_202915_create_detail_room_transactions_table.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/testing/qrScanner2.blade.php" />
+        <option value="$PROJECT_DIR$/notes.txt" />
       </list>
     </option>
   </component>
@@ -241,6 +258,17 @@
             <path>
               <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
               <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -248,13 +276,6 @@
               <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="testing" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -336,7 +357,7 @@
       <workItem from="1578623515108" duration="4596000" />
       <workItem from="1578828181164" duration="96000" />
       <workItem from="1578972121311" duration="27518000" />
-      <workItem from="1579055734677" duration="19397000" />
+      <workItem from="1579055734677" duration="20768000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1574998364228</created>
@@ -349,7 +370,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106318000" />
+    <option name="totallyTimeSpent" value="107689000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -599,13 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notes.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.styleci.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -624,13 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/Master.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -676,13 +683,6 @@
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/testing/qrScanner2.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
@@ -749,6 +749,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -756,10 +763,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/css/Master.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="782">
+          <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/testing/qrScanner2.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
+          <folding>
+            <element signature="e#73#132#0#HTML" expanded="true" />
+            <element signature="e#165#192#0#HTML" expanded="true" />
+            <element signature="e#280#301#0#HTML" expanded="true" />
+            <element signature="e#414#463#0#HTML" expanded="true" />
+            <element signature="e#533#567#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
         </state>
       </provider>
     </entry>

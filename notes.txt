@@ -1,10 +1,18 @@
+QR :
+- Scan QR tampil status ruangan
+    Front End :
+    1. Tampilin Data di Front End
+
+    Back End:
+    1. Validasi Transaksi ada apa enggak (Kalo enggak ada tampilin no transaction)
+    2. Validasi Waktu scan sesuai dengan waktu saat itu (Batas waktu 30 menit)
+    3. Validasi data (Kirim Data)
 
 form pinjam ruang :
  - bikin qr ama send wa dan email 
  - bikin form buat request inet, kalo centang dia disable
  - kirim email ikut lama 
  - WA, buka tab baru, buat send (kirim ke 700 buat send ke pengguna transaksi)
- -
 
 pengembalian kunci dan pengambilan 
  - scan qr di page check in 
