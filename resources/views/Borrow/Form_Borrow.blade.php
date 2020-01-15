@@ -28,7 +28,7 @@
 	<div class="bg-contact3" style="background-image: url('{{asset("/Borrow/images/bg-01.jpg")}}');">
 		<div class="container-contact3">
 			<div class="wrap-contact3">
-				<form class="contact3-form validate-form">
+				<form class="contact3-form validate-form" action="{{url("/")}}" method="POST">
 					<span class="contact3-form-title">
 						Form Peminjaman Ruang SLC
 					</span>

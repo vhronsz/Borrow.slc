@@ -1,184 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79213623-0e3d-4e2e-81fe-62ae89d17611" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/jquery/jquery-3.3.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/jquery/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/jquery/jquery-3.3.1.slim.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/jquery/jquery-3.3.1.slim.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/jquery/jquery-3.3.1.slim.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/particles/particles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/binus/particles/particles.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/ba-linkify.min.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/button.550007e6cc79c00bac51111d8131d860.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/cansynch.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/cantooltip.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/canvanizer20_badge.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/canvas_admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/canvas_print.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/colour.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/cufon-yui.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/f(1).txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/f.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/fs_popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/ga.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/icon-fb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/icon-twitter.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/jqModal.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/jquery-ui-1.8.16.custom.min.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/jquery-ui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/jquery.1.7.2.min.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/jquery.colorpicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/jquery.colorpicker.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/jquery.form.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/jquery.modal.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/jquery.qtip.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/jquery.qtip.min.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/jquery.ui.all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/jquery.ui.touch-punch.min.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/notes.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/revslider.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/roughage_400.font.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/saved_resource.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/template.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/tweet_button.4f8aea4342a4ada72cba2bdffcff6b4d.en(1).html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/tweet_button.4f8aea4342a4ada72cba2bdffcff6b4d.en(2).html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/tweet_button.4f8aea4342a4ada72cba2bdffcff6b4d.en.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/widget_iframe.4f8aea4342a4ada72cba2bdffcff6b4d.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/Pisang Goreng Ibu Nanik - Canvanizer_files/widgets.js.download" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/css/util.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/less/animated.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/less/bordered-pulled.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/less/core.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/less/fixed-width.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/less/font-awesome.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/less/icons.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/less/larger.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/less/list.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/less/mixins.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/less/path.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/less/rotated-flipped.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/less/screen-reader.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/less/stacked.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/less/variables.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/scss/_animated.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/scss/_core.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/scss/_fixed-width.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/scss/_icons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/scss/_larger.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/scss/_list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/scss/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/scss/_path.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/scss/_screen-reader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/scss/_stacked.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/scss/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/font-awesome-4.7.0/scss/font-awesome.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-Black.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-BlackItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-ExtraBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-ExtraBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-ExtraLight.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-ExtraLightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-LightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-MediumItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-SemiBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-Thin.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/fonts/poppins/Poppins-ThinItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/images/bg-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/images/icons/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/images/img-01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/animate/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/js/popper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/bootstrap/js/tooltip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/css-hamburgers/hamburgers.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/css-hamburgers/hamburgers.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/jquery/jquery-3.2.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/jquery/jquery-3.3.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/jquery/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/jquery/jquery-3.3.1.slim.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/jquery/jquery-3.3.1.slim.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/jquery/jquery-3.3.1.slim.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/particles/particles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/particles/particles.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/select2/select2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/select2/select2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/select2/select2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Borrow/vendor/select2/select2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/Master.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Form_Borrow.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Master/Footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Master/Header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Master/navBar.blade.php" afterDir="false" />
+    <list default="true" id="79213623-0e3d-4e2e-81fe-62ae89d17611" name="Default Changelist" comment="Borrow Form Done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TestingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/master.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/monitorRoom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/monitorRoom.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/navBar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Master/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Form_Borrow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/monitorRoom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Borrow/monitorRoom.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -192,20 +18,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="true" current-in-tab="false">
+      <file pinned="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+            <state relative-caret-position="263">
+              <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/Form_Borrow.blade.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2363">
-              <caret line="139" column="43" selection-start-line="139" selection-start-column="43" selection-end-line="139" selection-end-column="43" />
+            <state relative-caret-position="247">
+              <caret line="30" column="74" selection-start-line="30" selection-start-column="74" selection-end-line="30" selection-end-column="74" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#script#7;n#body#0;n#html#0;n#!!top" />
@@ -235,6 +61,7 @@
       <find>scannedImg</find>
       <find>alert</find>
       <find>beep</find>
+      <find>form</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -289,8 +116,9 @@
         <option value="$PROJECT_DIR$/resources/views/monitorRoom.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Master/navBar.blade.php" />
         <option value="$PROJECT_DIR$/public/css/Master.css" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/Form_Borrow.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
       </list>
     </option>
   </component>
@@ -408,6 +236,24 @@
             <path>
               <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
               <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -420,13 +266,6 @@
               <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="testing" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -447,6 +286,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Project\RIG 19-20\borrow.slc\resources\views\Borrow" />
       <recent name="F:\Project\RIG 19-20\borrow.slc\resources\views\Master" />
       <recent name="F:\Project\RIG 19-20\borrow.slc\public\js" />
       <recent name="F:\Project\RIG 19-20\borrow.slc\resources\views\testing" />
@@ -507,7 +347,7 @@
       <workItem from="1578623515108" duration="4596000" />
       <workItem from="1578828181164" duration="96000" />
       <workItem from="1578972121311" duration="27518000" />
-      <workItem from="1579055734677" duration="8144000" />
+      <workItem from="1579055734677" duration="8617000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1574998364228</created>
@@ -520,7 +360,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95065000" />
+    <option name="totallyTimeSpent" value="95538000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -888,7 +728,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/monitorRoom.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/Borrow/monitorRoom.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
@@ -909,13 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/testing/qrScanner2.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -923,14 +756,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Form_Borrow.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2363">
-          <caret line="139" column="43" selection-start-line="139" selection-start-column="43" selection-end-line="139" selection-end-column="43" />
+        <state relative-caret-position="247">
+          <caret line="30" column="74" selection-start-line="30" selection-start-column="74" selection-end-line="30" selection-end-column="74" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#script#7;n#body#0;n#html#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
         </state>
       </provider>
     </entry>

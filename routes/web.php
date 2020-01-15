@@ -14,10 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/master', function () {
     return view('Master.master');
 });
-
 
 Route::group(["prefix" => "view"],function(){
     Route::get('login',function(){
@@ -27,9 +27,11 @@ Route::group(["prefix" => "view"],function(){
         return view('monitorRoom');
     });
     Route::get('Borrow_Room_Form',function(){
-        return view('Form_Borrow');
+        return view('Borrow.Form_Borrow');
     });
 });
+
+Route::post("/Add_Transaction","TransactionController@Add");
 
 Route::group(["prefix"=>"auth"],function(){
     Route::post("login","UserController@doLogin");
