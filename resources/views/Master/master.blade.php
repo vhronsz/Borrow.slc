@@ -6,20 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Borrow.Slc</title>
+    @section('style')
+        <link rel="stylesheet" href="{{asset("css/Master.css")}}">
+    @show
 </head>
 <body>
-    @section("header")
-        <div id="HeaderContainer">
-            <div id="LogoBinusTerlope">
-                <img src="{{asset("../Asset/Binus.png")}}" alt="">
-            </div>
-            <div>
-                Borrow
-            </div>
-        </div>
-    @show
-    @yield("nav_bar")
+    @include("Master.Header")
+    @include("Master.navBar")
     @yield("content")
-    @yield("footer")
+    @include("Master.Footer")
 </body>
 </html>

@@ -17,7 +17,7 @@ class TestingController extends Controller
                 "status" =>true,
             ]);
         }
-
+        
         $qr = new QrModel();
         $qr->Qrpassword = $req->data;
         $qr->save();

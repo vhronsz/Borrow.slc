@@ -15,13 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/master', function () {
-    return view('master');
+    return view('Master.master');
 });
 
 
 Route::group(["prefix" => "view"],function(){
     Route::get('login',function(){
         return view('login');
+    });
+    Route::get('Room_Monitor',function(){
+        return view('monitorRoom');
+    });
+    Route::get('Borrow_Room_Form',function(){
+        return view('Form_Borrow');
     });
 });
 
