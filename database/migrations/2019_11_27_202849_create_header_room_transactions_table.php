@@ -17,7 +17,7 @@ class CreateHeaderRoomTransactionsTable extends Migration
             $table->uuid('roomTransactionID');
             $table->uuid('adminID');
             $table->dateTime('transactionDate');
-
+            $table->string("transactionStatus");
             $table->softDeletes();
             $table->timestamps();
         });

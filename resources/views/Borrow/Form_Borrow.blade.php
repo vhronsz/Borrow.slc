@@ -28,8 +28,14 @@
 	<div class="bg-contact3" style="background-image: url('{{asset("/Borrow/images/bg-01.jpg")}}');">
 		<div class="container-contact3">
 			<div class="wrap-contact3">
-				<form class="contact3-form validate-form" action="{{url("/")}}" method="POST">
-					<span class="contact3-form-title">
+
+				<form class="" action="{{url("/Add_Transaction")}}" method="POST">
+
+                    <button onclick="a()" type="button" class="contact3-form-btn" style="margin-bottom:20px;">
+                        Back
+                    </button>
+
+                    <span class="contact3-form-title">
 						Form Peminjaman Ruang SLC
 					</span>
 
@@ -65,18 +71,33 @@
 
 					<div class="wrap-input3 validate-input" data-validate="Room is required">
 						<div>
-							<select class="selection-2" name="shift">
-								<option disabled selected hidden>Shift</option>
-								<option value=1>1</option>
-								<option value=2>2</option>
-								<option value=3>3</option>
-								<option value=4>4</option>
-								<option value=5>5</option>
-								<option value=6>6</option>
+							<select class="selection-2" name="shiftStart">
+								<option disabled selected hidden>Shift Start</option>
+								<option value=1>1 (07:00 - 09:00)</option>
+								<option value=2>2 (09:00 - 11:00)</option>
+								<option value=3>3 (11:00 - 13:00)</option>
+								<option value=4>4 (13:00 - 15:00)</option>
+								<option value=5>5 (15:00 - 17:00)</option>
+								<option value=6>6 (17:00 - 19:00)</option>
 							</select>
 						</div>
 						<span class="focus-input3"></span>
 					</div>
+
+                    <div class="wrap-input3 validate-input" data-validate="Room is required">
+                        <div>
+                            <select class="selection-2" name="shiftEnd">
+                                <option disabled selected hidden>Shift End</option>
+                                <option value=1>1 (07:00 - 09:00)</option>
+                                <option value=2>2 (09:00 - 11:00)</option>
+                                <option value=3>3 (11:00 - 13:00)</option>
+                                <option value=4>4 (13:00 - 15:00)</option>
+                                <option value=5>5 (15:00 - 17:00)</option>
+                                <option value=6>6 (17:00 - 19:00)</option>
+                            </select>
+                        </div>
+                        <span class="focus-input3"></span>
+                    </div>
 
 					<div class="wrap-input3">
 						<input class="input3" type="date" name="date" placeholder="Date">
@@ -90,14 +111,14 @@
 
 					<div class="wrap-contact3-form-radio">
 						<div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio1" type="radio" name="choice" value="say-hi">
+							<input class="input-radio3" id="radio1" type="radio" name="internetRequest" value="yes">
 							<label class="label-radio3" for="radio1">
 								Yes
 							</label>
 						</div>
 
 						<div class="contact3-form-radio">
-							<input class="input-radio3" id="radio2" type="radio" name="choice" value="get-quote"
+							<input class="input-radio3" id="radio2" type="radio" name="internetRequest" value="no"
 								checked="checked">
 							<label class="label-radio3" for="radio2">
 								No
@@ -106,12 +127,12 @@
 					</div>
 
 					<div class="wrap-input3 input3-select" data-validate="Message is required">
-						<textarea class="input3" name="message" placeholder="Internet Reason Description"></textarea>
+						<textarea class="input3" name="reason" placeholder="Internet Reason Description"></textarea>
 						<span class="focus-input3"></span>
 					</div>
 
 					<div class="container-contact3-form-btn">
-						<button class="contact3-form-btn">
+						<button type="submit" class="contact3-form-btn">
 							Submit
 						</button>
 					</div>
@@ -148,7 +169,12 @@
 
 		gtag('config', 'UA-23581568-13');
 	</script>
-
+    <script>
+        function a(){
+            console.log("clicked");
+            window.top.close();
+        }
+    </script>
 </body>
 
 </html>

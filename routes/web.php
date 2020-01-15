@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/master', function () {
+    return view('Master.master');
+});
+
 Route::get('/master', function () {
     return view('Master.master');
 });
@@ -41,7 +45,7 @@ Route::group(["prefix"=>"auth"],function(){
 Route::group(['prefix'=>'testing'],function (){
 
     Route::get('qr', function () {
-        return view('testing\qrtesting',["name"=>"Tesating","kunci"=>"Sambala"]);
+        return view('testing\qrtesting')->with("key","83204bba-dbe2-351b-a0c2-c5b50b0c9fc3");
     });
 
     Route::get("qrscan",function(){

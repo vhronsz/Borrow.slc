@@ -56,10 +56,11 @@
             data: {data:code},
             success: function(data) {
                 if(data.status === true){
-                    {{--$(location).attr('href',"{{url("/master")}}");--}}
+                    console.log(data);
+                    $(location).attr('href',data.id);
                 }
                 else{
-                    alert("Making new user");
+                    console.log("Making new user");
                 }
             },
             error : function (data) {
@@ -98,7 +99,6 @@
                 scannedImg.src = res.imgData;
                 CallAjaxLoginQr(res.code);
                 scannedQR[txt] = res.format + ": " + res.code;
-                alert(scannedImg.src);
             },
             getDevicesError: function(error) {
                 var p, message = "Error detected with the following parameters:\n";
