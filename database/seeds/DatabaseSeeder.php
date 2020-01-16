@@ -12,5 +12,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        \Illuminate\Support\Facades\DB::table("header_room_transactions")->insert([
+            "roomTransactionID"=>"83204bba-dbe2-351b-a0c2-c5b50b0c9fc3",
+            "adminID" => \Faker\Provider\Uuid::uuid(),
+            "transactionDate" => '2020-01-01 10:10:10',
+            "transactionStatus" => "Registered",
+        ]);
     }
 }

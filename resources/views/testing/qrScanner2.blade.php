@@ -27,8 +27,9 @@
         <div class="well" style="display: none;">
             <img width="320" height="240" id="scanned-img" src="">
         </div>
-        <div class="caption">
+        <div class="caption" style="text-align: center">
             <p id="scanned-QR"></p>
+            <p id="scanned-Status"></p>
         </div>
     </div>
 
@@ -45,18 +46,22 @@
             $.ajax({
                 type: "Get",
                 cache: false,
-                url : "/testing/a",
+                url : "/testing/update",
                 data: {data:code},
                 success: function(data) {
-                    if(data.status === true){
-                        console.log(data);
-                        $(location).attr('href',data.id);
-                    }
-                    else{
-                        console.log("Making new user");
+                    console.log(data);
+                    $("#scanned-QR").css("color",data.color);
+                    $("#scanned-QR").text(data.message);
+                    $("#scanned-Status").css("color",data.color);
+                    if(data.status != null){
+                        $("#scanned-Status").text("Transaction Status : " + data.status);
                     }
                 },
                 error : function (data) {
+                    console.log(data);
+                    $("#scanned-QR").css("color",data.color);
+                    $("#scanned-QR").text(data.message);
+                    $("#scanned-Status").css("color",data.color);
                 }
             })
         }
@@ -91,7 +96,7 @@
                     });
                     scannedImg.src = res.imgData;
                     CallAjaxLoginQr(res.code);
-                    scannedQR[txt] = res.format + ": " + res.code;
+                    // scannedQR[txt] = res.format + ": " + res.code;
                 },
                 getDevicesError: function(error) {
                     var p, message = "Error detected with the following parameters:\n";

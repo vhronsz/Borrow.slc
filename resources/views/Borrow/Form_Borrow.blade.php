@@ -31,10 +31,11 @@
 
 				<form class="" action="{{url("/Add_Transaction")}}" method="POST">
 
-                    <button onclick="a()" type="button" class="contact3-form-btn" style="margin-bottom:20px;">
-                        Back
-                    </button>
-
+                    <a href="{{url("/testing/qrscan2")}}">
+                        <button type="button" class="contact3-form-btn" style="margin-bottom:20px;">
+                            Back
+                        </button>
+                    </a>
                     <span class="contact3-form-title">
 						Form Peminjaman Ruang SLC
 					</span>

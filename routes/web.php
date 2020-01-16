@@ -44,8 +44,10 @@ Route::group(["prefix"=>"auth"],function(){
 
 Route::group(['prefix'=>'testing'],function (){
 
+    Route::get('/update','TestingController@updateDB');
+
     Route::get('qr', function () {
-        return view('testing\qrtesting')->with("key","83204bba-dbe2-351b-a0c2-c5b50b0c9fc3");
+        return view('testing\qrtesting')->with("key","3656fc84-13d6-39ba-8aae-3a2da8c5fab7");
     });
 
     Route::get("qrscan",function(){
