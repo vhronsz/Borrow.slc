@@ -50,6 +50,7 @@
                 data: {data:code},
                 success: function(data) {
                     console.log(data);
+                    $("#scanned-Status").text("");
                     $("#scanned-QR").css("color",data.color);
                     $("#scanned-QR").text(data.message);
                     $("#scanned-Status").css("color",data.color);
@@ -59,9 +60,6 @@
                 },
                 error : function (data) {
                     console.log(data);
-                    $("#scanned-QR").css("color",data.color);
-                    $("#scanned-QR").text(data.message);
-                    $("#scanned-Status").css("color",data.color);
                 }
             })
         }

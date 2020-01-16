@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             "adminID" => \Faker\Provider\Uuid::uuid(),
             "transactionDate" => '2020-01-01 10:10:10',
             "transactionStatus" => "Registered",
+            "updated_at" => \Carbon\Carbon::now(),
         ]);
     }
 }

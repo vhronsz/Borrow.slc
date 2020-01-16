@@ -30,7 +30,7 @@ class TransactionController extends Controller
             //////////////////////
 
             $header->transactionDate = Date::now();
-            $header->transactionStatus = "Not Taken";
+            $header->transactionStatus = "Registered";
             $header->save();
 
             $detail = new DetailRoomTransaction();
@@ -44,7 +44,7 @@ class TransactionController extends Controller
                 $detail->reason = $req->reason;
             }
             $detail->save();
-            return redirect()->back();
+            return redirect("/view/Borrow_Room_Form");
     }
 
 }
