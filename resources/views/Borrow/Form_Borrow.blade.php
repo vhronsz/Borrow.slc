@@ -29,9 +29,9 @@
 		<div class="container-contact3">
 			<div class="wrap-contact3">
 
-				<form class="" action="{{url("/Add_Transaction")}}" method="POST">
+				<form class="" action="{{url("/transaction/Add_Room")}}" method="POST">
 
-                    <a href="{{url("/testing/qrscan2")}}">
+                    <a href="{{url("/view/Home")}}">
                         <button type="button" class="contact3-form-btn" style="margin-bottom:20px;">
                             Back
                         </button>

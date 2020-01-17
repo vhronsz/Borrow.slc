@@ -46,7 +46,7 @@
             $.ajax({
                 type: "Get",
                 cache: false,
-                url : "/testing/update",
+                url : "/transaction/Update_Room",
                 data: {data:code},
                 success: function(data) {
                     console.log(data);

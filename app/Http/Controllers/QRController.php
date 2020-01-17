@@ -7,7 +7,7 @@ use App\QrModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-class TestingController extends Controller
+class QRController extends Controller
 {
     //
     public function updateDb(Request $req){
@@ -21,9 +21,15 @@ class TestingController extends Controller
                 $header->transactionStatus = "Done";
                 $header->save();
             }
-            return response()->json(["message"=>"Transaction Updated","status"=>$header->transactionStatus,"color"=>"green","time"=>Carbon::now()->diffInSeconds($header->updated_at)]);
+            return response()->json([   "message"=>"Transaction Updated",
+                                        "status"=>$header->transactionStatus,
+                                        "color"=>"green",
+                                        "time"=>Carbon::now()->diffInSeconds($header->updated_at)
+                                    ]);
         }else{
-            return response()->json(["message"=>"Transaction Not Found","color"=>"red","id"=>$req->data]);
+            return response()->json([   "message"=>"Transaction Not Found",
+                                        "color"=>"red","id"=>$req->data
+                                    ]);
         }
 
     }

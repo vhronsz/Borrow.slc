@@ -71,6 +71,8 @@ Qr scan
 Generate QR automaticaly after borrow form add a transaction
 Send email (Use test email temporary)
 
+Route
+Grouping Route to each category
 
 Manage Item
 On progress
