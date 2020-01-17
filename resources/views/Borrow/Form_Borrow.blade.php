@@ -135,7 +135,7 @@
 
                     @if($errors->any())
                         <div>
-                            <span class="input3" style="color: red;">{{$error->first()}}</span>
+                            <span class="input3" style="color: #c93200;">{{$errors->first()}}</span>
                             <br>
                         </div>
                     @endif

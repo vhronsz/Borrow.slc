@@ -27,6 +27,9 @@ class TransactionController extends Controller
             if($valid->fails()){
                 return redirect()->back()->withErrors($valid->errors());
             }
+            if($req->shiftStart > $req->shiftEnd){
+                return redirect()->back()->withErrors("Shift Start Cannot Exceed Shift End");
+            }
 
             $header = new HeaderRoomTransaction();
             $header->roomTransactionID = Uuid::uuid();
@@ -45,14 +48,20 @@ class TransactionController extends Controller
             $detail->shiftStart = $req->shiftStart;
             $detail->shiftEnd = $req->shiftEnd;
 
-            if($req->internetRequest){
+            if($req->internetRequest === "yes"){
+                $validInet = Validator::make($req->all(),[
+                    "reason" => "required"
+                ]);
+                if($validInet->fails()){
+                    return redirect()->back()->withErrors($validInet->errors());
+                }
                 $detail->internetRequest = true;
                 $detail->reason = $req->reason;
             }
             $detail->save();
 
             $qrCode = QrCode::size(300)->generate($header->roomTransactionID);
-            return redirect("/view/Home");
+            return redirect("/view/Home")->with("qr",$qrCode);
     }
 
 }
