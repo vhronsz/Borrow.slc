@@ -6,10 +6,10 @@
 <body>
 
 <div class="visible-print text-center">
-    <h1>Laravel {{$name}}- QR Code Generator Example</h1>
+    <h1>-QR Code Generator</h1>
     {{--  generate qr --}}
-    {!! QrCode::size(500)->generate($kunci); !!}
-    <p>example Cuii=</p>
+    {!! QrCode::size(300)->generate("1f16f75b-cce0-3dc3-84b5-e3b9d80e5593") !!}
+    <p>1f16f75b-cce0-3dc3-84b5-e3b9d80e5593</p>
 </div>
 
 </body>

@@ -9,7 +9,7 @@ class HeaderRoomTransaction extends Model
 {
     //
     use SoftDeletes;
-
+    protected $primaryKey = 'roomTransactionID';
     public function admin(){
         return $this->belongsTo('App\Admin');
     }

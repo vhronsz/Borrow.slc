@@ -18,6 +18,7 @@ class CreateHeaderItemTransactionsTable extends Migration
             $table->uuid('adminID');
             $table->uuid('userID');
             $table->dateTime('transactionDate');
+            $table->
 
             $table->softDeletes();
             $table->timestamps();

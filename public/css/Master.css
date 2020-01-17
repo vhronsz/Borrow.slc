@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/*Header*/
+#HeaderContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid black;
+}
+
+#LogoBinusTerlope{
+    width: 150px;
+    height: 100px;
+    margin-left: 10px;
+}
+
+#HeaderText{
+    margin-top: 10px;
+    margin-left: 2%;
+    font-size: 4vh;
+}
+
+/*End Header*/
+
+/*Navigation Bar*/
+#NavBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-bottom: 2px solid black;
+}
+
+.Item{
+    padding: 10px;
+    color: black;
+}
+
+.Item:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+
+/*End Navigation Bar*/
+
+
+/*Footer*/
+#FooterContainer{
+    width: 100%;
+    border-top: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*End Footer*/

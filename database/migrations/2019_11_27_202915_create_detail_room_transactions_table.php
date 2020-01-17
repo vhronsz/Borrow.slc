@@ -18,10 +18,10 @@ class CreateDetailRoomTransactionsTable extends Migration
             $table->string('roomID');
             $table->integer('shiftStart');
             $table->integer('shiftEnd');
-            $table->string('reason');
+            $table->string('reason')->nullable(true);
             $table->boolean('internetRequest');
-            $table->uuid('userID1');
-            $table->uuid('userID2');
+            $table->uuid('userID1')->nullable(true);
+            $table->uuid('userID2')->nullable(true);
 
             $table->softDeletes();
             $table->timestamps();
