@@ -27,13 +27,14 @@ Route::group(["prefix" => "view"],function(){
     Route::get('login',function(){
         return view('login');
     });
-    Route::get('Room_Monitor',function(){
-        return view('Borrow.Room_Monitor');
-    });
+
     Route::get('Borrow_Room_Form',function(){
         return view('Borrow.Form_Borrow');
     });
 });
+
+Route::get('Room_Availability',"ViewController@roomAvailability");
+Route::post('ChangeDateRA',"RoomController@changeDate");
 
 Route::post("/Add_Transaction","TransactionController@Add");
 
