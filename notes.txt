@@ -61,13 +61,16 @@ Please Kindly Review Room Availability blade, viewcontroller and Room controller
 as those get many bugs on today development and not debugged yet
 
 Todo:
+Room Availability Monitoring :
+- Make Table on room number and shift
+
 Make Room Status Monitoring :
 - Front End
 - Back End
 
-//////////////////////////
 Qr scan
-//////////////////////////
+========
+
 Generate QR automaticaly after borrow form add a transaction
 Send email (Use test email temporary)
 

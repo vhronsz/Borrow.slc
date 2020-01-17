@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79213623-0e3d-4e2e-81fe-62ae89d17611" name="Default Changelist" comment="Borrow Form Done">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoomController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TestingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QRController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ViewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ViewController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/notes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Borrow/Room_Availability.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Borrow/Room_Availability.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Borrow/Room_Monitor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Borrow/Room_Monitor.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Borrow/ScanRoomQR.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Borrow/ScanRoomQR.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Master/navBar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Master/navBar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,13 +16,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/notes.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
-              <folding>
-                <element signature="e#1474#1634#1#PHP" />
-              </folding>
+            <state relative-caret-position="218">
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
             </state>
           </provider>
         </entry>
@@ -114,7 +100,6 @@
         <option value="$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php" />
         <option value="$PROJECT_DIR$/public/css/monitorRoomStyle.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RoomController.php" />
-        <option value="$PROJECT_DIR$/notes.txt" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ViewController.php" />
         <option value="$PROJECT_DIR$/resources/views/Master/navBar.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/QRController.php" />
@@ -124,6 +109,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" />
         <option value="$PROJECT_DIR$/resources/views/Borrow/ScanRoomQR.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/notes.txt" />
       </list>
     </option>
   </component>
@@ -240,24 +226,6 @@
               <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
               <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="testing" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -348,7 +316,7 @@
       <workItem from="1579182008588" duration="1475000" />
       <workItem from="1579187404631" duration="1907000" />
       <workItem from="1579227309658" duration="5113000" />
-      <workItem from="1579233834164" duration="23687000" />
+      <workItem from="1579233834164" duration="23910000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1574998364228</created>
@@ -361,7 +329,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165168000" />
+    <option name="totallyTimeSpent" value="165391000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -383,7 +351,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3427762" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3427762" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -618,13 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notes.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Master/Header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -754,11 +715,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="221">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#1474#1634#1#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>
