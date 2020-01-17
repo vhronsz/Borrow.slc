@@ -53,3 +53,27 @@ Room Monitoring
 
 
 /////////////////////////////////////////
+
+/////////////////////
+//Status 17/01/2019//
+/////////////////////
+Please Kindly Review Room Availability blade, viewcontroller and Room controller, web.php
+as those get many bugs on today development and not debugged yet
+
+Todo:
+Make Room Status Monitoring :
+- Front End
+- Back End
+
+//////////////////////////
+Qr scan
+//////////////////////////
+Generate QR automaticaly after borrow form add a transaction
+Send email (Use test email temporary)
+
+Route
+Grouping Route to each category
+
+Manage Item
+On progress
+

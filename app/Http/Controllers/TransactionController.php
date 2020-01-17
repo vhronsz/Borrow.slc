@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 class TransactionController extends Controller
 {
     //
-    public  function add(Request $req){
+    public  function addRoom(Request $req){
             $valid = Validator::make($req->all(),[
                 "name" => "required",
                 "email" => "required",
@@ -44,7 +44,7 @@ class TransactionController extends Controller
                 $detail->reason = $req->reason;
             }
             $detail->save();
-            return redirect("/view/Borrow_Room_Form");
+            return redirect("/view/Home");
     }
 
 }
