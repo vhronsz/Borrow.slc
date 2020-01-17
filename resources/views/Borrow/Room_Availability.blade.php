@@ -24,8 +24,14 @@
                 No Transaction
             </div>
         @else
+            <?php $index = 0; ?>
             @foreach($details as $detail)
                 @if($detail["Campus"] === "ANGGREK")
+
+                    @if($index === 6)
+                        <div id="break"></div> <!-- Temporary-->
+                    @endif
+
                     @foreach($detail["StatusDetails"] as $status)
                         @if(sizeof($status) !== 0)
                             <div class="roomAvailable">
@@ -36,6 +42,7 @@
                                 <span>{{$detail["RoomName"]}}</span>
                             </div>
                         @endif
+                        <?php $index++; ?>
                     @endforeach
                 @endif
             @endforeach

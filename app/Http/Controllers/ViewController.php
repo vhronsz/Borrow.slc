@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Session;
 
 class ViewController extends Controller
 {
+    //View and Room
+//    Kalo ada tanggal cari transaksi sesuai tanggal , jika tidak ambil hari ini
+
+
     public function roomAvailability(Request $req)
     {
         if (!Session::get("Date")) {
