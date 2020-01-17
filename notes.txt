@@ -80,3 +80,12 @@ Grouping Route to each category
 Manage Item
 On progress
 
+////////////////////////////////
+
+Status 18/01
+=============
+Form Borrow Blade
+add validation
+- Check if desired room have transaction on desired days on the shift
+- Validate the start and end shift
+

@@ -8,6 +8,7 @@ use Faker\Provider\Uuid;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Validator;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class TransactionController extends Controller
 {
@@ -22,6 +23,11 @@ class TransactionController extends Controller
                 "shiftEnd" => "required",
                 "date" => "required",
             ]);
+
+            if($valid->fails()){
+                return redirect()->back()->withErrors($valid->errors());
+            }
+
             $header = new HeaderRoomTransaction();
             $header->roomTransactionID = Uuid::uuid();
 
@@ -44,6 +50,8 @@ class TransactionController extends Controller
                 $detail->reason = $req->reason;
             }
             $detail->save();
+
+            $qrCode = QrCode::size(300)->generate($header->roomTransactionID);
             return redirect("/view/Home");
     }
 
