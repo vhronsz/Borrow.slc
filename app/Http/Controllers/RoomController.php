@@ -15,7 +15,6 @@ class RoomController extends Controller
         $url = file_get_contents("https://laboratory.binus.ac.id/lapi/api/Room/GetTransactions?startDate=$date&endDate=$date&includeUnapproved=true");
         $json = json_decode($url, true);
         $details = $json["Details"];
-        Session::put("Date","");
-        return view("Borrow.Room_Availability")->with("details",$details);
+        return view("Borrow.Room_Availability")->with("details",$details)->with("date",$json["Dates"]);
     }
 }

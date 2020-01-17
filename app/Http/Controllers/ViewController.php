@@ -10,7 +10,6 @@ class ViewController extends Controller
 {
     public function roomAvailability(Request $req)
     {
-
         if (!Session::get("Date")) {
             Session::put("Date",date("m/d/y",time()));
         }
@@ -20,7 +19,7 @@ class ViewController extends Controller
         $json = json_decode($url, true);
         $details = $json["Details"];
 
-        return view("Borrow.Room_Availability")->with("details",$details);
+        return view("Borrow.Room_Availability")->with("details",$details)->with("date",$json["Dates"]);
     }
 
 
