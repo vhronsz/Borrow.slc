@@ -19,5 +19,15 @@ class DatabaseSeeder extends Seeder
             "transactionStatus" => "Registered",
             "updated_at" => \Carbon\Carbon::now(),
         ]);
+        \Illuminate\Support\Facades\DB::table("detail_room_transactions")->insert([
+            "roomTransactionID" => "83204bba-dbe2-351b-a0c2-c5b50b0c9fc3",
+            "roomID"=>601,
+            "shiftStart"=>1,
+            "shiftEnd"=>2,
+            "reason"=>null,
+            "internetRequest"=>false,
+            "userID1"=>null,
+            "userID2"=>null,
+        ]);
     }
 }

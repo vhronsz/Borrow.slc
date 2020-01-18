@@ -18,6 +18,7 @@ class CreateRoomsTable extends Migration
             $table->integer('roomCapacity');
             $table->string('roomStatus');
 
+            $table->primary("roomID");
             $table->softDeletes();
             $table->timestamps();
         });

@@ -6,14 +6,14 @@
 
 @section("content")
     <div class="MonitorRoomContainer">
-        <form action="{{url("Room_Availability")}}" method="POST">
+        <form action="{{url("Room_Monitor")}}" method="POST">
             <input type="date" name="date" id="">
             <button type="submit">Submit</button>
         </form>
     </div>
     <div class="MonitorRoomContainer">
         @if($details === null)
-            <div>sdad</div>
+            <div></div>
         @else
             @foreach($details as $detail)
                 @foreach($detail["StatusDetails"] as $status)
