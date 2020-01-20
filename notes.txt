@@ -100,3 +100,4 @@ Add
     protected $keyType = 'string';
     public $incrementing = false;
 ) to enable uuid as primary key
+test
