@@ -10,6 +10,8 @@ class HeaderItemTransaction extends Model
     //
     use SoftDeletes;
     protected $primaryKey = 'itemTransactionID';
+    protected $keyType = 'string';
+    public $incrementing = false;
 
     public function detailItemTransaction(){
         return $this->hasMany('App\DetailRoomTransaction','itemTransactionID');

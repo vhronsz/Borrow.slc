@@ -93,3 +93,10 @@ add validation
 Status 20/1
 ============
 Foreign key added in model (eloquent relationship)
+Add item directory
+Add scan item qr
+Add
+(
+    protected $keyType = 'string';
+    public $incrementing = false;
+) to enable uuid as primary key

@@ -55,7 +55,7 @@
                     $("#scanned-QR").text(data.message);
                     $("#scanned-Status").css("color",data.color);
                     if(data.status != null){
-                        $("#scanned-Status").text("Transaction Status : " + data.status);
+                        $("#scanned-Status").text("Transaction " + data.status);
                     }
                 },
                 error : function (data) {

@@ -25,6 +25,9 @@ Route::group(["prefix" => "view"],function(){
         return view('Borrow.ScanRoomQR');
     });
 
+    Route::get('/ScanItem',function(){
+        return view('Item.ItemQR');
+    });
 });
 
 Route::group(["prefix" => "room"],function(){
@@ -35,9 +38,20 @@ Route::group(["prefix" => "room"],function(){
     Route::post('Room_Monitor',"ViewController@roomMonitor");
 });
 
+Route::group(["prefix" => "item"],function(){
+    Route::get('',"ViewController@");
+    Route::post('',"ViewController@");
+
+    Route::get('',"ViewController@");
+    Route::post('',"ViewController@");
+});
+
 Route::group(["prefix" => "transaction"],function (){
     Route::post("/Add_Room","TransactionController@addRoom");
     Route::get('/Update_Room','TransactionController@updateRoom');
+
+    Route::post("/Add_Item","TransactionController@addItemTransaction");
+    Route::get('/Update_Item','TransactionController@updateItemTransaction');
 });
 
 Route::group(["prefix"=>"auth"],function(){

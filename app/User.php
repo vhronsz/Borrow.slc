@@ -11,7 +11,8 @@ class User extends Authenticatable
 {
     use Notifiable;
     use SoftDeletes;
-
+    protected $keyType = 'string';
+    public $incrementing = false;
     /**
      * The attributes that are mass assignable.
      *

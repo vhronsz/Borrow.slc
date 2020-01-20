@@ -9,6 +9,8 @@ class DetailItemTransaction extends Model
 {
     //
     use SoftDeletes;
+    protected $keyType = 'string';
+    public $incrementing = false;
 
     public function item(){
         return $this->hasOne('App\Item','itemID');

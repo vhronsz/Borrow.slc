@@ -10,6 +10,8 @@ class Admin extends Model
 {
     //
     use SoftDeletes;
+    protected $keyType = 'string';
+    public $incrementing = false;
 
     public function roomTransaction(){
         return $this->hasMany('App\HeaderRoomTransaction','roomTransactionID');
