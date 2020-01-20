@@ -11,6 +11,6 @@ class Item extends Model
     use SoftDeletes;
 
     public function detailItemTransaction(){
-        return $this->belongsTo('App\DetailRoomTransaction');
+        return $this->belongsTo('App\DetailItemTransaction','itemTransactionID');
     }
 }

@@ -12,14 +12,14 @@ class HeaderItemTransaction extends Model
     protected $primaryKey = 'itemTransactionID';
 
     public function detailItemTransaction(){
-        return $this->hasMany('App\DetailRoomTransaction');
+        return $this->hasMany('App\DetailRoomTransaction','itemTransactionID');
     }
 
     public function admin(){
-        return $this->belongsTo('App\Admin');
+        return $this->belongsTo('App\Admin','adminID');
     }
 
     public function user(){
-        return $this->hasOne('App\User');
+        return $this->hasOne('App\User','userID');
     }
 }

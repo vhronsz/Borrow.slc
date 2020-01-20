@@ -90,3 +90,5 @@ add validation
 - Validate the start and end shift
 - Add Primary key to database
 
+Status 20/1
+============

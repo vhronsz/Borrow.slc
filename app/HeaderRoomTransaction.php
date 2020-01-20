@@ -12,11 +12,11 @@ class HeaderRoomTransaction extends Model
     protected $primaryKey = 'roomTransactionID';
 
     public function admin(){
-        return $this->belongsTo('App\Admin');
+        return $this->belongsTo('App\Admin','adminID');
     }
 
     public function roomTransaction(){
-        return $this->hasMany('App\DetailRoomTransaction');
+        return $this->hasMany('App\DetailRoomTransaction','roomTransactionID');
     }
 
 

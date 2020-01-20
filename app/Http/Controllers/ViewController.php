@@ -26,19 +26,16 @@ class ViewController extends Controller
     }
 
     public function roomMonitor(Request $req){
-
         $date = date("m/d/y",time());
-
         if($req->date !== null){
             $date = date('m/d/y',strtotime($req->date));
         }
-
-        $header = HeaderRoomTransaction::where("transactionDate",$date)->get();
-        dd($header);
-
+        $header = HeaderRoomTransaction::where("transactionDate","2020-01-01 10:10:10")->with("roomTransaction")->get();
 //        $url = file_get_contents("https://laboratory.binus.ac.id/lapi/api/Room/GetTransactions?startDate=$date&endDate=$date&includeUnapproved=true");
 //        $json = json_decode($url, true);
 //        $details = $json["Details"];
+        dd($header);
+        return view("Borrow.Room_Monitor")->with("date",$date);
 
     }
 }
