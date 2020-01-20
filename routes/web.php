@@ -30,11 +30,14 @@ Route::group(["prefix" => "view"],function(){
 Route::group(["prefix" => "room"],function(){
     Route::get('Room_Availability',"ViewController@roomAvailability");
     Route::post('Room_Availability',"ViewController@roomAvailability");
+
+    Route::get('Room_Monitor',"ViewController@roomMonitor");
+    Route::post('Room_Monitor',"ViewController@roomMonitor");
 });
 
 Route::group(["prefix" => "transaction"],function (){
     Route::post("/Add_Room","TransactionController@addRoom");
-    Route::get('/Update_Room','QRController@updateRoom');
+    Route::get('/Update_Room','TransactionController@updateRoom');
 });
 
 Route::group(["prefix"=>"auth"],function(){

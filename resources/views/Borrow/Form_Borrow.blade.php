@@ -132,6 +132,13 @@
 						<span class="focus-input3"></span>
 					</div>
 
+
+                    @if($errors->any())
+                        <div>
+                            <span class="input3" style="color: #c93200;">{{$errors->first()}}</span>
+                            <br>
+                        </div>
+                    @endif
 					<div class="container-contact3-form-btn">
 						<button type="submit" class="contact3-form-btn">
 							Submit

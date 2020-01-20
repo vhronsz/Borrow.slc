@@ -40,16 +40,16 @@ class User extends Authenticatable
     ];
 
     public function role(){
-        return $this->hasOne('App\Role');
+        return $this->hasOne('App\Role','roleID');
     }
 
     public function roomTransaction(){
-        return $this->belongsTo('App\DetailRoomTransaction');
+        return $this->belongsTo('App\DetailRoomTransaction','roomID');
         //Notes User ga bisa ambil detail kalo lebih dari 1 di detail
     }
 
     public function itemTransaction(){
-        return $this->belongsTo('App\HeaderItemTransaction');
+        return $this->belongsTo('App\HeaderItemTransaction','itemTransactionID');
     }
 
 }

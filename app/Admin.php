@@ -12,10 +12,10 @@ class Admin extends Model
     use SoftDeletes;
 
     public function roomTransaction(){
-        return $this->hasMany('App\HeaderRoomTransaction');
+        return $this->hasMany('App\HeaderRoomTransaction','roomTransactionID');
     }
 
     public function itemTransaction(){
-        return $this->hasMany('App\HeaderItemTransaction');
+        return $this->hasMany('App\HeaderItemTransaction','itemTransactionID');
     }
 }

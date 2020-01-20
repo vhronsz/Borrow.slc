@@ -11,10 +11,10 @@ class DetailItemTransaction extends Model
     use SoftDeletes;
 
     public function item(){
-        return $this->hasOne('App\Item');
+        return $this->hasOne('App\Item','itemID');
     }
 
     public function headerItemTransaction(){
-        return $this->belongsTo('App\HeaderItemTransaction');
+        return $this->belongsTo('App\HeaderItemTransaction','itemTransactionID');
     }
 }

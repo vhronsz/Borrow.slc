@@ -57,17 +57,20 @@ Room Monitoring
 /////////////////////
 //Status 17/01/2019//
 /////////////////////
-Please Kindly Review Room Availability blade, viewcontroller and Room controller, web.php
+Please Review Room Availability blade, viewcontroller and Room controller, web.php
 as those get many bugs on today development and not debugged yet
 
 Todo:
+Room Availability Monitoring :
+- Make Table on room number and shift
+
 Make Room Status Monitoring :
 - Front End
 - Back End
 
-//////////////////////////
 Qr scan
-//////////////////////////
+========
+
 Generate QR automaticaly after borrow form add a transaction
 Send email (Use test email temporary)
 
@@ -77,3 +80,15 @@ Grouping Route to each category
 Manage Item
 On progress
 
+////////////////////////////////
+
+Status 18/01
+=============
+Form Borrow Blade
+add validation
+- Check if desired room have transaction on desired days on the shift
+- Validate the start and end shift
+- Add Primary key to database
+
+Status 20/1
+============

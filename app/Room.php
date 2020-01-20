@@ -11,6 +11,6 @@ class room extends Model
     use SoftDeletes;
 
     public function detailRoomTransaction(){
-        return $this->belongsTo('App\DetailRoomTransaction');
+        return $this->belongsTo('App\DetailRoomTransaction','roomTransactionID');
     }
 }

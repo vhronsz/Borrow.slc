@@ -19,6 +19,7 @@ class CreateItemsTable extends Migration
             $table->integer('itemStock');
             $table->text('itemDesc');
 
+            $table->primary("itemID");
             $table->softDeletes();
             $table->timestamps();
         });

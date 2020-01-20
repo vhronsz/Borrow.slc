@@ -8,4 +8,5 @@ use Illuminate\Support\Facades\Session;
 
 class RoomController extends Controller
 {
+
 }

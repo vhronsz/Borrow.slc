@@ -20,6 +20,7 @@ class CreateHeaderRoomTransactionsTable extends Migration
             $table->string("transactionStatus");
             $table->softDeletes();
             $table->timestamps();
+            $table->primary("roomTransactionID");
         });
     }
 

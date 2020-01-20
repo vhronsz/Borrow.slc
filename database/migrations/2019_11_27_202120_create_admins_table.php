@@ -19,6 +19,7 @@ class CreateAdminsTable extends Migration
             $table->string('adminEmail');
             $table->string('adminPhone');
 
+            $table->primary("adminID");
             $table->softDeletes();
             $table->timestamps();
         });

@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class QRController extends Controller
 {
-    //
+
     public function updateDb(Request $req){
         $header = HeaderRoomTransaction::where("roomTransactionID",$req->data)->first();
         if($header){
@@ -32,25 +32,5 @@ class QRController extends Controller
                                     ]);
         }
 
-    }
-
-    public function a(Request $req){
-        $a = QrModel::where("Qrpassword",$req->data)->first();
-
-        if($a !== null){
-            return response()->json([
-                "Id"=>$a,
-                "status" =>true,
-            ]);
-        }
-        
-        $qr = new QrModel();
-        $qr->Qrpassword = $req->data;
-        $qr->save();
-
-        return response()->json([
-            "Id"=>$qr,
-            "status" =>false,
-        ]);
     }
 }

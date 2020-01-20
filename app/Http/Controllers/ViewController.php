@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
+use App\HeaderRoomTransaction;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 
 class ViewController extends Controller
 {
+    //
+
     //View and Room
-//    Kalo ada tanggal cari transaksi sesuai tanggal , jika tidak ambil hari ini
+    //Kalo ada tanggal cari transaksi sesuai tanggal , jika tidak ambil hari ini
 
     public function roomAvailability(Request $req){
         $date = date("m/d/y",time());
-
         if($req->date !== null){
             $date = date('m/d/y',strtotime($req->date));
         }
@@ -21,8 +21,21 @@ class ViewController extends Controller
         $url = file_get_contents("https://laboratory.binus.ac.id/lapi/api/Room/GetTransactions?startDate=$date&endDate=$date&includeUnapproved=true");
         $json = json_decode($url, true);
         $details = $json["Details"];
+
         return view("Borrow.Room_Availability")->with("details",$details)->with("date",$json["Dates"]);
     }
 
+    public function roomMonitor(Request $req){
+        $date = date("m/d/y",time());
+        if($req->date !== null){
+            $date = date('m/d/y',strtotime($req->date));
+        }
+        $header = HeaderRoomTransaction::where("transactionDate","2020-01-01 10:10:10")->with("roomTransaction")->get();
+//        $url = file_get_contents("https://laboratory.binus.ac.id/lapi/api/Room/GetTransactions?startDate=$date&endDate=$date&includeUnapproved=true");
+//        $json = json_decode($url, true);
+//        $details = $json["Details"];
+        dd($header);
+        return view("Borrow.Room_Monitor")->with("date",$date);
 
+    }
 }
