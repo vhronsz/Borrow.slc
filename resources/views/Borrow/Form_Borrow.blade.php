@@ -29,7 +29,7 @@
 		<div class="container-contact3">
 			<div class="wrap-contact3">
 
-				<form class="" action="{{url("/transaction/Add_Room")}}" method="POST">
+				<form class="" action="{{url("/transaction/Add_Room_Transaction")}}" method="POST">
 
                     <a href="{{url("/view/Home")}}">
                         <button type="button" class="contact3-form-btn" style="margin-bottom:20px;">

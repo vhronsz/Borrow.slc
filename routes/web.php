@@ -12,46 +12,39 @@
 */
 
 Route::group(["prefix" => "view"],function(){
-
     Route::get('Login',function(){
         return view('login');
     });
 
-    Route::get('Borrow_Room_Form',function(){
-        return view('Borrow.Form_Borrow');
+    Route::group(["prefix" => "room"],function(){
+        Route::get('Borrow_Room_Form',function(){
+            return view('Borrow.Form_Borrow');
+        });
+        Route::get('/Home',function(){
+            return view('Borrow.ScanRoomQR');
+        });
+    });
+    
+    Route::group(["prefix" => "item"],function(){
+        Route::get('/ScanItem',function(){
+            return view('Item.ItemQR');
+        });
     });
 
-    Route::get('/Home',function(){
-        return view('Borrow.ScanRoomQR');
-    });
-
-    Route::get('/ScanItem',function(){
-        return view('Item.ItemQR');
-    });
 });
 
 Route::group(["prefix" => "room"],function(){
     Route::get('Room_Availability',"ViewController@roomAvailability");
     Route::post('Room_Availability',"ViewController@roomAvailability");
-
     Route::get('Room_Monitor',"ViewController@roomMonitor");
     Route::post('Room_Monitor',"ViewController@roomMonitor");
 });
 
-Route::group(["prefix" => "item"],function(){
-    Route::get('',"ViewController@");
-    Route::post('',"ViewController@");
-
-    Route::get('',"ViewController@");
-    Route::post('',"ViewController@");
-});
-
 Route::group(["prefix" => "transaction"],function (){
-    Route::post("/Add_Room","TransactionController@addRoom");
-    Route::get('/Update_Room','TransactionController@updateRoom');
-
-    Route::post("/Add_Item","TransactionController@addItemTransaction");
-    Route::get('/Update_Item','TransactionController@updateItemTransaction');
+    Route::post("/Add_Room_Transaction","TransactionController@addRoom");
+    Route::get('/Update_Room_Transaction','TransactionController@updateRoom');
+    Route::post("/Add_Item_Transaction","TransactionController@addItemTransaction");
+    Route::get('/Update_Item_Transaction','TransactionController@updateItemTransaction');
 });
 
 Route::group(["prefix"=>"auth"],function(){
