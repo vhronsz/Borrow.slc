@@ -92,3 +92,4 @@ add validation
 
 Status 20/1
 ============
+Foreign key added in model (eloquent relationship)
