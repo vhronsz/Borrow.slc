@@ -23,6 +23,9 @@ class CreateDetailRoomTransactionsTable extends Migration
             $table->uuid('userID1')->nullable(true);
             $table->uuid('userID2')->nullable(true);
 
+            $table->string('Borrower');
+            $table->string("Borrow_Reason");
+
             $table->softDeletes();
             $table->timestamps();
         });

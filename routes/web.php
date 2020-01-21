@@ -15,7 +15,6 @@ Route::group(["prefix" => "view"],function(){
     Route::get('Login',function(){
         return view('login');
     });
-
     Route::group(["prefix" => "room"],function(){
         Route::get('Borrow_Room_Form',function(){
             return view('Borrow.Form_Borrow');
@@ -24,22 +23,20 @@ Route::group(["prefix" => "view"],function(){
             return view('Borrow.ScanRoomQR');
         });
     });
-    
     Route::group(["prefix" => "item"],function(){
         Route::get('/ScanItem',function(){
             return view('Item.ItemQR');
         });
-
         Route::get('/UpdateItem',function(){
             return view('Item.formPeminjamanBarang');
         });
     });
-
 });
 
 Route::group(["prefix" => "room"],function(){
     Route::get('Room_Availability',"ViewController@roomAvailability");
     Route::post('Room_Availability',"ViewController@roomAvailability");
+
     Route::get('Room_Monitor',"ViewController@roomMonitor");
     Route::post('Room_Monitor',"ViewController@roomMonitor");
 });
@@ -52,9 +49,10 @@ Route::group(["prefix" => "transaction"],function (){
     Route::get('/Update_Item_Transaction','TransactionController@updateItemTransaction');
 });
 
-Route::group(["prefix"=>"auth"],function(){
-    Route::post("Login","UserController@doLogin");
+Route::group(["prefix"=>"migration"],function(){
+    Route::get("testMigration","TransactionController@getDataFromMessier");
 });
+
 
 
 ////////////////
@@ -80,4 +78,8 @@ Route::group(['prefix'=>'testing'],function (){
     Route::get("qr",function(){
         return view("testing.qrtesting");
     });
+});
+
+Route::group(["prefix"=>"auth"],function(){
+    Route::post("Login","UserController@doLogin");
 });
