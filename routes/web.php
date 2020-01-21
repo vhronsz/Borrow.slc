@@ -29,6 +29,10 @@ Route::group(["prefix" => "view"],function(){
         Route::get('/ScanItem',function(){
             return view('Item.ItemQR');
         });
+
+        Route::get('/UpdateItem',function(){
+            return view('Item.formPeminjamanBarang');
+        });
     });
 
 });
