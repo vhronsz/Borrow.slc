@@ -173,4 +173,37 @@ class TransactionController extends Controller
 
     }
 
+    public function getDataFromMessier(){
+        $date = date("m/d/y",time());
+        $url = file_get_contents("https://laboratory.binus.ac.id/lapi/api/Room/GetTransactions?startDate=$date&endDate=$date&includeUnapproved=true");
+        $json = json_decode($url, true);
+        $data = $json["Details"];
+        $transactionData = [];
+        foreach ($data as $d){
+            if($d["Campus"] === "ANGGREK"){
+                array_push($transactionData,$d);
+            }
+        }
+        dd($transactionData);
+        foreach ($transactionData as $tdata){
+            $header = new HeaderRoomTransaction();
+
+            $header->roomTransactionID = Uuid::uuid();
+            $header->adminID = Uuid::uuid();
+            $header->transactionDate = Carbon::now();
+            $header->transactionStatus = "Registered";
+            $header->save();
+
+            $detail = new DetailRoomTransaction();
+            $detail->roomTransactionID = $header->roomTransactionID;
+            $detail->roomID = $tdata["Campus"];
+            $idx = 0;
+            foreach ($tdata["StatusDetails"] as $shift){
+
+            }
+//            $detail->shiftStart = ;
+
+
+        }
+    }
 }
