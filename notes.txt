@@ -111,6 +111,6 @@ Fix many routes on view
 Transaction Room Database Change
 Added userDivision on  user table
 
-Change Transaction Controller to match new Header room table
+Change Transaction Controller to match new Header room table (add and update [Check if the transaction i multi shift])
 Change view Controller to match new Header room table
 

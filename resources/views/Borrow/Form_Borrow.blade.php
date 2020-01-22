@@ -55,7 +55,18 @@
 						<span class="focus-input3"></span>
 					</div>
 
-					<div class="wrap-input3 validate-input" data-validate="Room is required">
+                    <div class="wrap-input3 validate-input" data-validate="Phone is required">
+                        <input class="input3" type="text" name="division" placeholder="Division">
+                        <span class="focus-input3"></span>
+                    </div>
+
+                    <div class="wrap-input3 input3-select" data-validate="Message is required">
+                        <textarea class="input3" name="borrowReason" placeholder="Borrow Reason Description"></textarea>
+                        <span class="focus-input3"></span>
+                    </div>
+
+
+                    <div class="wrap-input3 validate-input" data-validate="Room is required">
 						<div>
 							<select class="selection-2" name="room" placeholder="Room">
 								<option disabled selected hidden>Room</option>
@@ -65,12 +76,16 @@
 								<option value="604">604</option>
 								<option value="605">605</option>
 								<option value="606">606</option>
+                                <option value="606">607</option>
+                                <option value="606">608</option>
+                                <option value="606">609</option>
+                                <option value="606">610</option>
 							</select>
 						</div>
 						<span class="focus-input3"></span>
 					</div>
 
-					<div class="wrap-input3 validate-input" data-validate="Room is required">
+					<div class="wrap-input3 validate-input" data-validate="Start Shift is required">
 						<div>
 							<select class="selection-2" name="shiftStart">
 								<option disabled selected hidden>Shift Start</option>
@@ -85,7 +100,7 @@
 						<span class="focus-input3"></span>
 					</div>
 
-                    <div class="wrap-input3 validate-input" data-validate="Room is required">
+                    <div class="wrap-input3 validate-input" data-validate="End Shift is required">
                         <div>
                             <select class="selection-2" name="shiftEnd">
                                 <option disabled selected hidden>Shift End</option>
@@ -128,7 +143,7 @@
 					</div>
 
 					<div class="wrap-input3 input3-select" data-validate="Message is required">
-						<textarea class="input3" name="reason" placeholder="Internet Reason Description"></textarea>
+						<textarea class="input3" name="internetReason" placeholder="Internet Reason Description"></textarea>
 						<span class="focus-input3"></span>
 					</div>
 

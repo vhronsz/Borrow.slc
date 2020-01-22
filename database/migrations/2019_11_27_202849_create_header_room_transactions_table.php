@@ -22,6 +22,19 @@ class CreateHeaderRoomTransactionsTable extends Migration
             $table->string("campus");
             $table->string('roomID');
 
+            $table->string('borrowerName');
+            $table->string('borrowerEmail');
+            $table->string('borrowerPhone');
+            $table->string('borrowerDivision');
+            $table->string("borrowReason");
+
+            $table->integer("shiftStart");
+            $table->integer("shiftEnd");
+
+            $table->boolean('internetRequest');
+            $table->string('internetReason')->nullable(true);
+            $table->string('assistant')->nullable(true);
+
             $table->softDeletes();
             $table->timestamps();
             $table->primary("roomTransactionID");
