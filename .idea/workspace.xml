@@ -4,7 +4,6 @@
     <list default="true" id="79213623-0e3d-4e2e-81fe-62ae89d17611" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Item/ItemQR.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Item/ItemQR.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +19,7 @@
       <file pinned="true" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="663">
               <caret line="48" column="40" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="40" />
             </state>
           </provider>
@@ -29,32 +28,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="250" column="20" lean-forward="true" selection-start-line="250" selection-start-column="20" selection-end-line="250" selection-end-column="20" />
+            <state relative-caret-position="539">
+              <caret line="240" column="42" lean-forward="true" selection-start-line="240" selection-start-column="42" selection-end-line="240" selection-end-column="42" />
               <folding>
                 <element signature="e#40#70#0#PHP" expanded="true" />
-                <element signature="e#387#565#0#PHP" />
-                <element signature="e#5170#6127#0#PHP" />
-                <element signature="e#6134#7910#0#PHP" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/Borrow/ScanRoomQR.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1598">
-              <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_27_202849_create_header_room_transactions_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -238,8 +216,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="617" />
-    <option name="y" value="-9" />
+    <option name="x" value="616" />
+    <option name="y" value="-10" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
@@ -251,6 +229,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -305,7 +284,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -395,7 +373,8 @@
       <workItem from="1579315007831" duration="10158000" />
       <workItem from="1579486577656" duration="19600000" />
       <workItem from="1579573573718" duration="19498000" />
-      <workItem from="1579659905612" duration="34027000" />
+      <workItem from="1579659905612" duration="34095000" />
+      <workItem from="1579707315132" duration="2639000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1574998364228</created>
@@ -460,17 +439,24 @@
       <option name="project" value="LOCAL" />
       <updated>1579699022555</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Test Migration Update">
+      <created>1579705379048</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1579705379048</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254325000" />
+    <option name="totallyTimeSpent" value="257032000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24161074" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24496645" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -519,7 +505,8 @@
     <MESSAGE value="Change on header room transaction" />
     <MESSAGE value="Room Transaction table changed&#10;Borrow Room Form Changed" />
     <MESSAGE value="Add Notes 22/01 20:16" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Notes 22/01 20:16" />
+    <MESSAGE value="Test Migration Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Migration Update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/views/login.blade.php">
@@ -848,13 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="48" column="40" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -876,29 +856,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="48" column="40" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_27_202849_create_header_room_transactions_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
+        <state relative-caret-position="442">
           <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Borrow/ScanRoomQR.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
+        <state relative-caret-position="624">
+          <caret line="134" selection-start-line="134" selection-end-line="134" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="250" column="20" lean-forward="true" selection-start-line="250" selection-start-column="20" selection-end-line="250" selection-end-column="20" />
+        <state relative-caret-position="539">
+          <caret line="240" column="42" lean-forward="true" selection-start-line="240" selection-start-column="42" selection-end-line="240" selection-end-column="42" />
           <folding>
             <element signature="e#40#70#0#PHP" expanded="true" />
-            <element signature="e#387#565#0#PHP" />
-            <element signature="e#5170#6127#0#PHP" />
-            <element signature="e#6134#7910#0#PHP" />
           </folding>
         </state>
       </provider>
