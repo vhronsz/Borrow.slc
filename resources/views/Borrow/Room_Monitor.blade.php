@@ -6,7 +6,7 @@
 
 @section("content")
     <div class="MonitorRoomContainer">
-        <form action="{{url("Room_Monitor")}}" method="POST">
+        <form action="{{url("room/Room_Monitor")}}" method="POST">
             <input type="date" name="date" id="">
             <button type="submit">Submit</button>
         </form>

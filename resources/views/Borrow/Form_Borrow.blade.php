@@ -31,7 +31,7 @@
 
 				<form class="" action="{{url("/transaction/Add_Room_Transaction")}}" method="POST">
 
-                    <a href="{{url("/view/Home")}}">
+                    <a href="{{url("/view/room/Home")}}">
                         <button type="button" class="contact3-form-btn" style="margin-bottom:20px;">
                             Back
                         </button>
