@@ -100,3 +100,11 @@ Add
     protected $keyType = 'string';
     public $incrementing = false;
 ) to enable uuid as primary key
+
+Status 21/01
+============
+Add input for reason and borrower on borrow form
+See Commit message
+
+// Kalo mau ganti jadi kayak messier
+Changed Room transaction erd to match messier
