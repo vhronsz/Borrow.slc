@@ -20,8 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('userPassword');
             $table->string('userPhone');
             $table->string('userRole');
-            $table->primary("userID");
+            $table->string('userDivision');
 
+
+            $table->primary("userID");
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();

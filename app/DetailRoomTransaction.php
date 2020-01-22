@@ -19,12 +19,4 @@ class DetailRoomTransaction extends Model
     public function room(){
         return $this->hasOne('App\Room','roomID');
     }
-
-    public function user1(){
-        return $this->hasOne('App\User','userID');
-    }
-
-    public function user2(){
-        return $this->hasOne('App\User','userID');
-    }
 }

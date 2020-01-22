@@ -15,16 +15,13 @@ class CreateDetailRoomTransactionsTable extends Migration
     {
         Schema::create('detail_room_transactions', function (Blueprint $table) {
             $table->uuid('roomTransactionID');
-            $table->string('roomID');
             $table->integer('shiftStart');
             $table->integer('shiftEnd');
-            $table->string('reason')->nullable(true);
             $table->boolean('internetRequest');
-            $table->uuid('userID1')->nullable(true);
-            $table->uuid('userID2')->nullable(true);
-
-            $table->string('Borrower');
-            $table->string("Borrow_Reason");
+            $table->string('internetReason')->nullable(true);
+            $table->string('assistant')->nullable(true);
+            $table->string('borrower');
+            $table->string("borrowReason");
 
             $table->softDeletes();
             $table->timestamps();

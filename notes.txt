@@ -106,6 +106,11 @@ Status 21/01
 Add input for reason and borrower on borrow form
 See Commit message
 
-// Kalo mau ganti jadi kayak messier
 Changed Room transaction erd to match messier
 Fix many routes on view
+Transaction Room Database Change
+Added userDivision on  user table
+
+Change Transaction Controller to match new Header room table
+Change view Controller to match new Header room table
+

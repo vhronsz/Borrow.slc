@@ -175,6 +175,7 @@ class TransactionController extends Controller
 
     public function getDataFromMessier(){
         $date = date("m/d/y",time());
+//        $date = date('m/d/y',strtotime("10/10/2019"));
         $url = file_get_contents("https://laboratory.binus.ac.id/lapi/api/Room/GetTransactions?startDate=$date&endDate=$date&includeUnapproved=true");
         $json = json_decode($url, true);
         $data = $json["Details"];
@@ -184,6 +185,7 @@ class TransactionController extends Controller
                 array_push($transactionData,$d);
             }
         }
+
         dd($transactionData);
         foreach ($transactionData as $tdata){
             $header = new HeaderRoomTransaction();
