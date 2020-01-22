@@ -46,7 +46,7 @@
             $.ajax({
                 type: "Get",
                 cache: false,
-                url : "/transaction/Update_Item",
+                url : "/transaction/Update_Item_Transaction",
                 data: {data:code},
                 success: function(data) {
                     console.log(data);

@@ -14,24 +14,15 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class TransactionController extends Controller
 {
-    //  /*
-    //         *
-    //         * $table->uuid('roomTransactionID');
-    //            $table->uuid('adminID');
-    //            $table->dateTime('transactionDate');
-    //            $table->string("transactionStatus");
-    //            $table->string("campus");
-    //            $table->string('roomID');
-    //
-    //            $table->uuid('roomTransactionID');
-    //            $table->integer('shiftStart');
-    //            $table->integer('shiftEnd');
-    //            $table->boolean('internetRequest');
-    //            $table->string('internetReason')->nullable(true);
-    //            $table->string('assistant')->nullable(true);
-    //            $table->string('borrower');
-    //            $table->string("borrowReason");
-    //         * */
+    public function getShift($shift){
+        $time = null;
+        $time = "12/12/2010";
+        if($shift === 1){
+            $time = "1/1/1";
+        }
+        return $time;
+    }
+
     public  function addRoom(Request $req){
 
         $valid = Validator::make($req->all(),[
@@ -45,15 +36,18 @@ class TransactionController extends Controller
             "borrowReason" =>"required",
             "division" => "required"
         ]);
+
         if($valid->fails()){
             return redirect()->back()->withErrors($valid->errors());
         }else {
-
             $checkHeader =  HeaderRoomTransaction::where("transactionDate", $req->date)->get();
 
+            //Check if Start shift is bigger than end shift
             if ($req->shiftStart > $req->shiftEnd) {
                 return redirect()->back()->withErrors("Shift Start Cannot Exceed Shift End");
             }
+
+            //Check if there is a transaction on selected shift
             foreach ($checkHeader as $header){
                 if ($req->shiftStart === $header->shiftStart ||
                     $req->shiftStart === $header->shiftEnd     ||
@@ -64,7 +58,7 @@ class TransactionController extends Controller
                     return redirect()->back()->withErrors("There is another transaction in selected shift");
                 }
             }
-            //New Controller
+
             $header = new HeaderRoomTransaction();
             $header->roomTransactionID = Uuid::uuid();
             $header->adminID = Uuid::uuid();
@@ -100,17 +94,8 @@ class TransactionController extends Controller
             return redirect("/view/room/Home");
         }
     }
-//cara update dia liat brp shift kalo satu 30 menit pertama kalo dua liat di shift terakhirnya
-//
-    public function getShift($shift){
-        $time = null;
-        $time = "12/12/2010";
-        if($shift === 1){
-            $time = "1/1/1";
-        }
-        return $time;
-    }
 
+    //cara update dia liat brp shift kalo satu 30 menit pertama kalo dua liat di shift terakhirnya
     public function updateRoom(Request $req){
         $header = HeaderRoomTransaction::where("roomTransactionID",$req->data)->first();
         if($header){
@@ -134,7 +119,6 @@ class TransactionController extends Controller
         }
 
     }
-
 
     public  function addItemTransaction(Request $req){
 
@@ -218,45 +202,72 @@ class TransactionController extends Controller
     }
 
     public function getDataFromMessier(){
-        dd($this->getShift(1));
-
         $date = date("m/d/y",time());
 //        $date = date('m/d/y',strtotime("10/10/2019"));
+
         $url = file_get_contents("https://laboratory.binus.ac.id/lapi/api/Room/GetTransactions?startDate=$date&endDate=$date&includeUnapproved=true");
         $json = json_decode($url, true);
-        $data = $json["Details"];
-        $transactionData = [];
-        foreach ($data as $d){
-            if($d["Campus"] === "ANGGREK"){
-                array_push($transactionData,$d);
-            }
-        }
 
-        dd($transactionData);
-        foreach ($transactionData as $tdata){
+        $data = $json["Details"];
+        $date = $json["Dates"];
+//        dd($data);
+
+        $idx = 0;
+
+        foreach ($data as $tdata){
+
+            if($idx === 7){
+                $idx = 0;
+            }
+
             $header = new HeaderRoomTransaction();
 
             $header->roomTransactionID = Uuid::uuid();
             $header->adminID = Uuid::uuid();
-            $header->transactionDate = Carbon::now();
+            $header->transactionDate = $date;
             $header->transactionStatus = "Registered";
-            $header->save();
+            $header->campus = $tdata["Campus"];
+            $header->roomID = $tdata["RoomName"];
 
-            $detail = new DetailRoomTransaction();
-            $detail->roomTransactionID = $header->roomTransactionID;
-            $detail->roomID = $tdata["Campus"];
-            $idx = 0;
-            foreach ($tdata["StatusDetails"] as $shift){
+            if($tdata["StatusDetails"][$idx]){
+                $transaction = $tdata["StatusDetails"][$idx][0];
+                dd($transaction);
 
+                $header->borrowerName = $transaction["Name"];
+                $header->borrowerEmail = $transaction["Email"];
+                $header->borrowerPhone = $transaction["Phone"];
+                $header->borrowerDivision = $transaction["Division"];
+                $header->borrowerName = $transaction["Description"];
+                $header->shiftStart = $idx+1;
+
+                //Temporary
+                $header->shiftEnd = $idx+1;
+                ////////////////////////////
+                $header->borrowReason = $transaction["Description"];
+
+                if($transaction["NeedInternet"] === true){
+
+                }
+                else{
+
+                }
+
+
+                /*
+                    $table->integer("shiftEnd");
+                    $table->boolean('internetRequest');
+                    $table->string('internetReason')->nullable(true);
+                    $table->string('assistant')->nullable(true);
+                */
+                $header->save();
+            }else{
+                continue;
             }
-//            $detail->shiftStart = ;
-
 
         }
     }
+
 }
-
-
 //
 //            $header = new HeaderRoomTransaction();
 //            $header->roomTransactionID = Uuid::uuid();
