@@ -228,7 +228,7 @@ class TransactionController extends Controller
                     $header->borrowerEmail = $transaction["Email"];
                     $header->borrowerPhone = null;
                     $header->borrowerDivision = $transaction["Division"];
-                    $header->borrowerName = $transaction["Description"];
+                    $header->borrowerName = $transaction["Name"];
                     $header->shiftStart = $index + 1;
                     $header->borrowReason = $transaction["Description"];
 
@@ -245,7 +245,7 @@ class TransactionController extends Controller
                     //Get Shift end from all transaction
                     //Check if current index is not the last index and the next index is not null
                     if($index<6 && $tdata["StatusDetails"][$index][0]){
-                        $totalShift = $this->getEndShift($header->shiftStart,$tdata["StatusDetails"]);
+                        $totalShift = $this->getEndShift($index,$tdata["StatusDetails"]);
                         $header->shiftEnd = $header->shiftStart + $totalShift;
                         $index = $header->shiftEnd;
                     }
@@ -269,17 +269,19 @@ class TransactionController extends Controller
 
     }
 
-    public function getEndShift($shiftStart,$data){
+    public function getEndShift($index,$data){
         $totalShift = 0;
-
-        while($shiftStart < 6){
-            if($data[$shiftStart]){
-                if($data[$shiftStart+1][0]["Desciption"] === $data[$shiftStart][0]["Desciption"]){
+        //Index Start from 0 - 6
+        while($index+1 <= 6){
+            //Check if the shift after is null or not
+            if($data[$index+1]){
+                if($data[$index+1][0]["Description"] === $data[$index][0]["Description"]){
                     $totalShift++;
                 }
-            }else if(!$data[$shiftStart]){
+            }else{
                 break;
             }
+            $index++;
         }
         return $totalShift;
     }
