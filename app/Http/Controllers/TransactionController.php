@@ -215,8 +215,11 @@ class TransactionController extends Controller
 //        dd($data);
 //        dd($date);
         foreach ($data as $tdata){
-            for($i=0;$i<7;$i++) {
-                if ($tdata["StatusDetails"][$i]) {
+            $index = 0;
+            while($index<7) {
+                $index = 7;
+                if ($tdata["StatusDetails"][$index]) {
+//                dd($tdata["StatusDetails"]);
                     $header = new HeaderRoomTransaction();
 
                     $header->roomTransactionID = Uuid::uuid();
@@ -226,14 +229,16 @@ class TransactionController extends Controller
                     $header->campus = $tdata["Campus"];
                     $header->roomID = $tdata["RoomName"];
 
-                    $transaction = $tdata["StatusDetails"][$i][0];
+                    $transaction = $tdata["StatusDetails"][$index][0];
                     $header->borrowerName = $transaction["Name"];
                     $header->borrowerEmail = $transaction["Email"];
                     $header->borrowerPhone = null;
                     $header->borrowerDivision = $transaction["Division"];
                     $header->borrowerName = $transaction["Description"];
-                    $header->shiftStart = $i + 1;
+                    $header->shiftStart = $index + 1;
                     $header->borrowReason = $transaction["Description"];
+
+                    dd($tdata["StatusDetails"]);
 
                     if ($transaction["NeedInternet"] === true) {
                         $header->internetRequest = true;
@@ -244,16 +249,24 @@ class TransactionController extends Controller
                     if ($transaction["Assistant"]) {
                         $header->assistant = $transaction["Assistant"];
                     }
-//                    dd($transaction);
-                    /*
-                        $table->integer("shiftEnd");
-                        $table->string('internetReason')->nullable(true);
-                        $table->string('assistant')->nullable(true);
-                    */
-//                    dd($header);
-                    //Temporary
-                    $header->shiftEnd = $i + 1;
-                    ////////////////////////////
+
+                    $status = true;
+
+                    //Get Shift end from all transaction
+                    //Check if current index is not the last index and the next index is not null
+                    if($index<6 && $tdata["StatusDetails"][$index+1][0]){
+//                        $totalShift = $this->getEndShift($header->shiftStart,$tdata["StatusDetails"]);
+//                        $header->shiftEnd = $header->shiftStart + $totalShift;
+
+                        $header->shiftEnd = $header->shiftStart;
+                        $index = $header->shiftEnd;
+                        dd($index);
+                    }
+                    else{
+                        $header->shiftEnd = $header->shiftStart;
+                        $index++;
+                        dd($index);
+                    }
                     $header->save();
                 } else {
                     continue;
@@ -266,6 +279,18 @@ class TransactionController extends Controller
             "status" => true
         ]);
 
+    }
+
+    public function getEndShift($shiftStart,$data){
+        $totalShift = 0;
+        while($shiftStart <6){
+            if($data[$shiftStart][0]["Description"] === $data[$shiftStart+1][0]["Description"]){
+
+            }
+            $shiftStart++;
+        }
+
+            return $totalShift;
     }
 
 }
@@ -286,3 +311,11 @@ class TransactionController extends Controller
 //            $qrCode = QrCode::size(300)->generate($header->roomTransactionID);
 //            return redirect("/view/Home")->with("qr", $qrCode);
 
+//                    dd($transaction);
+/*
+    $table->integer("shiftEnd");
+    $table->string('internetReason')->nullable(true);
+    $table->string('assistant')->nullable(true);
+*/
+//                    dd($header);
+//Temporary
