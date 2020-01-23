@@ -25,7 +25,7 @@ class CreateHeaderRoomTransactionsTable extends Migration
             $table->string('borrowerName');
             $table->string('borrowerEmail')->nullable(true);
             $table->string('borrowerPhone')->nullable(true);
-            $table->string('borrowerDivision');
+            $table->string('borrowerDivision')->nullable(true);;
             $table->string("borrowReason");
 
             $table->integer("shiftStart");

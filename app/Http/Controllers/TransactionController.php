@@ -14,6 +14,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class TransactionController extends Controller
 {
+
     public function getShift($shift){
         $time = null;
         $time = "12/12/2010";
@@ -174,7 +175,6 @@ class TransactionController extends Controller
 //        return redirect("/view/Home")->with("qr",$qrCode);
         return redirect()->back();
     }
-
     public function updateItemTransaction(Request $req){
 
         $header = HeaderItemTransaction::where("itemTransactionID",$req->data)->first();
@@ -205,23 +205,17 @@ class TransactionController extends Controller
 
     public function getDataFromMessier(){
         $date = date("m/d/y",time());
-//        $date = date('m/d/y',strtotime("10/10/2019"));
 
         $url = file_get_contents("https://laboratory.binus.ac.id/lapi/api/Room/GetTransactions?startDate=$date&endDate=$date&includeUnapproved=true");
         $json = json_decode($url, true);
 
         $data = $json["Details"];
         $date = $json["Dates"][0];
-//        dd($data);
-//        dd($date);
         foreach ($data as $tdata){
             $index = 0;
-            while($index<7) {
-                $index = 7;
+            while($index < 7) {
                 if ($tdata["StatusDetails"][$index]) {
-//                dd($tdata["StatusDetails"]);
                     $header = new HeaderRoomTransaction();
-
                     $header->roomTransactionID = Uuid::uuid();
                     $header->adminID = Uuid::uuid();
                     $header->transactionDate = $date;
@@ -238,8 +232,6 @@ class TransactionController extends Controller
                     $header->shiftStart = $index + 1;
                     $header->borrowReason = $transaction["Description"];
 
-                    dd($tdata["StatusDetails"]);
-
                     if ($transaction["NeedInternet"] === true) {
                         $header->internetRequest = true;
                     } else {
@@ -250,30 +242,26 @@ class TransactionController extends Controller
                         $header->assistant = $transaction["Assistant"];
                     }
 
-                    $status = true;
-
                     //Get Shift end from all transaction
                     //Check if current index is not the last index and the next index is not null
-                    if($index<6 && $tdata["StatusDetails"][$index+1][0]){
-//                        $totalShift = $this->getEndShift($header->shiftStart,$tdata["StatusDetails"]);
-//                        $header->shiftEnd = $header->shiftStart + $totalShift;
-
-                        $header->shiftEnd = $header->shiftStart;
+                    if($index<6 && $tdata["StatusDetails"][$index][0]){
+                        $totalShift = $this->getEndShift($header->shiftStart,$tdata["StatusDetails"]);
+                        $header->shiftEnd = $header->shiftStart + $totalShift;
                         $index = $header->shiftEnd;
-                        dd($index);
                     }
                     else{
                         $header->shiftEnd = $header->shiftStart;
                         $index++;
-                        dd($index);
                     }
                     $header->save();
-                } else {
+                }
+                else {
+                    $index++;
                     continue;
                 }
             }
-        }
 
+        }
         return response()->json([
             "Message" => "Fetching Data Success",
             "status" => true
@@ -283,14 +271,17 @@ class TransactionController extends Controller
 
     public function getEndShift($shiftStart,$data){
         $totalShift = 0;
-        while($shiftStart <6){
-            if($data[$shiftStart][0]["Description"] === $data[$shiftStart+1][0]["Description"]){
 
+        while($shiftStart < 6){
+            if($data[$shiftStart]){
+                if($data[$shiftStart+1][0]["Desciption"] === $data[$shiftStart][0]["Desciption"]){
+                    $totalShift++;
+                }
+            }else if(!$data[$shiftStart]){
+                break;
             }
-            $shiftStart++;
         }
-
-            return $totalShift;
+        return $totalShift;
     }
 
 }

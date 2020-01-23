@@ -30,22 +30,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notes.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="121" column="13" lean-forward="true" selection-start-line="121" selection-start-column="13" selection-end-line="121" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="215" column="20" lean-forward="true" selection-start-line="215" selection-start-column="20" selection-end-line="215" selection-end-column="20" />
+            <state relative-caret-position="115">
+              <caret line="277" column="34" selection-start-line="277" selection-start-column="34" selection-end-line="277" selection-end-column="34" />
               <folding>
                 <element signature="e#40#70#0#PHP" expanded="true" />
+                <element signature="e#383#561#0#PHP" />
+                <element signature="e#567#3319#0#PHP" />
+                <element signature="e#3424#4381#0#PHP" />
+                <element signature="e#4387#6163#0#PHP" />
+                <element signature="e#6169#7158#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -54,17 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_27_202849_create_header_room_transactions_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_27_202915_create_detail_room_transactions_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="152">
+              <caret line="24" column="43" lean-forward="true" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -272,7 +259,13 @@
             <path>
               <item name="New folder" type="b2602c69:ProjectViewProjectNode" />
               <item name="New folder" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="New folder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="New folder" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -292,15 +285,15 @@
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Project\RIG 19-20\borrow.slc\resources\views\Borrow" />
-      <recent name="F:\Project\RIG 19-20\borrow.slc\public\css" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Project\RIG 19-20\borrow.slc\resources\views\Borrow" />
       <recent name="F:\Project\RIG 19-20\borrow.slc\resources\views\Master" />
       <recent name="F:\Project\RIG 19-20\borrow.slc\public\js" />
       <recent name="F:\Project\RIG 19-20\borrow.slc\resources\views\testing" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Project\RIG 19-20\borrow.slc\resources\views\Borrow" />
+      <recent name="F:\Project\RIG 19-20\borrow.slc\public\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -371,6 +364,7 @@
       <workItem from="1579707315132" duration="2639000" />
       <workItem from="1579746121140" duration="2631000" />
       <workItem from="1579749361891" duration="2012000" />
+      <workItem from="1579761218612" duration="3788000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1574998364228</created>
@@ -446,13 +440,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261675000" />
+    <option name="totallyTimeSpent" value="265463000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16950959" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17170954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -466,8 +460,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50201344" side_tool="true" weight="0.34560907" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49798658" visible="true" weight="0.3445287" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5030257" side_tool="true" weight="0.34369886" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4969743" visible="true" weight="0.34369886" />
       <window_info active="true" anchor="bottom" id="Command Line Tools Console" order="12" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -832,6 +826,7 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env" />
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -839,40 +834,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_27_202915_create_detail_room_transactions_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        <state relative-caret-position="442">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notes.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="121" column="13" lean-forward="true" selection-start-line="121" selection-start-column="13" selection-end-line="121" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_27_202915_create_detail_room_transactions_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="254">
+          <caret line="128" column="10" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_27_202849_create_header_room_transactions_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="152">
+          <caret line="24" column="43" lean-forward="true" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="215" column="20" lean-forward="true" selection-start-line="215" selection-start-column="20" selection-end-line="215" selection-end-column="20" />
+        <state relative-caret-position="115">
+          <caret line="277" column="34" selection-start-line="277" selection-start-column="34" selection-end-line="277" selection-end-column="34" />
           <folding>
             <element signature="e#40#70#0#PHP" expanded="true" />
+            <element signature="e#383#561#0#PHP" />
+            <element signature="e#567#3319#0#PHP" />
+            <element signature="e#3424#4381#0#PHP" />
+            <element signature="e#4387#6163#0#PHP" />
+            <element signature="e#6169#7158#0#PHP" />
           </folding>
         </state>
       </provider>
