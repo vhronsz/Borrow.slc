@@ -122,7 +122,7 @@ Migration from mesier database - Done / Multishift Transaction now have shift st
 Fix shift end (Shift end Timeout) - Shift end registered on database - Done
 
 New update Transaction (Using new database)
-  Update by using last start shift + 30 min
+  Update by using last start shift + 30 min - Done (Not Tested)
 
 Send Message with Whatsapp API
 Send Email

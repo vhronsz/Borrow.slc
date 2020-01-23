@@ -15,6 +15,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 class TransactionController extends Controller
 {
 
+
     public function getShift($shift){
         $time = null;
         if($shift === 1){
@@ -51,6 +52,14 @@ class TransactionController extends Controller
         }else{
             return false;
         }
+    }
+
+    public function getTimeDone($shift){
+        if(Carbon::now()->diffInSeconds($this->getShift($shift)) >= 1795){
+            return true;
+        }
+
+        return false;
     }
 
     public  function addRoom(Request $req){
@@ -131,14 +140,17 @@ class TransactionController extends Controller
     public function updateRoom(Request $req){
         $header = HeaderRoomTransaction::where("roomTransactionID",$req->data)->first();
         if($header){
+            //Check if transaction is on the same day
             if($header->transactionStatus === "Registered" && $this->getSameDay($header->transactionDate)){
                 $header->transactionStatus = "Taken";
                 $header->save();
             }
-            else if($header->transactionStatus === "Taken" && $this->getTime($header->shiftStart) )){
+            //Check if the time already pass the transaction time and check if 30 minutes already passed
+            else if($header->transactionStatus === "Taken" && $this->getTime($header->shiftStart) && $this->getTimeDone($header->shiftStart) || $this->getTimeDone($header->shiftEnd)){
                 $header->transactionStatus = "Done";
                 $header->save();
             }
+            //Add Shift and Room
             return response()->json([
                 "message"=>"Transaction Updated",
                 "status"=>$header->transactionStatus,
