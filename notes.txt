@@ -118,11 +118,11 @@ Add Element on Borrow form
 
 Status 23/01
 ============
-Migration from mesier database - Done / Multishift Transaction now have shif start and shift end
+Migration from mesier database - Done / Multishift Transaction now have shift start and shift end
 Fix shift end (Shift end Timeout) - Shift end registered on database - Done
 
 New update Transaction (Using new database)
-    Update by using last start shift + 30 min
+  Update by using last start shift + 30 min
 
 Send Message with Whatsapp API
 Send Email

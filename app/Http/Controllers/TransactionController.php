@@ -17,11 +17,40 @@ class TransactionController extends Controller
 
     public function getShift($shift){
         $time = null;
-        $time = "12/12/2010";
         if($shift === 1){
-            $time = "1/1/1";
+            $time = "07:20:00";
+        }else if($shift === 2){
+            $time = "09:20:00";
+        }else if($shift === 3){
+            $time = "11:20:00";
+        }else if($shift === 4){
+            $time = "13:20:00";
+        }else if($shift === 5){
+            $time = "15:20:00";
+        }else if($shift === 6){
+            $time = "17:20:00";
+        }else if($shift === 7) {
+            $time = "19:20:00";
         }
         return $time;
+    }
+
+    public function getSameDay($day){
+        if(Carbon::now()->diffInDays($day) === 0){
+            return true;
+        }
+        return false;
+    }
+
+    public function getTime($shift)
+    {
+        $shiftTime = \date("h", strtotime($this->getShift($shift)));
+        $now = \date("h", strtotime(Carbon::now()));
+        if($now >= $shiftTime){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public  function addRoom(Request $req){
@@ -102,21 +131,23 @@ class TransactionController extends Controller
     public function updateRoom(Request $req){
         $header = HeaderRoomTransaction::where("roomTransactionID",$req->data)->first();
         if($header){
-            if($header->transactionStatus === "Registered"){
+            if($header->transactionStatus === "Registered" && $this->getSameDay($header->transactionDate)){
                 $header->transactionStatus = "Taken";
                 $header->save();
             }
-            else if($header->transactionStatus === "Taken" && Carbon::now()->diffInSeconds($header->updated_at) > 200){
+            else if($header->transactionStatus === "Taken" && $this->getTime($header->shiftStart) )){
                 $header->transactionStatus = "Done";
                 $header->save();
             }
-            return response()->json([   "message"=>"Transaction Updated",
+            return response()->json([
+                "message"=>"Transaction Updated",
                 "status"=>$header->transactionStatus,
                 "color"=>"green",
                 "time"=>Carbon::now()->diffInSeconds($header->updated_at)
             ]);
         }else{
-            return response()->json([   "message"=>"Transaction Not Found",
+            return response()->json([
+                "message"=>"Transaction Not Found",
                 "color"=>"red","id"=>$req->data
             ]);
         }
@@ -288,6 +319,11 @@ class TransactionController extends Controller
             ]);
         }
 
+    }
+
+    public function dump(){
+        dd($this->getTime(6));
+        dd($this->getShift(6));
     }
 
 }

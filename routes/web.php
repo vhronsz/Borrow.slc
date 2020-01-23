@@ -78,6 +78,8 @@ Route::group(['prefix'=>'testing'],function (){
     Route::get("qr",function(){
         return view("testing.qrtesting");
     });
+
+    Route::get("/dump","TransactionController@dump");
 });
 
 Route::group(["prefix"=>"auth"],function(){
