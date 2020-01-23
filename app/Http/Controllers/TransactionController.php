@@ -334,8 +334,7 @@ class TransactionController extends Controller
     }
 
     public function dump(){
-        dd($this->getTime(6));
-        dd($this->getShift(6));
+        $qr = QrCode::format("png")->size(300)->generate("asd");
     }
 
 }
