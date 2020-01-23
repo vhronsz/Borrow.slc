@@ -125,7 +125,7 @@ New update Transaction (Using new database)
   Update by using last start shift + 30 min - Done (Not Tested)
 
 Send Message with Whatsapp API
-Send Email
+Send Email - (Test with mailtrap)
 
 
 

@@ -131,9 +131,13 @@ class TransactionController extends Controller
 
 
             $header->save();
-
+            sendRoomMail($header);
             return redirect("/view/room/Home");
         }
+    }
+
+    public function sendRoomMail($headerTransaction){
+
     }
 
     //cara update dia liat brp shift kalo satu 30 menit pertama kalo dua liat di shift terakhirnya
@@ -251,7 +255,6 @@ class TransactionController extends Controller
         return $totalShift;
     }
 
-
     public  function addItemTransaction(Request $req){
 
         $valid = Validator::make($req->all(),[
@@ -304,6 +307,8 @@ class TransactionController extends Controller
 //        return redirect("/view/Home")->with("qr",$qrCode);
         return redirect()->back();
     }
+
+
 
     public function updateItemTransaction(Request $req){
 
