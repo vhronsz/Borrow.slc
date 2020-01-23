@@ -119,7 +119,9 @@ Add Element on Borrow form
 Status 23/01
 ============
 Migration from mesier database
+Fix shift end
 New update Transaction (Using new database)
+    Update by using last start shift + 30 min
 Send Message with Whatsapp API
 Send Email
 

@@ -212,10 +212,10 @@ class TransactionController extends Controller
 
         $data = $json["Details"];
         $date = $json["Dates"][0];
-        dd($data);
+//        dd($data);
 //        dd($date);
         foreach ($data as $tdata){
-            for($i=5;$i<6;$i++) {
+            for($i=0;$i<7;$i++) {
                 if ($tdata["StatusDetails"][$i]) {
                     $header = new HeaderRoomTransaction();
 
@@ -233,9 +233,6 @@ class TransactionController extends Controller
                     $header->borrowerDivision = $transaction["Division"];
                     $header->borrowerName = $transaction["Description"];
                     $header->shiftStart = $i + 1;
-                    //Temporary
-                    $header->shiftEnd = $i + 1;
-                    ////////////////////////////
                     $header->borrowReason = $transaction["Description"];
 
                     if ($transaction["NeedInternet"] === true) {
@@ -254,13 +251,23 @@ class TransactionController extends Controller
                         $table->string('assistant')->nullable(true);
                     */
 //                    dd($header);
+                    //Temporary
+                    $header->shiftEnd = $i + 1;
+                    ////////////////////////////
                     $header->save();
                 } else {
                     continue;
                 }
             }
         }
+
+        return response()->json([
+            "Message" => "Fetching Data Success",
+            "status" => true
+        ]);
+
     }
+
 }
 
 //

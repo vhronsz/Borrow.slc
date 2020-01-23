@@ -23,7 +23,7 @@ class CreateHeaderRoomTransactionsTable extends Migration
             $table->string('roomID');
 
             $table->string('borrowerName');
-            $table->string('borrowerEmail');
+            $table->string('borrowerEmail')->nullable(true);
             $table->string('borrowerPhone')->nullable(true);
             $table->string('borrowerDivision');
             $table->string("borrowReason");
