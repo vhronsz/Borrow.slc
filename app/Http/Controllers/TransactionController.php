@@ -211,52 +211,49 @@ class TransactionController extends Controller
         $json = json_decode($url, true);
 
         $data = $json["Details"];
-        $date = $json["Dates"];
-//        dd($data);
-
+        $date = $json["Dates"][0];
+        dd($data);
+//        dd($date);
         foreach ($data as $tdata){
-
-            $header = new HeaderRoomTransaction();
-
-            $header->roomTransactionID = Uuid::uuid();
-            $header->adminID = Uuid::uuid();
-            $header->transactionDate = $date;
-            $header->transactionStatus = "Registered";
-            $header->campus = $tdata["Campus"];
-            $header->roomID = $tdata["RoomName"];
-
-            for($i=0;$i<7;$i++) {
+            for($i=5;$i<6;$i++) {
                 if ($tdata["StatusDetails"][$i]) {
-                    $transaction = $tdata["StatusDetails"][$i][0];
-                    dd($transaction);
+                    $header = new HeaderRoomTransaction();
 
+                    $header->roomTransactionID = Uuid::uuid();
+                    $header->adminID = Uuid::uuid();
+                    $header->transactionDate = $date;
+                    $header->transactionStatus = "Registered";
+                    $header->campus = $tdata["Campus"];
+                    $header->roomID = $tdata["RoomName"];
+
+                    $transaction = $tdata["StatusDetails"][$i][0];
                     $header->borrowerName = $transaction["Name"];
                     $header->borrowerEmail = $transaction["Email"];
-                    $header->borrowerPhone = $transaction["Phone"];
+                    $header->borrowerPhone = null;
                     $header->borrowerDivision = $transaction["Division"];
                     $header->borrowerName = $transaction["Description"];
                     $header->shiftStart = $i + 1;
-
                     //Temporary
                     $header->shiftEnd = $i + 1;
                     ////////////////////////////
-
                     $header->borrowReason = $transaction["Description"];
 
                     if ($transaction["NeedInternet"] === true) {
-                        $header->internetRequest = "yes";
+                        $header->internetRequest = true;
                     } else {
-                        $header->internetRequest = "no";
+                        $header->internetRequest = false;
                     }
 
                     if ($transaction["Assistant"]) {
                         $header->assistant = $transaction["Assistant"];
                     }
+//                    dd($transaction);
                     /*
                         $table->integer("shiftEnd");
                         $table->string('internetReason')->nullable(true);
                         $table->string('assistant')->nullable(true);
                     */
+//                    dd($header);
                     $header->save();
                 } else {
                     continue;

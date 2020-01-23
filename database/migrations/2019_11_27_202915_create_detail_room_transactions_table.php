@@ -15,6 +15,16 @@ class CreateDetailRoomTransactionsTable extends Migration
     {
         Schema::create('detail_room_transactions', function (Blueprint $table) {
             $table->uuid('roomTransactionID');
+
+            $table->string('borrowerName');
+            $table->string('borrowerEmail');
+            $table->string('borrowerPhone');
+            $table->string('borrowerDivision');
+            $table->string("borrowReason");
+
+            $table->integer("shiftStart");
+            $table->integer("shiftEnd");
+
             $table->boolean('internetRequest');
             $table->string('internetReason')->nullable(true);
             $table->string('assistant')->nullable(true);

@@ -50,7 +50,7 @@ Route::group(["prefix" => "transaction"],function (){
 });
 
 Route::group(["prefix"=>"migration"],function(){
-    Route::get("testMigration","TransactionController@getDataFromMessier");
+    Route::get("Test_Migration","TransactionController@getDataFromMessier");
 });
 
 

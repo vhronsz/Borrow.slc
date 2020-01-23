@@ -115,3 +115,19 @@ Change Transaction Controller to match new Header room table (add and update [Ch
 Change view Controller to match new Header room table
 Add Element on Borrow form
 
+
+Status 23/01
+============
+Migration from mesier database
+New update Transaction (Using new database)
+Send Message with Whatsapp API
+Send Email
+
+
+
+
+
+
+
+
+
