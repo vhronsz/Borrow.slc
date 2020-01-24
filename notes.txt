@@ -128,6 +128,11 @@ Send Message with Whatsapp API
 Send Email - (Test with mailtrap)
 
 
+Status 24/01
+============
+Send Message with Whatsapp API
+Send Email - (Test with mailtrap)
+
 
 
 

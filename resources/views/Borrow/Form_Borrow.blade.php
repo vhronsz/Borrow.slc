@@ -60,7 +60,7 @@
                         <span class="focus-input3"></span>
                     </div>
 
-                    <div class="wrap-input3 input3-select" data-validate="Message is required">
+                    <div class="wrap-input3 validate-input" data-validate="Message is required">
                         <textarea class="input3" name="borrowReason" placeholder="Borrow Reason Description"></textarea>
                         <span class="focus-input3"></span>
                     </div>

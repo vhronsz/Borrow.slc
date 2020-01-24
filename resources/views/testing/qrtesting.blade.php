@@ -6,10 +6,11 @@
 <body>
 
 <div class="visible-print text-center">
-    <h1>QR Code Generator</h1>
-    {{--  generate qr --}}
-{{--    {!! QrCode::size(300)->generate("27517e20-c7bb-31ed-87d7-05d57ab311af") !!}--}}
+<h1>QR Code Generator</h1>
+{{--  generate qr --}}
+{!! QrCode::size(300)->generate("4f3c73c7-88d8-3e86-8b91-b85519e75892") !!}
 {{--    <p>1f16f75b-cce0-3dc3-84b5-e3b9d80e5593</p>--}}
+
 </div>
 
 

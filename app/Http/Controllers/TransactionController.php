@@ -88,16 +88,16 @@ class TransactionController extends Controller
 
             //Check if there is a transaction on selected shift
             foreach ($checkHeader as $header){
-                if ($req->shiftStart === $header->shiftStart ||
-                    $req->shiftStart === $header->shiftEnd     ||
-                    $req->shiftStart >= $header->shiftStart &&
-                    $req->shiftStart >= $header->shiftEnd ||
-                    $req->shiftEnd === $header->shiftStart
+                if ((int)$req->shiftStart === $header->shiftStart ||
+                    (int)$req->shiftStart === $header->shiftEnd     ||
+                    (int)$req->shiftStart >= $header->shiftStart &&
+                    (int)$req->shiftStart >= $header->shiftEnd ||
+                    (int)$req->shiftEnd === $header->shiftStart
                 ){
                     return redirect()->back()->withErrors("There is another transaction in selected shift");
                 }
-            }
 
+            }
             $header = new HeaderRoomTransaction();
             $header->roomTransactionID = Uuid::uuid();
             $header->adminID = Uuid::uuid();
@@ -113,7 +113,7 @@ class TransactionController extends Controller
             $header->shiftEnd = $req->shiftEnd;
             $header->transactionDate = $req->date;
             $header->borrowerDivision = $req->division;
-            $header->borrowerReason = $req->borrowReason;
+            $header->borrowReason = $req->borrowReason;
 
 
             if ($req->internetRequest === "yes") {
@@ -129,9 +129,7 @@ class TransactionController extends Controller
                 $header->internetRequest = false;
             }
 
-
             $header->save();
-            sendRoomMail($header);
             return redirect("/view/room/Home");
         }
     }
@@ -255,91 +253,9 @@ class TransactionController extends Controller
         return $totalShift;
     }
 
-    public  function addItemTransaction(Request $req){
-
-        $valid = Validator::make($req->all(),[
-            "name" => "required",
-            "email" => "required",
-            "phone" => "required",
-            "room" => "required",
-            "shiftStart" => "required",
-            "shiftEnd" => "required",
-            "date" => "required",
-        ]);
-
-        if($valid->fails()){
-            return redirect()->back()->withErrors($valid->errors());
-        }
-        if($req->shiftStart > $req->shiftEnd){
-            return redirect()->back()->withErrors("Shift Start Cannot Exceed Shift End");
-        }
-
-        $header = new HeaderRoomTransaction();
-        $header->roomTransactionID = Uuid::uuid();
-
-        //Changed When Done////
-        $header->adminID = Uuid::uuid();
-        //////////////////////
-
-        $header->transactionDate = Date::now();
-        $header->transactionStatus = "Registered";
-        $header->save();
-
-        $detail = new DetailRoomTransaction();
-        $detail->roomTransactionID = $header->roomTransactionID;
-        $detail->roomID = $req->room;
-        $detail->shiftStart = $req->shiftStart;
-        $detail->shiftEnd = $req->shiftEnd;
-
-        if($req->internetRequest === "yes"){
-            $validInet = Validator::make($req->all(),[
-                "reason" => "required"
-            ]);
-            if($validInet->fails()){
-                return redirect()->back()->withErrors($validInet->errors());
-            }
-            $detail->internetRequest = true;
-            $detail->reason = $req->reason;
-        }
-
-        $detail->save();
-//        $qrCode = QrCode::size(300)->generate($header->roomTransactionID);
-//        return redirect("/view/Home")->with("qr",$qrCode);
-        return redirect()->back();
-    }
-
-
-
-    public function updateItemTransaction(Request $req){
-
-        $header = HeaderItemTransaction::where("itemTransactionID",$req->data)->first();
-
-        if($header){
-            if($header->transactionStatus === "Registered"){
-                $header->transactionStatus = "Taken";
-                $header->save();
-            }
-            else if($header->transactionStatus === "Taken" && Carbon::now()->diffInSeconds($header->updated_at) > 200){
-                $header->transactionStatus = "Done";
-                $header->save();
-            }
-            return response()->json([
-                "message"=>"Item Taken",
-                "status"=>$header->transactionStatus,
-                "color"=>"green",
-                "time"=>Carbon::now()->diffInSeconds($header->updated_at)
-            ]);
-        }else{
-            return response()->json([
-                "message"=>"Transaction Not Found",
-                "color"=>"red","id"=>$req->data
-            ]);
-        }
-
-    }
-
     public function dump(){
         $qr = QrCode::format("png")->size(300)->generate("asd");
+		return view("testing.qrtesting")->with("qr",$qr);
     }
 
 }
