@@ -106,7 +106,6 @@ class TransactionController extends Controller
             }
             //Check if there is a transaction on selected shift
             foreach ($checkHeader as $header){
-                dd($header);
                 if (
                     $header->roomID === $req->room &&
                     (int)$req->shiftStart === $header->shiftStart ||
@@ -115,6 +114,7 @@ class TransactionController extends Controller
                     (int)$req->shiftStart >= $header->shiftEnd ||
                     (int)$req->shiftEnd === $header->shiftStart
                 ){
+                    dd($header);
                     return redirect()->back()->withErrors("There is another transaction in selected shift");
                 }
 
