@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79213623-0e3d-4e2e-81fe-62ae89d17611" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/borrow.slc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/borrow.slc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/notes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,13 +20,16 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="287" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+            <state relative-caret-position="382">
+              <caret line="171" column="31" lean-forward="true" selection-start-line="171" selection-start-column="31" selection-end-line="171" selection-end-column="31" />
               <folding>
                 <element signature="e#40#70#0#PHP" expanded="true" />
               </folding>
@@ -32,10 +38,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="118" column="64" lean-forward="true" selection-start-line="118" selection-start-column="64" selection-end-line="118" selection-end-column="64" />
+            <state relative-caret-position="204">
+              <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -65,6 +71,7 @@
       <find>QR</find>
       <find>scanned-QR</find>
       <find>7</find>
+      <find>dd</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,8 +128,8 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/COPYTHIS.env" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/notes.txt" />
         <option value="$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php" />
+        <option value="$PROJECT_DIR$/notes.txt" />
         <option value="$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" />
       </list>
@@ -218,6 +225,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
       <path value="$PROJECT_DIR$/vendor/simplesoftwareio/simple-qrcode" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -244,6 +256,11 @@
             <path>
               <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
               <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -258,6 +275,24 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="testing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -302,11 +337,19 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.TransactionController.php">
+    <configuration name="TransactionController.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/borrow.slc/Http/Controllers/TransactionController.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.TransactionController.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -361,7 +404,10 @@
       <workItem from="1579761218612" duration="3788000" />
       <workItem from="1579766076773" duration="5426000" />
       <workItem from="1579793397501" duration="2464000" />
-      <workItem from="1579832465883" duration="1941000" />
+      <workItem from="1579832465883" duration="4206000" />
+      <workItem from="1579844877680" duration="304000" />
+      <workItem from="1580133636708" duration="8986000" />
+      <workItem from="1580220733342" duration="3430000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1574998364228</created>
@@ -454,23 +500,30 @@
       <option name="project" value="LOCAL" />
       <updated>1579795840369</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Change Add transaction shift to integer">
+      <created>1579834468627</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1579834468627</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275294000" />
+    <option name="totallyTimeSpent" value="290279000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1785235" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18657719" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -478,13 +531,14 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49731544" weight="0.32719547" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50402683" side_tool="true" weight="0.3427762" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49597314" visible="true" weight="0.3427762" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.504698" side_tool="true" visible="true" weight="0.3427762" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49530202" visible="true" weight="0.3427762" />
       <window_info active="true" anchor="bottom" id="Command Line Tools Console" order="12" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.3295302" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +571,11 @@
     <MESSAGE value="Fetch Data on Messier Multi Shift - Done" />
     <MESSAGE value="Sent Email - Add COPYTHIS.env" />
     <MESSAGE value="Send Email - add mail and send email function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Send Email - add mail and send email function" />
+    <MESSAGE value="Change Add transaction shift to integer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Add transaction shift to integer" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/borrow_slc$TransactionController_php.dat" NAME="TransactionController.php Coverage Results" MODIFIED="1579834682124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
@@ -702,13 +760,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Application.php" />
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Room_Availability.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -850,20 +901,6 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/notes.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="135" selection-start-line="135" selection-end-line="135" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="118" column="64" lean-forward="true" selection-start-line="118" selection-start-column="64" selection-end-line="118" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_27_202849_create_header_room_transactions_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -871,17 +908,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="132" column="28" selection-start-line="132" selection-start-column="28" selection-end-line="132" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="118" column="64" selection-start-line="118" selection-start-column="64" selection-end-line="118" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="204">
+          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+        <state relative-caret-position="382">
+          <caret line="171" column="31" lean-forward="true" selection-start-line="171" selection-start-column="31" selection-end-line="171" selection-end-column="31" />
           <folding>
             <element signature="e#40#70#0#PHP" expanded="true" />
           </folding>

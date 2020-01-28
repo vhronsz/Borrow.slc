@@ -7,15 +7,16 @@ use App\HeaderItemTransaction;
 use App\HeaderRoomTransaction;
 use Carbon\Carbon;
 use Faker\Provider\Uuid;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class TransactionController extends Controller
 {
-
-
     public function getShift($shift){
         $time = null;
         if($shift === 1){
@@ -34,6 +35,25 @@ class TransactionController extends Controller
             $time = "19:20:00";
         }
         return $time;
+    }
+
+    public function getEndShift($index,$data){
+        $totalShift = 0;
+        //Index Start from 0 - 6
+        while($index+1 <= 6){
+            //Check if the shift after is null or not
+            if($data[$index+1]){
+                if($data[$index+1][0]["Description"] === $data[$index][0]["Description"]){
+                    $totalShift++;
+                }else{
+                    break;
+                }
+            }else{
+                break;
+            }
+            $index++;
+        }
+        return $totalShift;
     }
 
     public function getSameDay($day){
@@ -63,7 +83,6 @@ class TransactionController extends Controller
     }
 
     public  function addRoom(Request $req){
-
         $valid = Validator::make($req->all(),[
             "name" => "required",
             "email" => "required",
@@ -85,10 +104,12 @@ class TransactionController extends Controller
             if ($req->shiftStart > $req->shiftEnd) {
                 return redirect()->back()->withErrors("Shift Start Cannot Exceed Shift End");
             }
-
             //Check if there is a transaction on selected shift
             foreach ($checkHeader as $header){
-                if ((int)$req->shiftStart === $header->shiftStart ||
+                dd($header);
+                if (
+                    $header->roomID === $req->room &&
+                    (int)$req->shiftStart === $header->shiftStart ||
                     (int)$req->shiftStart === $header->shiftEnd     ||
                     (int)$req->shiftStart >= $header->shiftStart &&
                     (int)$req->shiftStart >= $header->shiftEnd ||
@@ -98,6 +119,7 @@ class TransactionController extends Controller
                 }
 
             }
+
             $header = new HeaderRoomTransaction();
             $header->roomTransactionID = Uuid::uuid();
             $header->adminID = Uuid::uuid();
@@ -115,7 +137,6 @@ class TransactionController extends Controller
             $header->borrowerDivision = $req->division;
             $header->borrowReason = $req->borrowReason;
 
-
             if ($req->internetRequest === "yes") {
                 $validInet = Validator::make($req->all(), [
                     "internetReason" => "required"
@@ -130,7 +151,45 @@ class TransactionController extends Controller
             }
 
             $header->save();
+            $qr = QrCode::format("png")->size(500)->generate($header->roomTransactionID);
+
+            Storage::put('public/'.$header->roomTransactionID.'.png',$qr);
+            $client = new \GuzzleHttp\Client();
+            $filePath = "storage/$header->roomTransactionID.png";
+            $fileContent = File::get($filePath);
+
+            $tmp = explode('/', $filePath);
+            $file_extension = end($tmp);
+
+            $client = new Client();
+            Try {
+                $response = $client->post(
+                    'borrow.douglasnugroho.com/upload.php', [
+                        'multipart' => [
+                            [
+                                'name'     => 'qr_code',
+                                'contents' => $qr,
+                                'filename' => $file_extension,
+                            ],
+                            [
+                                'name'      => 'name',
+                                'contents'  => $header->roomTransactionID
+                            ]
+                        ],
+                    ]
+                );
+
+
+            } catch(Exception $e) {
+                echo $e->getMessage();
+                $response = $e->getResponse();
+                $responseBody = $response->getBody()->getContents();
+
+                echo $responseBody;
+                exit;
+            }
             return redirect("/view/room/Home");
+            $this->sendRoomMail($header);
         }
     }
 
@@ -234,28 +293,9 @@ class TransactionController extends Controller
 
     }
 
-    public function getEndShift($index,$data){
-        $totalShift = 0;
-        //Index Start from 0 - 6
-        while($index+1 <= 6){
-            //Check if the shift after is null or not
-            if($data[$index+1]){
-                if($data[$index+1][0]["Description"] === $data[$index][0]["Description"]){
-                    $totalShift++;
-                }else{
-                    break;
-                }
-            }else{
-                break;
-            }
-            $index++;
-        }
-        return $totalShift;
-    }
-
     public function dump(){
         $qr = QrCode::format("png")->size(300)->generate("asd");
-		return view("testing.qrtesting")->with("qr",$qr);
+        return view("testing.qrtesting")->with("qr",$qr);
     }
 
 }

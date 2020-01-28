@@ -130,7 +130,8 @@ Send Email - (Test with mailtrap)
 
 Status 24/01
 ============
-Send Message with Whatsapp API
+Generate Qr send to Borrower
+Send Message with Whatsapp API with QR
 Send Email - (Test with mailtrap)
 
 
