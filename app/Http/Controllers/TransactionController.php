@@ -112,8 +112,8 @@ class TransactionController extends Controller
                 if ($this->checkTransactionValid($header,$req)){
                     return redirect()->back()->withErrors("There is another transaction in selected shift");
                 }
-
             }
+
             $header = new HeaderRoomTransaction();
             $header->roomTransactionID = Uuid::uuid();
             $header->adminID = Uuid::uuid();
@@ -156,6 +156,7 @@ class TransactionController extends Controller
             $file_extension = end($tmp);
 
             $client = new Client();
+
             Try {
                 $response = $client->post(
                     'borrow.douglasnugroho.com/upload.php', [
@@ -172,16 +173,17 @@ class TransactionController extends Controller
                         ],
                     ]
                 );
-
-
             } catch(Exception $e) {
                 echo $e->getMessage();
                 $response = $e->getResponse();
                 $responseBody = $response->getBody()->getContents();
-
                 echo $responseBody;
                 exit;
             }
+            $data = $response->getBody();
+            $url = $data->url;
+
+            $this->sendWA($header,$url);
             $this->sendRoomMail($header,$qr);
             return redirect("/view/room/Home");
         }
@@ -193,12 +195,15 @@ class TransactionController extends Controller
 
         //Cek masalah transaksi jika ruangannya sama
         if($header->roomID === $req->room) {
+            //Cek if shift yang dipilih bentrok dengan transaksi yang sudah ada
             if( $header->shiftStart == $shiftStart || $header->shiftEnd == $shiftStart ||
                 $header->shiftStart == $shiftEnd || $header->shiftEnd == $shiftEnd){
                 return true;
             }
+            //Cek apakah shift yang dipilih melewati transaksi yang ada
             else if($shiftStart <= $header->shiftStart && $shiftEnd >= $header->shiftEnd){
                 return true;
+                //Cek apakah shift yang dipilih berada pada jam dilaksanakan transaksi
             }else if($shiftStart >= $header->shiftStart && $shiftEnd <= $header->shiftEnd){
                 return true;
             }
@@ -206,14 +211,21 @@ class TransactionController extends Controller
         return false;
     }
 
-    public function sendWA($header){
-        $message = "Mr.+%2F+Mrs.+".$header->borrowerName."+here+are+your+information+for+your+room+borrowing+%0D%0ARoom+%3A+".$header->roomID."%0D%0AShift+Start%3A++".$header->shiftStart."+%28%29%0D%0AShift+End+%3A+".$header->shiftEnd."+%28%29%0D%0A%0D%0AFor+QR+code+please+click+link+below+%0D%0Ahttps%3A%2F%2Fasdasdasd";
+    public function sendWA($header,$url){
+        $message = "Dear+".$header->borrowerName."%2C%0D%0A%0D%0ABerikut+adalah+detail+peminjaman+ruang+yang+diajukan%3A%0D%0Atanggal%3A+xxxx%0D%0Aruang%3A+xxxx%0D%0Ashift%3A+xxxx+-+xxxxx%0D%0Awaktu%3A+xxxx+-+xxxx%0D%0A%0D%0AKunci+ruangan+dapat+diambil+dan+dikembalikan+menggunakan+qrcode+terlampir.+Qr+code+juga+dapat+di+akses+melalui%3A+".$url;
         return \redirect()->to("https://api.whatsapp.com/send?phone=$header->phone&text=".$message);
     }
 
-    public function sendRoomMail($headerTransaction,$qr){
-        //Sending Email
-    }
+//    public function sendRoomMail($header,$qr){
+//        //Send E-mail
+//        $data = array('name'=>$name,'filePath'=>$filePath,'url'=>$url,'itemName'=>$itemName);
+//        Mail::send('mail', $data, function($message)use($email,$filePath,$name) {
+//            $message->to($email, $name)->subject
+//            ('QRCode Items');
+//            $message->attach($filePath);
+//            $message->from('familyof18.2@gmail.com','Vick Koesoemo Santoso');
+//        });
+//    }
 
     //cara update dia liat brp shift kalo satu 30 menit pertama kalo dua liat di shift terakhirnya
     public function updateRoom(Request $req){
@@ -317,28 +329,3 @@ class TransactionController extends Controller
     }
 
 }
-
-//
-//            $header = new HeaderRoomTransaction();
-//            $header->roomTransactionID = Uuid::uuid();
-//
-//            //Changed When Done////
-//            $header->adminID = Uuid::uuid();
-//            //////////////////////
-//
-//            $header->transactionDate = Date::now();
-//            $header->transactionStatus = "Registered";
-//            $header->save();
-//
-//
-//            $qrCode = QrCode::size(300)->generate($header->roomTransactionID);
-//            return redirect("/view/Home")->with("qr", $qrCode);
-
-//                    dd($transaction);
-/*
-    $table->integer("shiftEnd");
-    $table->string('internetReason')->nullable(true);
-    $table->string('assistant')->nullable(true);
-*/
-//                    dd($header);
-//Temporary
