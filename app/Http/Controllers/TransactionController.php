@@ -99,27 +99,21 @@ class TransactionController extends Controller
             return redirect()->back()->withErrors($valid->errors());
         }else {
             $checkHeader =  HeaderRoomTransaction::where("transactionDate", $req->date)->get();
-
+            $shiftStart = (int) $req->shiftStart ;
+            $shiftEnd = (int) $req->shiftEnd;
             //Check if Start shift is bigger than end shift
-            if ($req->shiftStart > $req->shiftEnd) {
+
+            if ($shiftStart >$shiftEnd) {
                 return redirect()->back()->withErrors("Shift Start Cannot Exceed Shift End");
             }
             //Check if there is a transaction on selected shift
             foreach ($checkHeader as $header){
-                if (
-                    $header->roomID === $req->room &&
-                    (int)$req->shiftStart === $header->shiftStart ||
-                    (int)$req->shiftStart === $header->shiftEnd     ||
-                    (int)$req->shiftStart >= $header->shiftStart &&
-                    (int)$req->shiftStart >= $header->shiftEnd ||
-                    (int)$req->shiftEnd === $header->shiftStart
-                ){
-                    dd($header);
+                if ($this->checkTransactionValid($header,$req)){
                     return redirect()->back()->withErrors("There is another transaction in selected shift");
                 }
 
             }
-
+            dd("aih");
             $header = new HeaderRoomTransaction();
             $header->roomTransactionID = Uuid::uuid();
             $header->adminID = Uuid::uuid();
@@ -188,12 +182,35 @@ class TransactionController extends Controller
                 echo $responseBody;
                 exit;
             }
+            dd($response);
+            $this->sendRoomMail($header,$qr);
             return redirect("/view/room/Home");
-            $this->sendRoomMail($header);
         }
     }
 
-    public function sendRoomMail($headerTransaction){
+    public function checkTransactionValid($header,$req){
+
+        if($header->roomID === $req->room){
+            return true;
+        }
+        return false;
+
+//        $shiftStart === $header->shiftStart ||
+//        $shiftStart === $header->shiftEnd     ||
+//        $shiftStart >= $header->shiftStart &&
+//        $shiftEnd <= $header->shiftStart &&
+//        $shiftStart >= $header->shiftEnd &&
+//        $shiftEnd <= $header->shiftEnd &&
+//        $shiftEnd === $header->shiftStart ||
+//        $shiftEnd === $header->shiftEnd;
+
+    }
+
+    public function sendWA($header){
+
+    }
+
+    public function sendRoomMail($headerTransaction,$qr){
 
     }
 

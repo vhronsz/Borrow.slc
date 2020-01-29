@@ -76,10 +76,10 @@
 								<option value="604">604</option>
 								<option value="605">605</option>
 								<option value="606">606</option>
-                                <option value="606">607</option>
-                                <option value="606">608</option>
-                                <option value="606">609</option>
-                                <option value="606">610</option>
+                                <option value="607">607</option>
+                                <option value="608">608</option>
+                                <option value="609">609</option>
+                                <option value="610">610</option>
 							</select>
 						</div>
 						<span class="focus-input3"></span>
