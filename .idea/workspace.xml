@@ -4,7 +4,6 @@
     <list default="true" id="79213623-0e3d-4e2e-81fe-62ae89d17611" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,10 +22,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="194" column="9" lean-forward="true" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
+            <state relative-caret-position="272">
+              <caret line="204" column="9" lean-forward="true" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
               <folding>
                 <element signature="e#40#70#0#PHP" expanded="true" />
+                <element signature="e#5309#6215#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -371,7 +371,7 @@
       <workItem from="1579844877680" duration="304000" />
       <workItem from="1580133636708" duration="8986000" />
       <workItem from="1580220733342" duration="4336000" />
-      <workItem from="1580271388063" duration="2129000" />
+      <workItem from="1580271388063" duration="16915000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1574998364228</created>
@@ -485,11 +485,18 @@
       <option name="project" value="LOCAL" />
       <updated>1580230111182</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Borrow room transaction bug on transaction check">
+      <created>1580273552641</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1580273552641</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="293314000" />
+    <option name="totallyTimeSpent" value="308100000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -552,7 +559,8 @@
     <MESSAGE value="Change Add transaction shift to integer" />
     <MESSAGE value="Borrow QR Uploaded - not Tested" />
     <MESSAGE value="Borrow Room Form Transaction bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Borrow Room Form Transaction bug fix" />
+    <MESSAGE value="Borrow room transaction bug on transaction check" />
+    <option name="LAST_COMMIT_MESSAGE" value="Borrow room transaction bug on transaction check" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/borrow_slc$TransactionController_php.dat" NAME="TransactionController.php Coverage Results" MODIFIED="1579834682124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -918,10 +926,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="194" column="9" lean-forward="true" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
+        <state relative-caret-position="272">
+          <caret line="204" column="9" lean-forward="true" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
           <folding>
             <element signature="e#40#70#0#PHP" expanded="true" />
+            <element signature="e#5309#6215#0#PHP" />
           </folding>
         </state>
       </provider>

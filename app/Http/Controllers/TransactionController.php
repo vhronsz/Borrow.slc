@@ -11,6 +11,7 @@ use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -83,6 +84,7 @@ class TransactionController extends Controller
     }
 
     public  function addRoom(Request $req){
+
         $valid = Validator::make($req->all(),[
             "name" => "required",
             "email" => "required",
@@ -102,7 +104,6 @@ class TransactionController extends Controller
             $shiftStart = (int) $req->shiftStart ;
             $shiftEnd = (int) $req->shiftEnd;
             //Check if Start shift is bigger than end shift
-
             if ($shiftStart >$shiftEnd) {
                 return redirect()->back()->withErrors("Shift Start Cannot Exceed Shift End");
             }
@@ -113,7 +114,6 @@ class TransactionController extends Controller
                 }
 
             }
-            dd("aih");
             $header = new HeaderRoomTransaction();
             $header->roomTransactionID = Uuid::uuid();
             $header->adminID = Uuid::uuid();
@@ -182,36 +182,37 @@ class TransactionController extends Controller
                 echo $responseBody;
                 exit;
             }
-            dd($response);
             $this->sendRoomMail($header,$qr);
             return redirect("/view/room/Home");
         }
     }
 
     public function checkTransactionValid($header,$req){
+        $shiftStart = (int) $req->shiftStart;
+        $shiftEnd = (int) $req->shiftEnd;
 
-        if($header->roomID === $req->room){
-            return true;
+        //Cek masalah transaksi jika ruangannya sama
+        if($header->roomID === $req->room) {
+            if( $header->shiftStart == $shiftStart || $header->shiftEnd == $shiftStart ||
+                $header->shiftStart == $shiftEnd || $header->shiftEnd == $shiftEnd){
+                return true;
+            }
+            else if($shiftStart <= $header->shiftStart && $shiftEnd >= $header->shiftEnd){
+                return true;
+            }else if($shiftStart >= $header->shiftStart && $shiftEnd <= $header->shiftEnd){
+                return true;
+            }
         }
         return false;
-
-//        $shiftStart === $header->shiftStart ||
-//        $shiftStart === $header->shiftEnd     ||
-//        $shiftStart >= $header->shiftStart &&
-//        $shiftEnd <= $header->shiftStart &&
-//        $shiftStart >= $header->shiftEnd &&
-//        $shiftEnd <= $header->shiftEnd &&
-//        $shiftEnd === $header->shiftStart ||
-//        $shiftEnd === $header->shiftEnd;
-
     }
 
     public function sendWA($header){
-
+        $message = "Mr.+%2F+Mrs.+".$header->borrowerName."+here+are+your+information+for+your+room+borrowing+%0D%0ARoom+%3A+".$header->roomID."%0D%0AShift+Start%3A++".$header->shiftStart."+%28%29%0D%0AShift+End+%3A+".$header->shiftEnd."+%28%29%0D%0A%0D%0AFor+QR+code+please+click+link+below+%0D%0Ahttps%3A%2F%2Fasdasdasd";
+        return \redirect()->to("https://api.whatsapp.com/send?phone=$header->phone&text=".$message);
     }
 
     public function sendRoomMail($headerTransaction,$qr){
-
+        //Sending Email
     }
 
     //cara update dia liat brp shift kalo satu 30 menit pertama kalo dua liat di shift terakhirnya
