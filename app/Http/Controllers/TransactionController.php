@@ -86,9 +86,9 @@ class TransactionController extends Controller
     public  function addRoom(Request $req){
 
         $valid = Validator::make($req->all(),[
-            "name" => "required",
-            "email" => "required",
-            "phone" => "required",
+            "name" => "required|min:2",
+            "email" => "required|email",
+            "phone" => "required|numeric|digits_between:10,12",
             "room" => "required",
             "shiftStart" => "required",
             "shiftEnd" => "required",
@@ -139,7 +139,7 @@ class TransactionController extends Controller
                     return redirect()->back()->withErrors($validInet->errors());
                 }
                 $header->internetRequest = true;
-                $header->reason = $req->reason;
+                $header->internetReason = $req->internetReason;
             }else{
                 $header->internetRequest = false;
             }
@@ -180,11 +180,10 @@ class TransactionController extends Controller
                 echo $responseBody;
                 exit;
             }
-            $data = $response->getBody();
-            $url = $data->url;
 
-            $this->sendWA($header,$url);
-            $this->sendRoomMail($header,$qr);
+            $data = json_decode($response->getBody());
+            $url = $data->url;
+            $this->sendRoomMail($header,$qr,$url);
             return redirect("/view/room/Home");
         }
     }
@@ -212,20 +211,23 @@ class TransactionController extends Controller
     }
 
     public function sendWA($header,$url){
-        $message = "Dear+".$header->borrowerName."%2C%0D%0A%0D%0ABerikut+adalah+detail+peminjaman+ruang+yang+diajukan%3A%0D%0Atanggal%3A+xxxx%0D%0Aruang%3A+xxxx%0D%0Ashift%3A+xxxx+-+xxxxx%0D%0Awaktu%3A+xxxx+-+xxxx%0D%0A%0D%0AKunci+ruangan+dapat+diambil+dan+dikembalikan+menggunakan+qrcode+terlampir.+Qr+code+juga+dapat+di+akses+melalui%3A+".$url;
-        return \redirect()->to("https://api.whatsapp.com/send?phone=$header->phone&text=".$message);
+        $start  = $this->getShift($header->shiftStart);
+        $end  = $this->getShift($header->shiftEnd);
+        $message = "Dear+".$header->borrowerName."%2C%0D%0A%0D%0ABerikut+adalah+detail+peminjaman+ruang+yang+diajukan%3A%0D%0Atanggal%3A+".$header->transactionDate."%0D%0Aruang%3A+".$header->roomID."%0D%0Ashift%3A+".$header->shiftStart."+-+".$header->shiftEnd."%0D%0Awaktu%3A+".$start."+-+".$end."%0D%0A%0D%0AKunci+ruangan+dapat+diambil+dan+dikembalikan+menggunakan+qrcode+terlampir.+Qr+code+juga+dapat+di+akses+melalui%3A+".$url;
+        return Redirect::away("https://api.whatsapp.com/send?phone=$header->phone&text=".$message);
     }
 
-//    public function sendRoomMail($header,$qr){
-//        //Send E-mail
-//        $data = array('name'=>$name,'filePath'=>$filePath,'url'=>$url,'itemName'=>$itemName);
-//        Mail::send('mail', $data, function($message)use($email,$filePath,$name) {
-//            $message->to($email, $name)->subject
-//            ('QRCode Items');
-//            $message->attach($filePath);
-//            $message->from('familyof18.2@gmail.com','Vick Koesoemo Santoso');
-//        });
-//    }
+    public function sendRoomMail($header,$qr,$url){
+        //Send E-mail\
+        $name = "Ryan";
+        $data = array('name'=>$name,'url'=>$url,'itemName'=>$header);
+        Mail::send('mail', $data, function($message)use($email,$filePath,$name) {
+            $message->to($email, $name)->subject
+            ('QRCode Items');
+            $message->attach($filePath);
+            $message->from('familyof18.2@gmail.com','Vick Koesoemo Santoso');
+        });
+    }
 
     //cara update dia liat brp shift kalo satu 30 menit pertama kalo dua liat di shift terakhirnya
     public function updateRoom(Request $req){
