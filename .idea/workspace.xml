@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79213623-0e3d-4e2e-81fe-62ae89d17611" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
     </list>
@@ -13,6 +14,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="287" />
@@ -22,12 +26,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="204" column="9" lean-forward="true" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
+            <state relative-caret-position="181">
+              <caret line="188" column="47" lean-forward="true" selection-start-line="188" selection-start-column="47" selection-end-line="188" selection-end-column="47" />
               <folding>
                 <element signature="e#40#70#0#PHP" expanded="true" />
-                <element signature="e#5309#6215#0#PHP" />
+                <element signature="e#6318#7307#0#PHP" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
             </state>
           </provider>
         </entry>
@@ -237,23 +250,23 @@
         <subPane>
           <expand>
             <path>
-              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
+              <item name="New folder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="New folder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
+              <item name="New folder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="New folder" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
+              <item name="New folder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="New folder" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
+              <item name="New folder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="New folder" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="Borrow" type="462c0819:PsiDirectoryNode" />
@@ -276,16 +289,16 @@
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Project\RIG 19-20\borrow.slc" />
-      <recent name="F:\Project\RIG 19-20\borrow.slc\resources\views\Borrow" />
-      <recent name="F:\Project\RIG 19-20\borrow.slc\public\css" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Project\RIG 19-20\borrow.slc\resources\views\Borrow" />
       <recent name="F:\Project\RIG 19-20\borrow.slc\resources\views\Master" />
       <recent name="F:\Project\RIG 19-20\borrow.slc\public\js" />
       <recent name="F:\Project\RIG 19-20\borrow.slc\resources\views\testing" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Project\RIG 19-20\borrow.slc" />
+      <recent name="F:\Project\RIG 19-20\borrow.slc\resources\views\Borrow" />
+      <recent name="F:\Project\RIG 19-20\borrow.slc\public\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -372,6 +385,7 @@
       <workItem from="1580133636708" duration="8986000" />
       <workItem from="1580220733342" duration="4336000" />
       <workItem from="1580271388063" duration="16915000" />
+      <workItem from="1580365214192" duration="2053000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1574998364228</created>
@@ -496,13 +510,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308100000" />
+    <option name="totallyTimeSpent" value="310153000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23758389" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24130106" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -517,7 +531,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49731544" weight="0.32719547" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.504698" side_tool="true" weight="0.3427762" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49530202" visible="true" weight="0.3427762" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49530202" visible="true" weight="0.3420622" />
       <window_info active="true" anchor="bottom" id="Command Line Tools Console" order="12" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -879,13 +893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -917,20 +924,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
+        <state relative-caret-position="153">
+          <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="204" column="9" lean-forward="true" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
+        <state relative-caret-position="181">
+          <caret line="188" column="47" lean-forward="true" selection-start-line="188" selection-start-column="47" selection-end-line="188" selection-end-column="47" />
           <folding>
             <element signature="e#40#70#0#PHP" expanded="true" />
-            <element signature="e#5309#6215#0#PHP" />
+            <element signature="e#6318#7307#0#PHP" />
           </folding>
         </state>
       </provider>
