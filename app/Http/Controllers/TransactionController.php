@@ -347,6 +347,22 @@ class TransactionController extends Controller
 
     }
 
+    public function roomMonitor(Request $req){
+        $floor = 1;
+        if (isset($req->floor)){
+            $floor = (int)$req->floor;
+        }
+
+        $header = null;
+        if($floor === 1){
+            $header = HeaderRoomTransaction::where("roomID","like","6"."%")->get();
+        }else{
+            $header = HeaderRoomTransaction::where("roomID","like","7"."%")->get();
+        }
+
+        return view("Borrow.RoomMonitor")->with("rooms",$header);
+    }
+
     public function dump(){
         $qr = QrCode::format("png")->size(300)->generate("asd");
         return view("testing.qrtesting")->with("qr",$qr);
