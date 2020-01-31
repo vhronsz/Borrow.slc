@@ -29,7 +29,9 @@ class CreateHeaderRoomTransactionsTable extends Migration
             $table->string("borrowReason");
 
             $table->integer("shiftStart");
+            $table->string("timeStart");
             $table->integer("shiftEnd");
+            $table->string("timeEnd");
 
             $table->boolean('internetRequest');
             $table->string('internetReason')->nullable(true);

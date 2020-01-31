@@ -47,6 +47,13 @@
                         </div>
                     @endif
 
+                    @if(isset($message))
+                        <div>
+                            <span class="input3" style="color: #ffffff;">{{$message}}</span>
+                            <br>
+                        </div>
+                    @endif
+
 					<div class="wrap-input3 validate-input" data-validate="Name is required">
 						<input class="input3" type="text" name="name" placeholder="Your Name">
 						<span class="focus-input3"></span>

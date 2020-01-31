@@ -40,6 +40,7 @@ class BorrowRoomMail extends Mailable
     {
         return $this->from("ryansanjaya290799@gmail.com")
                     ->view('Mail.RoomMail')
+                    ->subject("Room Borrowing")
                     ->with("header",$this->header)
                     ->with("url",$this->url)
                     ->attachData($this->qr,'qr.png',[

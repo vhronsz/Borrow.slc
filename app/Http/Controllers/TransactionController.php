@@ -127,8 +127,11 @@ class TransactionController extends Controller
             $header->borrowerEmail = $req->email;
             $header->borrowerPhone = $req->phone;
             $header->roomID = $req->room;
+
             $header->shiftStart = $req->shiftStart;
             $header->shiftEnd = $req->shiftEnd;
+            $header->timeStart = $this->getShift($req->shiftStart);
+            $header->timeEnd = $this->getShift($req->shiftEnd);
             $header->transactionDate = $req->date;
             $header->borrowerDivision = $req->division;
             $header->borrowReason = $req->borrowReason;
@@ -186,7 +189,7 @@ class TransactionController extends Controller
             $data = json_decode($response->getBody());
             $url = $data->url;
             $this->sendRoomMail($header,$qr,$url);
-            return redirect("/view/room/Home");
+            return redirect('/view/room/Home')->with("message","Transaction Added");
         }
     }
 
