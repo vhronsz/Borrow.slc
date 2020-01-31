@@ -20,22 +20,42 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class TransactionController extends Controller
 {
-    public function getShift($shift){
+    public function getShiftStart($shift){
         $time = null;
         if($shift === 1){
-            $time = "07:20:00";
+            $time = "07:20";
         }else if($shift === 2){
-            $time = "09:20:00";
+            $time = "09:20";
         }else if($shift === 3){
-            $time = "11:20:00";
+            $time = "11:20";
         }else if($shift === 4){
-            $time = "13:20:00";
+            $time = "13:20";
         }else if($shift === 5){
-            $time = "15:20:00";
+            $time = "15:20";
         }else if($shift === 6){
-            $time = "17:20:00";
+            $time = "17:20";
         }else if($shift === 7) {
-            $time = "19:20:00";
+            $time = "19:20";
+        }
+        return $time;
+    }
+
+    public function getShiftEnd($shift){
+        $time = null;
+        if($shift === 1){
+            $time = "09:20";
+        }else if($shift === 2){
+            $time = "11:20";
+        }else if($shift === 3){
+            $time = "13:20";
+        }else if($shift === 4){
+            $time = "15:20";
+        }else if($shift === 5){
+            $time = "17:20";
+        }else if($shift === 6){
+            $time = "19:20";
+        }else if($shift === 7) {
+            $time = "21:20";
         }
         return $time;
     }
@@ -68,7 +88,7 @@ class TransactionController extends Controller
 
     public function getTime($shift)
     {
-        $shiftTime = \date("h", strtotime($this->getShift($shift)));
+        $shiftTime = \date("h", strtotime($this->getShiftStart($shift)));
         $now = \date("h", strtotime(Carbon::now()));
         if($now >= $shiftTime){
             return true;
@@ -78,7 +98,7 @@ class TransactionController extends Controller
     }
 
     public function getTimeDone($shift){
-        if(Carbon::now()->diffInSeconds($this->getShift($shift)) >= 1795){
+        if(Carbon::now()->diffInSeconds($this->getShiftEnd($shift)) >= 1795){
             return true;
         }
 
@@ -115,7 +135,6 @@ class TransactionController extends Controller
                     return redirect()->back()->withErrors("There is another transaction in selected shift");
                 }
             }
-
             $header = new HeaderRoomTransaction();
             $header->roomTransactionID = Uuid::uuid();
             $header->adminID = Uuid::uuid();
@@ -130,8 +149,8 @@ class TransactionController extends Controller
 
             $header->shiftStart = $req->shiftStart;
             $header->shiftEnd = $req->shiftEnd;
-            $header->timeStart = $this->getShift($req->shiftStart);
-            $header->timeEnd = $this->getShift($req->shiftEnd);
+            $header->timeStart = $this->getShiftStart((int)$req->shiftStart);
+            $header->timeEnd = $this->getShiftEnd((int)$req->shiftEnd);
             $header->transactionDate = $req->date;
             $header->borrowerDivision = $req->division;
             $header->borrowReason = $req->borrowReason;
@@ -216,8 +235,8 @@ class TransactionController extends Controller
     }
 
     public function sendWA($header,$url){
-        $start  = $this->getShift($header->shiftStart);
-        $end  = $this->getShift($header->shiftEnd);
+        $start  = $this->getShiftStart($header->shiftStart);
+        $end  = $this->getShiftEnd($header->shiftEnd);
         $message = "Dear+".$header->borrowerName."%2C%0D%0A%0D%0ABerikut+adalah+detail+peminjaman+ruang+yang+diajukan%3A%0D%0Atanggal%3A+".$header->transactionDate."%0D%0Aruang%3A+".$header->roomID."%0D%0Ashift%3A+".$header->shiftStart."+-+".$header->shiftEnd."%0D%0Awaktu%3A+".$start."+-+".$end."%0D%0A%0D%0AKunci+ruangan+dapat+diambil+dan+dikembalikan+menggunakan+qrcode+terlampir.+Qr+code+juga+dapat+di+akses+melalui%3A+".$url;
         return Redirect::away("https://api.whatsapp.com/send?phone=$header->phone&text=".$message);
     }
