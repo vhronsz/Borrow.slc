@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\HeaderRoomTransaction;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -11,14 +12,23 @@ class BorrowRoomMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+
+    protected $header;
+    protected $qr;
+    protected $url;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($header,$qr,$url)
     {
         //
+        $this->header = $header;
+        $this->qr = $qr;
+        $this->url = $url;
+
     }
 
     /**
@@ -28,6 +38,12 @@ class BorrowRoomMail extends Mailable
      */
     public function build()
     {
-        return $this->view('Mail.RoomMail');
+        return $this->from("ryansanjaya290799@gmail.com")
+                    ->view('Mail.RoomMail')
+                    ->with("header",$this->header)
+                    ->with("url",$this->url)
+                    ->attachData($this->qr,'qr.png',[
+                        "mime" => "image/png"
+                    ]);
     }
 }

@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\DetailRoomTransaction;
 use App\HeaderItemTransaction;
 use App\HeaderRoomTransaction;
+use App\Mail\BorrowRoomMail;
 use Carbon\Carbon;
 use Faker\Provider\Uuid;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -219,14 +221,7 @@ class TransactionController extends Controller
 
     public function sendRoomMail($header,$qr,$url){
         //Send E-mail\
-        $name = "Ryan";
-        $data = array('name'=>$name,'url'=>$url,'itemName'=>$header);
-        Mail::send('mail', $data, function($message)use($email,$filePath,$name) {
-            $message->to($email, $name)->subject
-            ('QRCode Items');
-            $message->attach($filePath);
-            $message->from('familyof18.2@gmail.com','Vick Koesoemo Santoso');
-        });
+        Mail::to("ryansanjaya290799@gmail.com")->send(new BorrowRoomMail($header,$qr,$url));
     }
 
     //cara update dia liat brp shift kalo satu 30 menit pertama kalo dua liat di shift terakhirnya

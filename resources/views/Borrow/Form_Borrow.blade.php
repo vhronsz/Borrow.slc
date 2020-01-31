@@ -40,6 +40,13 @@
 						Form Peminjaman Ruang SLC
 					</span>
 
+                    @if($errors->any())
+                        <div>
+                            <span class="input3" style="color: #c93200;">Failed : {{$errors->first()}}</span>
+                            <br>
+                        </div>
+                    @endif
+
 					<div class="wrap-input3 validate-input" data-validate="Name is required">
 						<input class="input3" type="text" name="name" placeholder="Your Name">
 						<span class="focus-input3"></span>
@@ -147,13 +154,6 @@
 						<span class="focus-input3"></span>
 					</div>
 
-
-                    @if($errors->any())
-                        <div>
-                            <span class="input3" style="color: #c93200;">{{$errors->first()}}</span>
-                            <br>
-                        </div>
-                    @endif
 					<div class="container-contact3-form-btn">
 						<button type="submit" class="contact3-form-btn">
 							Submit
