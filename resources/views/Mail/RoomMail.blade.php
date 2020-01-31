@@ -14,10 +14,16 @@
         Berikut kami infokan detail peminjaman ruang anda sebagai berikut :
         <ul>
             <li>
+                Tanggal : {{date('d-m-Y',strtotime($header->transactionDate))}}
+            </li>
+            <li>
                 Ruang : {{$header->roomID}}
             </li>
             <li>
-                Shift : {{$header->shiftStart}} - {{$header->shiftEnd}}
+                Shift : {{$header->shiftStart}}
+                @if($header->shiftStart !== $header->shiftEnd)
+                    - {{$header->shiftEnd}}
+                @endif
             </li>
             <li>
                 Waktu : {{$header->timeStart}} - {{$header->timeEnd}}

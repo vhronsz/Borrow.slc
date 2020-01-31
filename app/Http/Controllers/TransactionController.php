@@ -326,6 +326,8 @@ class TransactionController extends Controller
                         $header->shiftEnd = $header->shiftStart;
                         $index++;
                     }
+                    $header->timeStart = $this->getShiftStart($header->shiftStart);
+                    $header->timeEnd = $this->getShiftEnd($header->shiftEnd);
                     $header->save();
                 }
                 else {
