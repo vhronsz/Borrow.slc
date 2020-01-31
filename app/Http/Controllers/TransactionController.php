@@ -235,9 +235,10 @@ class TransactionController extends Controller
     }
 
     public function sendWA($header,$url){
-        $start  = $this->getShiftStart($header->shiftStart);
-        $end  = $this->getShiftEnd($header->shiftEnd);
-        $message = "Dear+".$header->borrowerName."%2C%0D%0A%0D%0ABerikut+adalah+detail+peminjaman+ruang+yang+diajukan%3A%0D%0Atanggal%3A+".$header->transactionDate."%0D%0Aruang%3A+".$header->roomID."%0D%0Ashift%3A+".$header->shiftStart."+-+".$header->shiftEnd."%0D%0Awaktu%3A+".$start."+-+".$end."%0D%0A%0D%0AKunci+ruangan+dapat+diambil+dan+dikembalikan+menggunakan+qrcode+terlampir.+Qr+code+juga+dapat+di+akses+melalui%3A+".$url;
+        $message = "Dear+".$header->borrowerName."%2C%0D%0A%0D%0ABerikut+adalah+detail+peminjaman+ruang+yang+diajukan%3A%0D%0Atanggal%3A+".\date('d/m/Y',strtotime($header->transactionDate))."%0D%0Aruang%3A+".$header->roomID."%0D%0Ashift%3A+".$header->shiftStart."+-+".$header->shiftEnd."%0D%0Awaktu%3A+".$header->timeStart."+-+".$header->timeEnd."%0D%0A%0D%0AKunci+ruangan+dapat+diambil+dan+dikembalikan+menggunakan+qrcode+terlampir.+Qr+code+juga+dapat+di+akses+melalui%3A+".$url;
+        if($header->shiftStart === $header->shiftEnd){
+            $message = "Dear+".$header->borrowerName."%2C%0D%0A%0D%0ABerikut+adalah+detail+peminjaman+ruang+yang+diajukan%3A%0D%0Atanggal%3A+".\date('d/m/Y',strtotime($header->transactionDate))."%0D%0Aruang%3A+".$header->roomID."%0D%0Ashift%3A+".$header->shiftStart."%0D%0Awaktu%3A+".$header->timeStart."+-+".$header->timeEnd."%0D%0A%0D%0AKunci+ruangan+dapat+diambil+dan+dikembalikan+menggunakan+qrcode+terlampir.+Qr+code+juga+dapat+di+akses+melalui%3A+".$url;
+        }
         return Redirect::away("https://api.whatsapp.com/send?phone=$header->phone&text=".$message);
     }
 
