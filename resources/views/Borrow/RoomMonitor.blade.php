@@ -8,11 +8,16 @@
     <div id="Parent">
         <div id="Container">
             @if(isset($rooms))
-                @foreach($rooms as $room)
+                @for($i=0;$i<10;$i++)
+                    @if($rooms[$i]["roomID"] === "610")
+                        <div>
+                            sadds
+                        </div>
+                    @endif
                     <div>
                         asd
                     </div>
-                @endforeach
+                @endfor
             @else
                 <div>
                     No Room Found

@@ -23,6 +23,8 @@ Route::group(["prefix" => "view"],function(){
             return view('Borrow.ScanRoomQR');
         });
         Route::get('/Room_Monitor',"TransactionController@roomMonitor");
+        Route::get('/History_Room',"TransactionController@borrowHistory");
+
     });
     Route::group(["prefix" => "item"],function(){
         Route::get('/ScanItem',function(){

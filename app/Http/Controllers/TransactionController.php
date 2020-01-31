@@ -363,6 +363,14 @@ class TransactionController extends Controller
         return view("Borrow.RoomMonitor")->with("rooms",$header);
     }
 
+    public function borrowHistory(Request $req){
+        $transaction = HeaderRoomTransaction::paginate(1);
+        if(isset($req->date)){
+            $transaction = HeaderRoomTransaction::where('transactionDate',$req->date)->paginate(10);
+        }
+        return view("Borrow.RoomHistory")->with("item",$transaction);
+    }
+
     public function dump(){
         $qr = QrCode::format("png")->size(300)->generate("asd");
         return view("testing.qrtesting")->with("qr",$qr);
