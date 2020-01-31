@@ -131,9 +131,13 @@ Send Email - (Test with mailtrap)
 Status 24/01
 ============
 Generate Qr send to Borrower
-Send Message with Whatsapp API with QR -> Variable belom diset
-Send Email - (Test with mailtrap) -> Function Error
+Send Message with Whatsapp API with QR -> Done
+Send Email - (Test with mailtrap) -> Done
 
+Status 31/01
+============
+Transaction History
+Room Monitor
 
 
 

@@ -65,7 +65,7 @@
 					</div>
 
 					<div class="wrap-input3 validate-input" data-validate="Phone is required">
-						<input class="input3" type="text" name="phone" placeholder="Your Phone">
+						<input class="input3" type="text" name="phone" placeholder="Your Phone" value="62">
 						<span class="focus-input3"></span>
 					</div>
 
