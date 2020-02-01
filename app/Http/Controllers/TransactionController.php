@@ -80,7 +80,9 @@ class TransactionController extends Controller
     }
 
     public function getSameDay($day){
-        if(Carbon::now()->diffInDays($day) === 0){
+        $dateNow = getdate(strtotime(Carbon::now()))["yday"];
+        $dateTransaction = getdate(strtotime($day))["yday"];
+        if($dateTransaction <= $dateNow){
             return true;
         }
         return false;
@@ -257,13 +259,17 @@ class TransactionController extends Controller
     public function updateRoom(Request $req){
         $header = HeaderRoomTransaction::where("roomTransactionID",$req->data)->first();
         if($header){
-            //Check if transaction is on the same day
-            if($header->transactionStatus === "Registered" && $this->getSameDay($header->transactionDate)){
+            //Validasi apkakah harinya sudah sama
+            if($this->getSameDay($header->transactionDate) && $header->transactionStatus === "Registered"){
+                return response(["header"=>$this->getSameDay($header->transactionDate)]);
                 $header->transactionStatus = "Taken";
                 $header->save();
             }
             //Check if the time already pass the transaction time and check if 30 minutes already passed
-            else if($header->transactionStatus === "Taken" && $this->getTime($header->shiftStart) && $this->getTimeDone($header->shiftStart) || $this->getTimeDone($header->shiftEnd)){
+            else if($header->transactionStatus === "Taken" &&
+                    $this->getTime($header->shiftStart) &&
+                    $this->getTimeDone($header->shiftStart) ||
+                    $this->getTimeDone($header->shiftEnd)){
                 $header->transactionStatus = "Done";
                 $header->save();
             }
@@ -274,7 +280,8 @@ class TransactionController extends Controller
                 "color"=>"green",
                 "time"=>Carbon::now()->diffInSeconds($header->updated_at)
             ]);
-        }else{
+        }
+        else{
             return response()->json([
                 "message"=>"Transaction Not Found",
                 "color"=>"red","id"=>$req->data
@@ -422,8 +429,10 @@ class TransactionController extends Controller
 
     /////////////////////////////////////////
     public function dump(){
-        $qr = QrCode::format("png")->size(300)->generate("asd");
-        return view("testing.qrtesting")->with("qr",$qr);
+        $header = HeaderRoomTransaction::where("roomTransactionID","da54abf4-e261-3d5c-b614-763211206b32")
+            ->where("transactionDate","like","%".\date("Y-m-d",strtotime(Carbon::now()))."%")
+            ->first();
+        dd($header);
     }
 
 }

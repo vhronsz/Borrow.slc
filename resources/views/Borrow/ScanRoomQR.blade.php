@@ -49,17 +49,10 @@
                 url : "/transaction/Update_Room_Transaction",
                 data: {data:code},
                 success: function(data) {
-                    console.log(data);
-                    $("#scanned-Status").text("");
-                    $("#scanned-QR").css("color",data.color);
-                    $("#scanned-QR").text(data.message);
-                    $("#scanned-Status").css("color",data.color);
-                    if(data.status != null){
-                        $("#scanned-Status").text("Transaction " + data.status);
-                    }
+                    console.log(data.header);
                 },
                 error : function (data) {
-                    console.log(data);
+                    console.log(data.message);
                 }
             })
         }

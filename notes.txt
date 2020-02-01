@@ -144,7 +144,7 @@ Room Monitor
 =============
 To do :
 1. Room Monitoring Function
-2. Fix Validation on QR Room
+2. Fix Validation on QR Room -- Done (Lupa udah ada)
 3. Add Message on scan QR (Show Transaction Info)
 4. Add Delete on Item History Transaction == Monday
 
