@@ -14,7 +14,7 @@ class HeaderItemTransaction extends Model
     public $incrementing = false;
 
     public function detailItemTransaction(){
-        return $this->hasMany('App\DetailRoomTransaction','itemTransactionID');
+        return $this->hasMany(DetailItemTransaction::class,'itemTransactionID','itemTransactionID');
     }
 
     public function admin(){

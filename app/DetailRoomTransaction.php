@@ -12,6 +12,7 @@ class DetailRoomTransaction extends Model
     protected $keyType = 'string';
     public $incrementing = false;
 
+
     public function headerRoomTransaction(){
         return $this->belongsTo(HeaderItemTransaction::class,'roomTransactionID','roomTransactionID');
     }

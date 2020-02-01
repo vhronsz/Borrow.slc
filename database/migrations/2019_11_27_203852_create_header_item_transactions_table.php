@@ -16,7 +16,9 @@ class CreateHeaderItemTransactionsTable extends Migration
         Schema::create('header_item_transactions', function (Blueprint $table) {
             $table->uuid('itemTransactionID');
             $table->uuid('adminID');
-            $table->uuid('userID');
+            $table->string('username');
+            $table->string('userEmail');
+            $table->string('userPhone');
             $table->dateTime('transactionDate');
             $table->string("transactionStatus");
 

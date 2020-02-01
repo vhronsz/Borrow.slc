@@ -1,12 +1,12 @@
 <div id="NavBar">
 
-    <a class="Item" href="{{url("/view/Home")}}">
+    <a class="Item" href="{{url("/view/room/Home")}}">
         Home
     </a>
-    <a class="Item" href="{{url("/view/Borrow_Room_Form")}}">
+    <a class="Item" href="{{url("/view/room/Borrow_Room_Form")}}">
         Borrow
     </a>
-    <a class="Item" href="{{url("/view/Room_Monitor")}}">
+    <a class="Item" href="{{url("/view/room/Room_Monitor")}}">
         Room
     </a>
     <a class="Item" href="{{url("/room/Room_Availability")}}">

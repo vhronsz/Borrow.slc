@@ -16,8 +16,8 @@ class CreateDetailItemTransactionsTable extends Migration
         Schema::create('detail_item_transactions', function (Blueprint $table) {
             $table->uuid('itemTransactionID');
             $table->uuid('itemID');
-            $table->integer('shiftStart');
-            $table->integer('shiftEnd');
+            $table->date('shiftStart');
+            $table->date('shiftEnd');
             $table->string('bookType');
             $table->string('status');
 

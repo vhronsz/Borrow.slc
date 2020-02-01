@@ -33,8 +33,10 @@
 }
 
 body, html {
-	height: 100%;
+	height: fit-content;
+    min-height: 100vh;
 	font-family: Poppins-Regular, sans-serif;
+    background: rgba(0, 247, 255, 0.1);
 }
 
 /*---------------------------------------------*/
@@ -144,15 +146,14 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 30px;
-  background: rgba(255,255,255,0.8);
 }
 
 .wrap-contact3 {
-  background: #80c64a;
-  background: -webkit-linear-gradient(45deg, #56ab2f, #a8e063);
-  background: -o-linear-gradient(45deg, #56ab2f, #a8e063);
-  background: -moz-linear-gradient(45deg, #56ab2f, #a8e063);
-  background: linear-gradient(45deg, #56ab2f, #a8e063);
+  background: #24cee0;
+  background: -webkit-linear-gradient(45deg, #0f58e0, #24cee0);
+  background: -o-linear-gradient(45deg, #0f58e0, #24cee0);
+  background: -moz-linear-gradient(45deg, #0f58e0, #24cee0);
+  background: linear-gradient(45deg, #0f58e0, #24cee0);
   border-radius: 10px;
   overflow: hidden;
   padding: 72px 55px 65px 55px;
@@ -365,6 +366,7 @@ input[type=date]::-webkit-inner-spin-button {
   -o-transition: opacity 0.4s;
   -moz-transition: opacity 0.4s;
   transition: opacity 0.4s;
+  border-radius: 10px;
 }
 
 .alert-validate::after {

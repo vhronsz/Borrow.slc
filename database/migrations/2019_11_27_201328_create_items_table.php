@@ -14,10 +14,10 @@ class CreateItemsTable extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->uuid('itemID');
+            $table->string('itemID');
             $table->string('itemName');
-            $table->integer('itemStock');
             $table->text('itemDesc');
+            $table->string('itemStatus');
 
             $table->primary("itemID");
             $table->softDeletes();
