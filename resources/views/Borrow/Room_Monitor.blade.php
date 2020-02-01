@@ -60,7 +60,7 @@
             <div id="descriptionText">
                 No Transaction
             </div>
-            <div id="colorBox">
+            <div id="colorBox" style="background-color: #2ab94c">
 
             </div>
         </div>
@@ -69,7 +69,7 @@
             <div id="descriptionText">
                 On Transaction
             </div>
-            <div id="colorBox">
+            <div id="colorBox" style="background-color: #0f61ff">
 
             </div>
         </div>
@@ -78,12 +78,13 @@
             <div id="descriptionText">
                 Transaction Over
             </div>
-            <div id="colorBox">
+            <div id="colorBox" style="background-color: #e72537">
 
             </div>
         </div>
 
     </div>
+
 @endsection
 
 @section("script")

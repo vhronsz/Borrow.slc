@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/monitorRoomStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/monitorRoomStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Borrow/Room_Monitor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Borrow/Room_Monitor.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Master/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Master/master.blade.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -114,8 +113,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state relative-caret-position="-136">
+              <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -124,7 +123,13 @@
         <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Room_Monitor.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="259">
-              <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+              <folding>
+                <element signature="e#0#2962#0#Blade" />
+                <element signature="e#3155#3188#0#HTML" expanded="true" />
+                <element signature="e#3384#3417#0#HTML" expanded="true" />
+                <element signature="e#3615#3648#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,20 +137,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/monitorRoomStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="354" column="23" lean-forward="true" selection-start-line="354" selection-start-column="23" selection-end-line="354" selection-end-column="23" />
-              <folding>
-                <element signature="e#40#70#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="307">
+              <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -178,12 +171,12 @@
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/notes.txt" />
         <option value="$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/Master/navBar.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" />
         <option value="$PROJECT_DIR$/public/css/roomAvailability.css" />
         <option value="$PROJECT_DIR$/resources/views/Borrow/Room_Availability.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Master/master.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/public/css/monitorRoomStyle.css" />
         <option value="$PROJECT_DIR$/resources/views/Borrow/Room_Monitor.blade.php" />
       </list>
@@ -363,7 +356,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580483423812</updated>
-      <workItem from="1580483442765" duration="34426000" />
+      <workItem from="1580483442765" duration="35667000" />
     </task>
     <task id="LOCAL-00001" summary="Borrow Room Done - Tested">
       <created>1580486776280</created>
@@ -449,11 +442,25 @@
       <option name="project" value="LOCAL" />
       <updated>1580557353978</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add script to prepare ajax">
+      <created>1580559133819</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1580559133819</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add Legend on Room Monitor">
+      <created>1580559906508</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1580559906508</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34426000" />
+    <option name="totallyTimeSpent" value="35667000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -461,12 +468,12 @@
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" sideWeight="0.49932885" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" sideWeight="0.49932885" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.50067115" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -497,7 +504,9 @@
     <MESSAGE value="add todo list for job" />
     <MESSAGE value="add room migration and seed" />
     <MESSAGE value="Monitor Room View added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Monitor Room View added" />
+    <MESSAGE value="add script to prepare ajax" />
+    <MESSAGE value="Add Legend on Room Monitor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Legend on Room Monitor" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.env">
@@ -642,16 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="354" column="23" lean-forward="true" selection-start-line="354" selection-start-column="23" selection-end-line="354" selection-end-column="23" />
-          <folding>
-            <element signature="e#40#70#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/roomAvailability.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -673,20 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/monitorRoomStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Master/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -694,10 +679,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1836">
+          <caret line="354" column="23" lean-forward="true" selection-start-line="354" selection-start-column="23" selection-end-line="354" selection-end-column="23" />
+          <folding>
+            <element signature="e#40#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/monitorRoomStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Room_Monitor.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
-          <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+          <folding>
+            <element signature="e#0#2962#0#Blade" />
+            <element signature="e#3155#3188#0#HTML" expanded="true" />
+            <element signature="e#3384#3417#0#HTML" expanded="true" />
+            <element signature="e#3615#3648#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

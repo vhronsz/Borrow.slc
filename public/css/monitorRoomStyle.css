@@ -50,3 +50,20 @@ body{
     margin-bottom: 50px;
 }
 
+.descriptionItem{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#colorBox{
+    margin-left: 10px;
+    min-width: 15px;
+    max-width: 15px;
+    min-height: 15px;
+    max-height: 15px;
+    border: 1px solid black;
+}
+
+
+
