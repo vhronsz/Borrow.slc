@@ -22,7 +22,7 @@
 
 @section("content")
 
-    <div class="MonitorRoomContainer">
+    <div class="FormContainer">
         <form action="{{url("room/Room_Monitor")}}" method="POST">
             <select class="form-control form-control-l" type="select" name="floor" id="select">
                 <option disabled selected hidden>Select Floor</option>
@@ -45,8 +45,16 @@
             </div>
 
             <div class="itemEvenContainer">
-
+                @foreach($rooms as $room)
+                    @if((int)$room->roomID %2 === 0)
+                        <div class="item"> {{$room->roomID}}</div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
+@endsection
+
+@section("script")
+    <script src="{{asset("Borrow/vendor/jquery/jquery-3.2.1.min.js")}}"></script>
 @endsection
