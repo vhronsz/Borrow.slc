@@ -1,7 +1,7 @@
 @extends("Master.master")
 
 @section("style")
-    <link rel="stylesheet" href="{{asset("/css/monitorRoomStyle.css")}}"/>
+    <link rel="stylesheet" href="{{asset("/css/roomAvailability.css")}}"/>
 @endsection
 
 @section("content")
@@ -13,7 +13,7 @@
         </form>
     </div>
 
-    <div style="margin-bottom: 10px">
+    <div style="margin: 20px">
         <br>
         Showing Data for : {{date("d/m/y",strtotime($date[0]))}}
     </div>

@@ -5,8 +5,8 @@
         Home
     </a>
 
-    <a class="Item" href="{{url("/view/room/Borrow_Room_Form")}}">
-        Borrow
+    <a class="Item" href="{{url("/view/room/Borrow_Room")}}">
+        Borrow Room
     </a>
 
     <a class="Item" href="{{url("/view/room/Room_Monitor")}}">

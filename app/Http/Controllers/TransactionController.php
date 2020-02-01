@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\HeaderItemTransaction;
 use App\HeaderRoomTransaction;
 use App\Mail\BorrowRoomMail;
+use App\room;
 use Carbon\Carbon;
 use Faker\Provider\Uuid;
 use GuzzleHttp\Client;
@@ -104,6 +105,10 @@ class TransactionController extends Controller
         return false;
     }
 
+    public function borrowForm(){
+        $room = room::get();
+        return view("Borrow.Form_Borrow")->with("room",$room);
+    }
     public  function addRoom(Request $req){
 
         $valid = Validator::make($req->all(),[
@@ -343,18 +348,19 @@ class TransactionController extends Controller
     }
 
     public function roomMonitor(Request $req){
-        $floor = 1;
+        $floor = 6;
         if (isset($req->floor)){
             $floor = (int)$req->floor;
         }
         $header = null;
-        if($floor === 1){
+        if($floor === 6){
             $header = HeaderRoomTransaction::where("roomID","like","6"."%")->get();
+            $room = room::where("roomFloor",6)->get();
         }else{
             $header = HeaderRoomTransaction::where("roomID","like","7"."%")->get();
+            $room = room::where("roomFloor",7)->get();
         }
-        
-        return view("Borrow.Room_Monitor")->with("rooms",$header);
+        return view("Borrow.Room_Monitor")->with("transaction",$header)->with("rooms",$room);
     }
 
     public function roomAvailability(Request $req){

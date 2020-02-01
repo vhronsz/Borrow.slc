@@ -17,9 +17,7 @@ Route::group(["prefix" => "view"],function(){
     });
 
     Route::group(["prefix" => "room"],function(){
-        Route::get('Borrow_Room_Form',function(){
-            return view('Borrow.Form_Borrow');
-        });
+        Route::get('Borrow_Room',"TransactionController@borrowForm");
         Route::get('/Home',function(){
             return view('Borrow.ScanRoomQR');
         });

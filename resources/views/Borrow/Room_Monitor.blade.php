@@ -21,9 +21,10 @@
 @endsection
 
 @section("content")
+
     <div class="MonitorRoomContainer">
         <form action="{{url("room/Room_Monitor")}}" method="POST">
-            <select class="form-control form-control-l" type="select" name="floor" id="">
+            <select class="form-control form-control-l" type="select" name="floor" id="select">
                 <option disabled selected hidden>Select Floor</option>
                 <option value=6>6</option>
                 <option value=7>7</option>
@@ -31,23 +32,21 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-    <div class="MonitorRoomContainer">
-{{--        @if(isset($details))--}}
-{{--            <div>No Room</div>--}}
-{{--        @else--}}
-{{--            @foreach($details ?? '' as $detail)--}}
-{{--                @foreach($detail["StatusDetails"] as $status)--}}
-{{--                    @if(sizeof($status) !== 0)--}}
-{{--                        <div class="roomAvailable">--}}
-{{--                            <span>{{$detail["RoomName"]}}</span>--}}
-{{--                        </div>--}}
-{{--                    @elseif(sizeof($status) === 0)--}}
-{{--                        <div class="roomNotAvailable">--}}
-{{--                            <span>{{$detail["RoomName"]}}</span>--}}
-{{--                        </div>--}}
-{{--                    @endif--}}
-{{--                @endforeach--}}
-{{--            @endforeach--}}
-{{--        @endif--}}
+
+    <div class="Parent">
+        <div id="MonitorRoomContainer">
+
+            <div class="itemOddContainer">
+                @foreach($rooms as $room)
+                    @if((int)$room->roomID %2 !== 0)
+                        <div class="item"> {{$room->roomID}}</div>
+                    @endif
+                @endforeach
+            </div>
+
+            <div class="itemEvenContainer">
+
+            </div>
+        </div>
     </div>
 @endsection

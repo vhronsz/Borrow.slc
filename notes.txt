@@ -145,8 +145,9 @@ Room Monitor
 To do :
 1. Room Monitoring Function
 2. Fix Validation on QR Room
-3. Add Delete on Item History Transaction == Monday
-4. Navbar Changed :
+3. Add Message on scan QR (Show Transaction Info)
+4. Add Delete on Item History Transaction == Monday
+5. Navbar Changed (KS Job):
     1. Split between room and item transaction
 
 

@@ -83,18 +83,9 @@
 						<div>
 							<select class="selection-2" name="room" placeholder="Room">
 								<option disabled selected hidden>Room</option>
-								<option value="601">601</option>
-								<option value="602">602</option>
-								<option value="603">603</option>
-								<option value="604">604</option>
-								<option value="605">605</option>
-								<option value="606">606</option>
-                                <option value="607">607</option>
-                                <option value="608">608</option>
-                                <option value="609">609</option>
-                                <option value="610">610</option>
-                                <option value="613">613</option>
-                                <option value="614">614</option>
+                                @foreach($room as $r)
+                                    <option value="{{$r->roomID}}">{{$r->roomID}}</option>
+                                @endforeach
 							</select>
 						</div>
 						<span class="focus-input3"></span>
