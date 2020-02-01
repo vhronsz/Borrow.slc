@@ -39,7 +39,10 @@
             <div class="itemOddContainer">
                 @foreach($rooms as $room)
                     @if((int)$room->roomID %2 !== 0)
-                        <div class="item"> {{$room->roomID}}</div>
+                        @foreach($transaction as $t)
+                            <div class="item"> {{$room->roomID}}</div>
+                        @endforeach
+
                     @endif
                 @endforeach
             </div>
@@ -79,6 +82,14 @@
 
         <div class="descriptionItem">
             <div id="descriptionText">
+                Next Shift on Queue
+            </div>
+            <div id="colorBox" style="background-color: #ffc107">
+
+            </div>
+        </div>
+        <div class="descriptionItem">
+            <div id="descriptionText">
                 Transaction Over
             </div>
             <div id="colorBox" style="background-color: #e72537">
@@ -99,6 +110,7 @@
         let select = document.getElementById("select");
         let value = select.options[select.selectedIndex].value;
         let floor = 0;
+        let refreshTime = (1000*60) * 30;
 
         window.addEventListener("load",()=>{
             if(value === 6){
@@ -110,19 +122,19 @@
             }
         });
 
-        window.setTimeout(()=>{
-            $.ajax({
-                type:"get",
-                url:"/transaction/getMonitorData",
-                data :{data:floor},
-                success: (data)=>{
-                    console.log(data);
-                },
-                error: (data)=>{
-                    console.log(data);
-                }
-            })
-        },10);
+        // window.setInterval(()=>{
+        //     $.ajax({
+        //         type:"get",
+        //         url:"/transaction/getMonitorData",
+        //         data :{data:floor},
+        //         success: (data)=>{
+        //             console.log(data);
+        //         },
+        //         error: (data)=>{
+        //             console.log(data);
+        //         }
+        //     })
+        // },refreshTime);
 
     </script>
 @endsection

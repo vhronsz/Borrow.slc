@@ -360,7 +360,22 @@ class TransactionController extends Controller
             $room = room::where("roomFloor",7)->get();
             $header = HeaderRoomTransaction::where("roomID","like","7"."%")->get();
         }
-        return view("Borrow.Room_Monitor")->with("rooms",$room);
+
+        return view("Borrow.Room_Monitor")->with("rooms",$room)->with("transaction",$header)->with("time",Carbon::now());
+    }
+
+    public function fetchMonitorRoom(Request $req){
+
+        if($req->data === 6 || $req->data === null){
+            $header = HeaderRoomTransaction::where("roomID","like","6"."%")->get();
+        }else{
+            $header = HeaderRoomTransaction::where("roomID","like","7"."%")->get();
+        }
+
+        return response()->json([
+            "message" => "Success",
+            "floor" => $header
+        ]);
     }
 
     public function roomAvailability(Request $req){
@@ -389,23 +404,6 @@ class TransactionController extends Controller
         $transaction->delete();
         return \redirect('/view/room/History_Room');
     }
-
-    public function fetchMonitorRoom(Request $req){
-
-        if($req->data === 6 || $req->data === null){
-            $header = HeaderRoomTransaction::where("roomID","like","6"."%")->get();
-        }else{
-            $header = HeaderRoomTransaction::where("roomID","like","7"."%")->get();
-        }
-
-        return response()->json([
-           "message" => "Success",
-            "floor" => $header
-        ]);
-        $header = HeaderRoomTransaction::where("roomID","like","6"."%")->get();
-        $header = HeaderRoomTransaction::where("roomID","like","7"."%")->get();
-    }
-
 
     /////////////////////////////////////////
     public function dump(){
