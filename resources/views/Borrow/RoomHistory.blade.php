@@ -23,8 +23,17 @@
 @section("content")
     <div id="Parent">
         <div id="Container">
+
             @foreach($item as $i)
-                <div>a</div>
+                <div id="ItemBox">
+                    <div id="Item">{{$i->roomID}}</div>
+                    <div id="Item">{{$i->borrowerName}}</div>
+                    <div id="Item">{{$i->roomID}}</div>
+
+                    <a href="{{url("/DeleteTransaction/".$i->roomTransactionId)}}">
+                        <button class="btn btn-danger">Delete</button>
+                    </a>
+                </div>
             @endforeach
         </div>
         <div id="links">
