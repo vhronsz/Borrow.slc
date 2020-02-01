@@ -51,6 +51,9 @@
                     @endif
                 @endforeach
             </div>
+            <a href="{{url("/view/room/Room_Monitor?floor=".$rooms[0]->roomFloor)}}" style="margin-left: 5px">
+                <button type="button" class="btn btn-warning" style="color: #ffffff">Refresh</button>
+            </a>
         </div>
     </div>
 
@@ -88,8 +91,38 @@
 @endsection
 
 @section("script")
-    <script src="{{asset("Borrow/vendor/jquery/jquery-3.2.1.min.js")}}"/>
+    <script src="{{asset("Borrow/vendor/jquery/jquery-3.2.1.min.js")}}"></script>
     <script>
+
+        let odd = $('.itemOddContainer').children();
+        let even = $('.itemEvenContainer').children();
+        let select = document.getElementById("select");
+        let value = select.options[select.selectedIndex].value;
+        let floor = 0;
+
+        window.addEventListener("load",()=>{
+            if(value === 6){
+                floor = 6;
+            }else if(value === 7){
+                floor = 7;
+            }else{
+                floor = 6;
+            }
+        });
+
+        window.setTimeout(()=>{
+            $.ajax({
+                type:"get",
+                url:"/transaction/getMonitorData",
+                data :{data:floor},
+                success: (data)=>{
+                    console.log(data);
+                },
+                error: (data)=>{
+                    console.log(data);
+                }
+            })
+        },10);
 
     </script>
 @endsection

@@ -3,7 +3,7 @@
 }
 
 body{
-    overflow-x: hidden;
+    overflow-x: auto;
 }
 
 #select{
@@ -27,6 +27,7 @@ body{
     overflow: hidden;
     margin-top: 20px;
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .itemEvenContainer{
@@ -34,6 +35,7 @@ body{
     overflow: hidden;
     margin-top: 20px;
     margin-bottom: 20px;
+
 }
 
 .item{
@@ -42,6 +44,7 @@ body{
     border: 1px solid black;
     margin-left: 5px;
     margin-right: 5px;
+    text-align: center;
 }
 
 #Description{

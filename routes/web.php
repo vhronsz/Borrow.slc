@@ -57,6 +57,8 @@ Route::group(["prefix" => "transaction"],function (){
     Route::get('/Update_Room_Transaction','TransactionController@updateRoom');
     Route::get('/Send_Room_Email',"TransactionController@sendRoomMail");
     Route::get('/Delete_Room_Transaction/{id}',"TransactionController@deleteRoomTransaction");
+    Route::get('/getMonitorData',"TransactionController@fetchMonitorRoom");
+
 
     Route::post("/Add_Item_Transaction","TransactionController@addItemTransaction");
     Route::get('/Update_Item_Transaction','TransactionController@updateItemTransaction');
