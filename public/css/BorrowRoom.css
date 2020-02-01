@@ -1,7 +1,20 @@
-#links{
-    display: flex;
-    flex-direction: row;
+#Parent{
+    margin: 20px;
 }
 
-#Parent{
+#Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+th{
+    color: #ffffff;
+}
+
+#links{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

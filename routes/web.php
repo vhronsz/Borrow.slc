@@ -15,6 +15,7 @@ Route::group(["prefix" => "view"],function(){
     Route::get('Login',function(){
         return view('login');
     });
+
     Route::group(["prefix" => "room"],function(){
         Route::get('Borrow_Room_Form',function(){
             return view('Borrow.Form_Borrow');
@@ -25,7 +26,13 @@ Route::group(["prefix" => "view"],function(){
         Route::get('/Room_Monitor',"TransactionController@roomMonitor");
         Route::get('/History_Room',"TransactionController@borrowHistory");
 
+        Route::get('Room_Availability',"ViewController@roomAvailability");
+        Route::post('Room_Availability',"ViewController@roomAvailability");
+
+        Route::get('Room_Monitor',"ViewController@roomMonitor");
+        Route::post('Room_Monitor',"ViewController@roomMonitor");
     });
+
     Route::group(["prefix" => "item"],function(){
         Route::get('/ScanItem',function(){
             return view('Item.ItemQR');
@@ -36,19 +43,11 @@ Route::group(["prefix" => "view"],function(){
     });
 });
 
-Route::group(["prefix" => "room"],function(){
-    Route::get('Room_Availability',"ViewController@roomAvailability");
-    Route::post('Room_Availability',"ViewController@roomAvailability");
-
-    Route::get('Room_Monitor',"ViewController@roomMonitor");
-    Route::post('Room_Monitor',"ViewController@roomMonitor");
-});
-
 Route::group(["prefix" => "transaction"],function (){
     Route::post("/Add_Room_Transaction","TransactionController@addRoom");
     Route::get('/Update_Room_Transaction','TransactionController@updateRoom');
     Route::get('/Send_Room_Email',"TransactionController@sendRoomMail");
-
+    Route::get('/Delete_Room_Transaction/{id}',"TransactionController@deleteRoomTransaction");
 
     Route::post("/Add_Item_Transaction","TransactionController@addItemTransaction");
     Route::get('/Update_Item_Transaction','TransactionController@updateItemTransaction');

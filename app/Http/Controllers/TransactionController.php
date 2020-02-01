@@ -43,19 +43,19 @@ class TransactionController extends Controller
     public function getShiftEnd($shift){
         $time = null;
         if($shift === 1){
-            $time = "09:20";
+            $time = "09:00";
         }else if($shift === 2){
-            $time = "11:20";
+            $time = "11:00";
         }else if($shift === 3){
-            $time = "13:20";
+            $time = "13:00";
         }else if($shift === 4){
-            $time = "15:20";
+            $time = "15:00";
         }else if($shift === 5){
-            $time = "17:20";
+            $time = "17:00";
         }else if($shift === 6){
-            $time = "19:20";
+            $time = "19:00";
         }else if($shift === 7) {
-            $time = "21:20";
+            $time = "21:00";
         }
         return $time;
     }
@@ -340,11 +340,7 @@ class TransactionController extends Controller
             }
 
         }
-        return response()->json([
-            "Message" => "Fetching Data Success",
-            "status" => true
-        ]);
-
+        return Redirect::to('/view/room/Home');
     }
 
     public function roomMonitor(Request $req){
@@ -364,11 +360,17 @@ class TransactionController extends Controller
     }
 
     public function borrowHistory(Request $req){
-        $transaction = HeaderRoomTransaction::paginate(1);
-        if(isset($req->date)){
+        $transaction = HeaderRoomTransaction::paginate(10) ;
+        if(isset($req->date) || $req->date !== null){
             $transaction = HeaderRoomTransaction::where('transactionDate',$req->date)->paginate(10);
         }
         return view("Borrow.RoomHistory")->with("item",$transaction);
+    }
+
+    public function deleteRoomTransaction($id){
+        $transaction = HeaderRoomTransaction::where("roomTransactionID",$id)->first();
+        $transaction->delete();
+        return \redirect('/view/room/History_Room');
     }
 
     public function dump(){
