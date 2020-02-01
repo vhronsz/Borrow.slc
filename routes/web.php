@@ -26,11 +26,8 @@ Route::group(["prefix" => "view"],function(){
         Route::get('/Room_Monitor',"TransactionController@roomMonitor");
         Route::get('/History_Room',"TransactionController@borrowHistory");
 
-        Route::get('Room_Availability',"ViewController@roomAvailability");
-        Route::post('Room_Availability',"ViewController@roomAvailability");
-
-        Route::get('Room_Monitor',"ViewController@roomMonitor");
-        Route::post('Room_Monitor',"ViewController@roomMonitor");
+        Route::get('Room_Availability',"TransactionController@roomAvailability");
+        Route::post('Room_Availability',"TransactionController@roomAvailability");
     });
 
     Route::group(["prefix" => "item"],function(){

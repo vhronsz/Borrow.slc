@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\DetailRoomTransaction;
 use App\HeaderItemTransaction;
 use App\HeaderRoomTransaction;
 use App\Mail\BorrowRoomMail;
@@ -348,7 +347,6 @@ class TransactionController extends Controller
         if (isset($req->floor)){
             $floor = (int)$req->floor;
         }
-
         $header = null;
         if($floor === 1){
             $header = HeaderRoomTransaction::where("roomID","like","6"."%")->get();
@@ -356,11 +354,24 @@ class TransactionController extends Controller
             $header = HeaderRoomTransaction::where("roomID","like","7"."%")->get();
         }
 
-        return view("Borrow.RoomMonitor")->with("rooms",$header);
+        return view("Borrow.Room_Monitor")->with("rooms",$header);
+    }
+
+    public function roomAvailability(Request $req){
+        $date = date("m/d/y",time());
+        if($req->date !== null){
+            $date = date('m/d/y',strtotime($req->date));
+        }
+
+        $url = file_get_contents("https://laboratory.binus.ac.id/lapi/api/Room/GetTransactions?startDate=$date&endDate=$date&includeUnapproved=true");
+        $json = json_decode($url, true);
+        $details = $json["Details"];
+
+        return view("Borrow.Room_Availability")->with("details",$details)->with("date",$json["Dates"]);
     }
 
     public function borrowHistory(Request $req){
-        $transaction = HeaderRoomTransaction::paginate(10) ;
+        $transaction = HeaderRoomTransaction::paginate(10);
         if(isset($req->date) || $req->date !== null){
             $transaction = HeaderRoomTransaction::where('transactionDate',$req->date)->paginate(10);
         }
@@ -373,6 +384,10 @@ class TransactionController extends Controller
         return \redirect('/view/room/History_Room');
     }
 
+
+
+
+    /////////////////////////////////////////
     public function dump(){
         $qr = QrCode::format("png")->size(300)->generate("asd");
         return view("testing.qrtesting")->with("qr",$qr);
