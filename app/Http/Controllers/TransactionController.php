@@ -352,17 +352,28 @@ class TransactionController extends Controller
         if (isset($req->floor)){
             $floor = (int)$req->floor;
         }
+
+//        dd(\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")));
+
         $header = null;
         if($floor === 6){
             $room = room::where("roomFloor",6)->get();
-            $header = HeaderRoomTransaction::where("roomID","like","6"."%")->get();
+            $header = HeaderRoomTransaction::where("roomID","like","6"."%")->where("transactionDate",\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")))->get();
         }else{
             $room = room::where("roomFloor",7)->get();
-            $header = HeaderRoomTransaction::where("roomID","like","7"."%")->get();
+            $header = HeaderRoomTransaction::where("roomID","like","7"."%")->where("transactionDate",\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")))->get();
         }
-        $filterTransaction = null;
-        foreach ($header as $h){
-
+        $rooms = [];
+        foreach ($room as $r){
+            foreach ($header as $h){
+                //Validasi cek apakah di jam sekarang transaksinya (Ada diantara) atau kosong
+                //lalu cek apakah transaksi sebelumnya sidah done jika sudah waktunya transaksi lain
+                //Intinya :
+                //Sedang kosong // no transaction
+                //Sedang ada transaksi // transaction on proggress
+                //Sedang ada transaksi dan peminjam selanjutnya sudah siap // transaction on progress and next transaction already taken
+                //Kunci belum kembali 20 menit setelah peminjaman berakhir // transaction not done
+            }
         }
 
         return view("Borrow.Room_Monitor")->with("rooms",$room);
