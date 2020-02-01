@@ -245,7 +245,7 @@ class TransactionController extends Controller
 
     public function sendRoomMail($header,$qr,$url){
         //Send E-mail\
-        Mail::to("ryansanjaya290799@gmail.com")->send(new BorrowRoomMail($header,$qr,$url));
+        Mail::to($header->borrowerEmail)->send(new BorrowRoomMail($header,$qr,$url));
     }
 
     //cara update dia liat brp shift kalo satu 30 menit pertama kalo dua liat di shift terakhirnya
@@ -353,7 +353,6 @@ class TransactionController extends Controller
         }else{
             $header = HeaderRoomTransaction::where("roomID","like","7"."%")->get();
         }
-        dd();
         return view("Borrow.Room_Monitor")->with("rooms",$header);
     }
 

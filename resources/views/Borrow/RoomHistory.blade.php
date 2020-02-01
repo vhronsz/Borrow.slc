@@ -69,12 +69,17 @@
                     @else
                         <td id="Item">No Assistant</td>
                     @endif
+                    @if($i->transactionStatus !== "Done")
+                        <td>
+                            <a id="ButtonContainer" href="{{url("/transaction/Delete_Room_Transaction/".$i->roomTransactionID)}}">
+                                <button class="btn btn-danger">Delete</button>
+                            </a>
+                        </td>
+                    @else
+                        <td>
 
-                    <td>
-                        <a id="ButtonContainer" href="{{url("/transaction/Delete_Room_Transaction/".$i->roomTransactionID)}}">
-                            <button class="btn btn-danger">Delete</button>
-                        </a>
-                    </td>
+                        </td>
+                    @endif
                 </tr>
             @endforeach
         </table>
