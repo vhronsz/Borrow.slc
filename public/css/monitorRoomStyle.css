@@ -3,7 +3,7 @@
 }
 
 body{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 #select{
@@ -43,3 +43,10 @@ body{
     margin-left: 5px;
     margin-right: 5px;
 }
+
+#Description{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+

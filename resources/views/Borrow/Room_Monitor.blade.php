@@ -23,7 +23,7 @@
 @section("content")
 
     <div class="FormContainer">
-        <form action="{{url("room/Room_Monitor")}}" method="POST">
+        <form action="{{url("view/room/Room_Monitor")}}" method="Get">
             <select class="form-control form-control-l" type="select" name="floor" id="select">
                 <option disabled selected hidden>Select Floor</option>
                 <option value=6>6</option>
@@ -53,8 +53,42 @@
             </div>
         </div>
     </div>
+
+    <div id="Description">
+        Legend
+        <div class="descriptionItem">
+            <div id="descriptionText">
+                No Transaction
+            </div>
+            <div id="colorBox">
+
+            </div>
+        </div>
+
+        <div class="descriptionItem">
+            <div id="descriptionText">
+                On Transaction
+            </div>
+            <div id="colorBox">
+
+            </div>
+        </div>
+
+        <div class="descriptionItem">
+            <div id="descriptionText">
+                Transaction Over
+            </div>
+            <div id="colorBox">
+
+            </div>
+        </div>
+
+    </div>
 @endsection
 
 @section("script")
-    <script src="{{asset("Borrow/vendor/jquery/jquery-3.2.1.min.js")}}"></script>
+    <script src="{{asset("Borrow/vendor/jquery/jquery-3.2.1.min.js")}}"/>
+    <script>
+
+    </script>
 @endsection
