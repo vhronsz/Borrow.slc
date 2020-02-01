@@ -24,7 +24,6 @@
 </head>
 
 <body>
-
 	<div class="bg-contact3" style="background-image: url('{{asset("/Borrow/images/bg-01.jpg")}}');">
 		<div class="container-contact3">
 			<div class="wrap-contact3">
@@ -94,6 +93,8 @@
                                 <option value="608">608</option>
                                 <option value="609">609</option>
                                 <option value="610">610</option>
+                                <option value="613">613</option>
+                                <option value="614">614</option>
 							</select>
 						</div>
 						<span class="focus-input3"></span>

@@ -30,7 +30,7 @@ Route::group(["prefix" => "view"],function(){
         Route::post('Room_Availability',"TransactionController@roomAvailability");
     });
 
-    Route::group(["prefix" => "item"],function(){
+    Route::group(["prefix" => "item"],function(  ){
         Route::get('/ScanItem',function(){
             return view('Item.ScanItemQR');
         });
@@ -65,7 +65,7 @@ Route::group(["prefix" => "transaction"],function (){
 });
 
 Route::group(["prefix"=>"migration"],function(){
-    Route::get("Test_Migration","TransactionController@getDataFromMessier");
+    Route::get("Migrate_Today","TransactionController@getDataFromMessier");
 });
 
 ////////////////
