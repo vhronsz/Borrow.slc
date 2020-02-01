@@ -14,10 +14,29 @@ class CreateHeaderRoomTransactionsTable extends Migration
     public function up()
     {
         Schema::create('header_room_transactions', function (Blueprint $table) {
+
             $table->uuid('roomTransactionID');
             $table->uuid('adminID');
             $table->dateTime('transactionDate');
             $table->string("transactionStatus");
+            $table->string("campus");
+            $table->string('roomID');
+
+            $table->string('borrowerName')->nullable(true);
+            $table->string('borrowerEmail')->nullable(true);
+            $table->string('borrowerPhone')->nullable(true);
+            $table->string('borrowerDivision')->nullable(true);;
+            $table->string("borrowReason");
+
+            $table->integer("shiftStart");
+            $table->integer("shiftEnd");
+            $table->string("timeStart");
+            $table->string("timeEnd");
+
+            $table->boolean('internetRequest');
+            $table->string('internetReason')->nullable(true);
+            $table->string('assistant')->nullable(true);
+
             $table->softDeletes();
             $table->timestamps();
             $table->primary("roomTransactionID");

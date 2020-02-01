@@ -31,7 +31,7 @@
 
 				<form class="" action="{{url("/transaction/Add_Room_Transaction")}}" method="POST">
 
-                    <a href="{{url("/view/Home")}}">
+                    <a href="{{url("/view/room/Home")}}">
                         <button type="button" class="contact3-form-btn" style="margin-bottom:20px;">
                             Back
                         </button>
@@ -39,6 +39,20 @@
                     <span class="contact3-form-title">
 						Form Peminjaman Ruang SLC
 					</span>
+
+                    @if($errors->any())
+                        <div>
+                            <span class="input3" style="color: #c93200;">Failed : {{$errors->first()}}</span>
+                            <br>
+                        </div>
+                    @endif
+
+                    @if(isset($message))
+                        <div>
+                            <span class="input3" style="color: #ffffff;">{{$message}}</span>
+                            <br>
+                        </div>
+                    @endif
 
 					<div class="wrap-input3 validate-input" data-validate="Name is required">
 						<input class="input3" type="text" name="name" placeholder="Your Name">
@@ -51,11 +65,22 @@
 					</div>
 
 					<div class="wrap-input3 validate-input" data-validate="Phone is required">
-						<input class="input3" type="text" name="phone" placeholder="Your Phone">
+						<input class="input3" type="text" name="phone" placeholder="Your Phone" value="62">
 						<span class="focus-input3"></span>
 					</div>
 
-					<div class="wrap-input3 validate-input" data-validate="Room is required">
+                    <div class="wrap-input3 validate-input" data-validate="Phone is required">
+                        <input class="input3" type="text" name="division" placeholder="Division">
+                        <span class="focus-input3"></span>
+                    </div>
+
+                    <div class="wrap-input3 validate-input" data-validate="Message is required">
+                        <textarea class="input3" name="borrowReason" placeholder="Borrow Reason Description"></textarea>
+                        <span class="focus-input3"></span>
+                    </div>
+
+
+                    <div class="wrap-input3 validate-input" data-validate="Room is required">
 						<div>
 							<select class="selection-2" name="room" placeholder="Room">
 								<option disabled selected hidden>Room</option>
@@ -65,12 +90,16 @@
 								<option value="604">604</option>
 								<option value="605">605</option>
 								<option value="606">606</option>
+                                <option value="607">607</option>
+                                <option value="608">608</option>
+                                <option value="609">609</option>
+                                <option value="610">610</option>
 							</select>
 						</div>
 						<span class="focus-input3"></span>
 					</div>
 
-					<div class="wrap-input3 validate-input" data-validate="Room is required">
+					<div class="wrap-input3 validate-input" data-validate="Start Shift is required">
 						<div>
 							<select class="selection-2" name="shiftStart">
 								<option disabled selected hidden>Shift Start</option>
@@ -85,7 +114,7 @@
 						<span class="focus-input3"></span>
 					</div>
 
-                    <div class="wrap-input3 validate-input" data-validate="Room is required">
+                    <div class="wrap-input3 validate-input" data-validate="End Shift is required">
                         <div>
                             <select class="selection-2" name="shiftEnd">
                                 <option disabled selected hidden>Shift End</option>
@@ -128,17 +157,10 @@
 					</div>
 
 					<div class="wrap-input3 input3-select" data-validate="Message is required">
-						<textarea class="input3" name="reason" placeholder="Internet Reason Description"></textarea>
+						<textarea class="input3" name="internetReason" placeholder="Internet Reason Description"></textarea>
 						<span class="focus-input3"></span>
 					</div>
 
-
-                    @if($errors->any())
-                        <div>
-                            <span class="input3" style="color: #c93200;">{{$errors->first()}}</span>
-                            <br>
-                        </div>
-                    @endif
 					<div class="container-contact3-form-btn">
 						<button type="submit" class="contact3-form-btn">
 							Submit
