@@ -39,10 +39,7 @@
             <div class="itemOddContainer">
                 @foreach($rooms as $room)
                     @if((int)$room->roomID %2 !== 0)
-                        @foreach($transaction as $t)
-                            <div class="item"> {{$room->roomID}}</div>
-                        @endforeach
-
+                        <div class="item"}}> {{$room->roomID}}</div>
                     @endif
                 @endforeach
             </div>

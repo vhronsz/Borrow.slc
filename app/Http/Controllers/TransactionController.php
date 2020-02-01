@@ -360,8 +360,12 @@ class TransactionController extends Controller
             $room = room::where("roomFloor",7)->get();
             $header = HeaderRoomTransaction::where("roomID","like","7"."%")->get();
         }
+        $filterTransaction = null;
+        foreach ($header as $h){
 
-        return view("Borrow.Room_Monitor")->with("rooms",$room)->with("transaction",$header)->with("time",Carbon::now());
+        }
+
+        return view("Borrow.Room_Monitor")->with("rooms",$room);
     }
 
     public function fetchMonitorRoom(Request $req){
