@@ -10,7 +10,7 @@
     </a>
 
     <a class="Item" href="{{url("/view/room/Room_Monitor")}}">
-        Room
+        Room Monitor
     </a>
 
     <a class="Item" href="{{url("/view/room/Room_Availability")}}">

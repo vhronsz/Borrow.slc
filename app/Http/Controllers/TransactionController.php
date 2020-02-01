@@ -353,7 +353,7 @@ class TransactionController extends Controller
         }else{
             $header = HeaderRoomTransaction::where("roomID","like","7"."%")->get();
         }
-
+        dd();
         return view("Borrow.Room_Monitor")->with("rooms",$header);
     }
 
