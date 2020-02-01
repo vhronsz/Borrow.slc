@@ -139,7 +139,12 @@ Status 31/01
 Transaction History
 Room Monitor
 
-
+Status 1/02
+===========
+To do :
+1. Fix Validation on QR Room
+2. Room Monitoring Function
+3. Add Delete on Item History Transaction
 
 
 
