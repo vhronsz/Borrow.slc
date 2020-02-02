@@ -92,7 +92,7 @@ Route::group(['prefix'=>'testing'],function (){
         return view("testing.qrtesting");
     });
 
-    Route::get("/dump","TransactionController@dump");
+    Route::get("/dump/{shift}","TransactionController@dump");
 });
 
 Route::group(["prefix"=>"auth"],function(){

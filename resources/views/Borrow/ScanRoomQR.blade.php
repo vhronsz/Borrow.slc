@@ -49,10 +49,10 @@
                 url : "/transaction/Update_Room_Transaction",
                 data: {data:code},
                 success: function(data) {
-                    console.log(data.header);
+                    console.log(data);
                 },
                 error : function (data) {
-                    console.log(data.message);
+                    console.log(data);
                 }
             })
         }
