@@ -48,7 +48,7 @@ class BorrowItemMail extends Mailable
             ->with("url",$this->url)
             ->attachData($this->imageQR,'qr.png',[
                 'mime'=> "image/png"
-            ]);
+            ])->send();
 
     }
 }

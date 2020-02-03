@@ -90,14 +90,14 @@ class ItemTransactionController extends Controller
 
             //Send E-mail
             $data = array('name'=>$name,'url'=>$url,'itemName'=>$itemName,'id'=>$id,'borrowDate'=>$borrowDate,'returnDate'=>$returnDate);
-//            Mail::send('mail', $data, function($message)use($email,$filePath,$name) {
-//                $message->to($email, $name)->subject
-//                ('QRCode Items');
-//                $message->attach($filePath);
-//                $message->from("ryansanjaya290799@gmail.com",'Vick Koesoemo Santoso');
-//            });
+            Mail::send('mail', $data, function($message)use($email,$filePath,$name) {
+                $message->to($email, $name)->subject
+                ('QRCode Items');
+                $message->attach($filePath);
+                $message->from("familyof18.2@gmail.com",'Vick Koesoemo Santoso');
+            });
 
-            \Illuminate\Support\Facades\Mail::to($email)->send(new BorrowItemMail($name,$itemName,$id,$borrowDate,$returnDate,$imageQR,$url));
+//            \Illuminate\Support\Facades\Mail::to($email)->send(new BorrowItemMail($name,$itemName,$id,$borrowDate,$returnDate,$imageQR,$url));
             //Send WhatsApp
             $text = "Dear%20Bapak/Ibu%20$name,%0A%0ABerikut%20adalah%20detail%20peminjaman%20alat%20yang%20diajukan:%0ANama%20alat:%20$itemName%0AKode%20alat:%20$id%0Atanggal%20peminjaman:%20$borrowDate%0Atanggal%20pengembalian:%20$returnDate%0A%0AAlat%20dapat%20diambil%20dan%20dikembalikan%20menggunakan%20qrcode%20terlampir.%20Qr%20code%20juga%20dapat%20di%20akses%20melalui:%20{$url}";
             return Redirect::to("https://api.whatsapp.com/send?phone=$phone&text=$text");

@@ -161,4 +161,4 @@ To do :
 =============
 Add Link to new Navbar == Done
 Add Message on qr scan modal - Done-Not Tested
-Add Mail for item Borrowing - Done - Not Tested
+Add Mail for item Borrowing - Done - Not Tested -> Error On item and room
