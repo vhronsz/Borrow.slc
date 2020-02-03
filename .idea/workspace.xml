@@ -4,8 +4,6 @@
     <list default="true" id="4ae081fd-f30a-4f44-b098-aaf2ba4f74db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Borrow/ScanRoomQR.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Borrow/ScanRoomQR.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/bacon/bacon-qr-code/" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -114,33 +112,32 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="255" column="24" selection-start-line="255" selection-start-column="24" selection-end-line="255" selection-end-column="24" />
+            <state relative-caret-position="188">
+              <caret line="444" column="41" selection-start-line="444" selection-start-column="41" selection-end-line="444" selection-end-column="41" />
               <folding>
                 <element signature="e#40#70#0#PHP" expanded="true" />
                 <element signature="e#596#723#0#PHP" />
                 <element signature="e#9816#11027#0#PHP" />
                 <element signature="e#10124#10523#0#PHP" />
                 <element signature="e#10808#10983#1#PHP" />
+                <element signature="e#13214#16029#0#PHP" />
+                <element signature="e#17521#17935#0#PHP" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/Borrow/ScanRoomQR.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Room_Monitor.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notes.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="137" column="12" lean-forward="true" selection-start-line="137" selection-start-column="12" selection-end-line="137" selection-end-column="12" />
+            <state relative-caret-position="341">
+              <caret line="98" column="63" selection-start-line="98" selection-start-column="56" selection-end-line="98" selection-end-column="63" />
+              <folding>
+                <element signature="e#2548#2574#0#HTML" expanded="true" />
+                <element signature="e#2856#2882#0#HTML" expanded="true" />
+                <element signature="e#3668#3701#0#HTML" expanded="true" />
+                <element signature="e#4145#4178#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -170,7 +167,6 @@
       <list>
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/RoomHistory.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Borrow/RoomMonitor.blade.php" />
         <option value="$PROJECT_DIR$/app/Item.php" />
         <option value="$PROJECT_DIR$/public/css/BorrowRoom.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ViewController.php" />
@@ -185,12 +181,13 @@
         <option value="$PROJECT_DIR$/public/css/roomAvailability.css" />
         <option value="$PROJECT_DIR$/resources/views/Borrow/Room_Availability.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Master/master.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Borrow/Room_Monitor.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Borrow/ScanRoomQR.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/Borrow/RoomMonitor.blade.php" />
         <option value="$PROJECT_DIR$/public/css/monitorRoomStyle.css" />
         <option value="$PROJECT_DIR$/notes.txt" />
-        <option value="$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/Borrow/ScanRoomQR.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Borrow/Room_Monitor.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" />
       </list>
     </option>
@@ -313,20 +310,20 @@
             <path>
               <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
               <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
               <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="borrow.slc" type="b2602c69:ProjectViewProjectNode" />
               <item name="borrow.slc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Borrow" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -370,7 +367,7 @@
       <updated>1580483423812</updated>
       <workItem from="1580483442765" duration="42973000" />
       <workItem from="1580580702194" duration="8872000" />
-      <workItem from="1580620628543" duration="15845000" />
+      <workItem from="1580620628543" duration="29725000" />
     </task>
     <task id="LOCAL-00001" summary="Borrow Room Done - Tested">
       <created>1580486776280</created>
@@ -512,11 +509,25 @@
       <option name="project" value="LOCAL" />
       <updated>1580586342170</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fix Validation on Borrow Room Transaction Scan QR">
+      <created>1580651168334</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1580651168334</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Room Monitor Done -- Monitor on transaction and free room">
+      <created>1580688065331</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1580688065331</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67690000" />
+    <option name="totallyTimeSpent" value="81570000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -568,20 +579,15 @@
     <MESSAGE value="1/02 Job Done" />
     <MESSAGE value="blueprint validasi di room monitor" />
     <MESSAGE value="found bug cause" />
-    <option name="LAST_COMMIT_MESSAGE" value="found bug cause" />
+    <MESSAGE value="Fix Validation on Borrow Room Transaction Scan QR" />
+    <MESSAGE value="Room Monitor Done -- Monitor on transaction and free room" />
+    <option name="LAST_COMMIT_MESSAGE" value="Room Monitor Done -- Monitor on transaction and free room" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Borrow/RoomMonitor.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -693,20 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/roomAvailability.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Room_Availability.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="36" column="42" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Form_Borrow.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -735,31 +727,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/monitorRoomStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Room_Monitor.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="46" column="43" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/testing/qrtesting.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
         </state>
       </provider>
     </entry>
@@ -770,10 +741,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notes.txt">
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="137" column="12" lean-forward="true" selection-start-line="137" selection-start-column="12" selection-end-line="137" selection-end-column="12" />
+        <state relative-caret-position="1037">
+          <caret line="94" column="21" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -784,16 +755,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/roomAvailability.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Room_Availability.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="36" column="42" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/monitorRoomStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="152" column="64" selection-start-line="152" selection-start-column="64" selection-end-line="152" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Borrow/RoomMonitor.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Borrow/Room_Monitor.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="98" column="63" selection-start-line="98" selection-start-column="56" selection-end-line="98" selection-end-column="63" />
+          <folding>
+            <element signature="e#2548#2574#0#HTML" expanded="true" />
+            <element signature="e#2856#2882#0#HTML" expanded="true" />
+            <element signature="e#3668#3701#0#HTML" expanded="true" />
+            <element signature="e#4145#4178#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="255" column="24" selection-start-line="255" selection-start-column="24" selection-end-line="255" selection-end-column="24" />
+        <state relative-caret-position="188">
+          <caret line="444" column="41" selection-start-line="444" selection-start-column="41" selection-end-line="444" selection-end-column="41" />
           <folding>
             <element signature="e#40#70#0#PHP" expanded="true" />
             <element signature="e#596#723#0#PHP" />
             <element signature="e#9816#11027#0#PHP" />
             <element signature="e#10124#10523#0#PHP" />
             <element signature="e#10808#10983#1#PHP" />
+            <element signature="e#13214#16029#0#PHP" />
+            <element signature="e#17521#17935#0#PHP" />
           </folding>
         </state>
       </provider>

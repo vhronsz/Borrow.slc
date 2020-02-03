@@ -429,13 +429,11 @@ class TransactionController extends Controller
             $room = room::where("roomFloor",6)->get();
             $header = HeaderRoomTransaction::where("roomID","like","6"."%")
                         ->where("transactionDate",\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")))
-                        ->where("shiftStart",$this->getClosestShift())
                         ->get();
         }else if($floor === 7){
             $room = room::where("roomFloor",7)->get();
             $header = HeaderRoomTransaction::where("roomID","like","7"."%")
                         ->where("transactionDate",\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")))
-                        ->where("shiftStart",$this->getClosestShift())
                         ->get();
         }
 
@@ -443,8 +441,14 @@ class TransactionController extends Controller
             $color = "";
             foreach ($header as $h){
                 if($r->roomID === $h->roomID){
-                    $color = "#0f61ff";
-                    break;
+                    if($h->shiftEnd < $this->getClosestShift() && $this->getMinuteDifference($h->shiftEnd) && $h->transactionStatus === "Taken"){
+                        $color = "#e72537";
+                        break;
+                    }
+                    if($this->getClosestShift() >= $h->shiftStart && $this->getClosestShift() <= $h->shiftEnd){
+                        $color = "#0f61ff";
+                        break;
+                    }
                 }
             }
             array_push($data,["room"=>$r,"color"=>$color]);
@@ -457,7 +461,6 @@ class TransactionController extends Controller
         $nowMinute = \date("i", strtotime(Carbon::now()));
         $now = ($nowHour * 60) + $nowMinute;
         $shift = 1;
-
         for($i=1;$i<7;$i++){
             $shiftStart = $this->getShiftStart($i);
             $shiftHourStart = getdate(strtotime($shiftStart))["hours"];
@@ -476,7 +479,23 @@ class TransactionController extends Controller
         }
         return $shift;
     }
-    
+
+    public function getMinuteDifference($shift){
+        $nowHour = \date("H", strtotime(Carbon::now()));
+        $nowMinute = \date("i", strtotime(Carbon::now()));
+        $now = ($nowHour * 60) + $nowMinute;
+
+        $shiftEnd = $this->getShiftEnd($shift);
+        $shiftHourEnd = getdate(strtotime($shiftEnd))["hours"];
+        $shiftMinuteEnd = getdate(strtotime($shiftEnd))["minutes"];
+        $timeEnd = ($shiftHourEnd*60)+$shiftMinuteEnd;
+
+        if($now - $timeEnd >20){
+            return true;
+        }
+        return false;
+    }
+
     
     public function fetchMonitorRoom(Request $req){
 
@@ -521,11 +540,7 @@ class TransactionController extends Controller
 
     /////////////////////////////////////////
     public function dump(){
-        $header = HeaderRoomTransaction::where("roomID","like","7"."%")
-            ->where("transactionDate",\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")))
-            ->where("shiftStart",$this->getClosestShift())
-            ->get();
-        dd($header);
+
     }
 
 }
