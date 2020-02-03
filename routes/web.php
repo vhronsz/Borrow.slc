@@ -42,6 +42,7 @@ Route::group(["prefix" => "view"],function(){
         Route::get('/deleteItem',"ItemController@viewDelete");
         Route::get('/formItem',"ItemController@viewFormPeminjaman");
         Route::get('/transaction',"ItemTransactionController@getAllTransaction");
+        Route::get('/filterTransaction/{id}',"ItemTransactionController@filterTransactionData");
     });
 });
 

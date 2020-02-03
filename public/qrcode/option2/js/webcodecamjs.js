@@ -556,7 +556,7 @@ var WebCodeCamJS = function(element) {
             }
             if (!display || display.tagName.toLowerCase() !== 'canvas') {
                 console.log('Element type must be canvas!');
-                alert('Element type must be canvas!');
+                // alert('Element type must be canvas!');
                 return false;
             }
             con = display.getContext('2d');

@@ -31,6 +31,12 @@ class ItemTransactionController extends Controller
         $borrowDate = $request->get('startDate');
         $returnDate = $request->get('endDate');
 
+        //Validasi Phone
+        if($phone[0] === '0'){
+            $phone = substr($phone,1);
+            $phone = "62" . $phone;
+        }
+
         $data = new HeaderItemTransaction();
         $uuid = Uuid::uuid4();
         $data->itemTransactionID = $uuid;
@@ -107,23 +113,28 @@ class ItemTransactionController extends Controller
 
         $id = $request->get('code');
         $data = DetailItemTransaction::find($id);
+        $item = Item::find($data->itemID);
 
         if($data->status === 'Registered'){
             $data->status = 'Taken';
         }
-        else if ($data->status === 'Taken'){
-            $item = Item::find($data->itemID);
+        else if($data->status === 'Taken'){
             $item->itemStatus = 'Done';
             $item->save();
             $data->status = 'Done';
         }
         $data->save();
-        return Redirect::to('http://127.0.0.1:8000/view/item/transaction');
+        return response(['status' => $data->status,'startDate'=>$data->shiftStart,'endDate'=>$data->shiftEnd,'itemName'=>$item->itemName],200);
     }
 
     public function getAllTransaction(){
         $data = HeaderItemTransaction::with('detailItemTransaction.item')->orderBy('created_at', 'ASC')->get();
 //        return $data;
+        return view('Item/Manage.itemTransaction',compact('data'));
+    }
+
+    public function filterTransactionData($id){
+        $data = HeaderItemTransaction::with(["detailItemTransaction" => function($query)use($id){$query->where('status','=',''.$id);}])->orderBy('created_at', 'ASC')->get();
         return view('Item/Manage.itemTransaction',compact('data'));
     }
 

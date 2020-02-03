@@ -26,17 +26,31 @@
 <div class="container">
     <h2>Item Transaction</h2>
     <p>Detail of Item Transaction on the table below : </p>
+
+    <br>
+    <form>
+        <fieldset>
+            <legend>Status:</legend>
+                <div class="table-warning" style="width: 20px; height: 20px;"></div>Registered
+                <div class="table-danger" style="width: 20px; height: 20px;"></div>Taken
+                <div class="table-success" style="width: 20px; height: 20px;"></div>Done
+        </fieldset>
+    </form>
+    <br>
+
     <div class="dropdown">
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
             Filter
         </button>
         <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">All</a>
-            <a class="dropdown-item" href="#">Registered</a>
-            <a class="dropdown-item" href="#">Taken</a>
-            <a class="dropdown-item" href="#">Done</a>
+            <a class="dropdown-item" href="/view/item/transaction">All</a>
+            <a class="dropdown-item" href="/view/item/filterTransaction/Registered">Registered</a>
+            <a class="dropdown-item" href="/view/item/filterTransaction/Taken">Taken</a>
+            <a class="dropdown-item" href="/view/item/filterTransaction/Done">Done</a>
         </div>
     </div>
+    <br>
+
     <table class="table table-dark table-hover">
         <thead>
         <tr>

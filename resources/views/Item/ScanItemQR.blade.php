@@ -1,7 +1,6 @@
 @extends("Master.master")
 
 @section("content")
-
     <div class="col-md-6" style="margin-left: 35%;margin-right: 35%;margin-top: 10px">
         <div class="col-md-6" style="margin-bottom: 10px">
             <select class="form-control" id="camera-select"></select>
@@ -14,7 +13,7 @@
             </div>
         </div>
 
-        <div class="well" style="position: relative;display: inline-block;">
+        <div class="well" id="canvasQR" style="position: relative;display: inline-block;">
             <canvas width="320px" height="240px" id="webcodecam-canvas" style="width: 400px;height: 320px"></canvas>
             <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
             <div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
@@ -33,10 +32,67 @@
         </div>
     </div>
 
-    <form action="{{action('ItemTransactionController@updateItemTransaction')}}" method="post">
-        <input type="hidden" name="code" id="code">
-        <input type="submit" id="submit" style="display: none;">
-    </form>
+    <div class="container">
+
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" style="display: none" data-target="#myModal" id="modal">
+            Open modal
+        </button>
+
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modal-title" style="color: green">Modal Heading</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body" id="modal-body" style="display: block">
+
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="modal-footer">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="dropDownSelect1"></div>
+
+    <!--===============================================================================================-->
+    <script src="{{asset("Borrow/vendor/jquery/jquery-3.2.1.min.js")}}"></script>
+    <!--===============================================================================================-->
+    <script src="{{asset("Borrow/vendor/bootstrap/js/popper.js")}}"></script>
+    <script src="{{asset("Borrow/vendor/bootstrap/js/bootstrap.min.js")}}"></script>
+    <!--===============================================================================================-->
+    <script src="{{asset("Borrow/vendor/select2/select2.min.js")}}"></script>
+    <script>
+        $(".selection-2").select2({
+            minimumResultsForSearch: 20,
+            dropdownParent: $('#dropDownSelect1')
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="{{asset("Borrow/js/main.js")}}"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -46,31 +102,47 @@
     <script type="text/javascript" src="{{ URL::asset('/qrcode/option2/js/webcodecamjs.js ') }}"></script>
 
     <script>
+        $(document).ready(function () {
+            $("#modal-footer").click(function () {
+                $("#canvasQR").css("display", "inline-block");
+            });
+        });
+    </script>
 
+    <script>
         function CallAjaxLoginQr(code) {
-            // $.ajax({
-            //     type: "POST  ",
-            //     cache: false,
-            //     url : "/item/updateTransactionStatus",
-            //     data: {data:code},
-            //     success: function(data) {
-            //         console.log('hai');
-            //         // $("#scanned-Status").text("");
-            //         // $("#scanned-QR").css("color",data.color);
-            //         // $("#scanned-QR").text(data.message);
-            //         // $("#scanned-Status").css("color",data.color);
-            //         if(data.status != null){
-            //             // $("#scanned-Status").text("Transaction " + data.status);
-            //         }
-            //     },
-            //     error : function (data) {
-            //         console.log('error');
-            //     }
-            // })
-            $(document).ready(function () {
-                $('#code').val(code)
-                $('#submit').click()
-            })
+            console.log(code)
+            $("#canvasQR").css("display", "none");
+            $.ajax({
+                type: "POST",
+                cache: false,
+                url : "/item/updateTransactionStatus",
+                data: {code:code},
+                success: function(data) {
+                    if(data.status == "Taken"){
+                        $('#modal-title').text('Success')
+                    }
+                    else{
+                        $('#modal-title').text('Returned')
+                    }
+                    var startDate = data.startDate;
+                    var endDate = data.endDate;
+                    var startDate = "Start Date : "+startDate
+                    var endDate = "End Date : "+endDate;
+                    var itemName = "Item Name : "+data.itemName;
+                    var text = String(startDate) + "<br>" +
+                            String(endDate) + "<br>" +
+                            String(itemName)
+                    $("#modal-body").text(text);
+                    jQuery(function(){
+                        jQuery('#modal').click();
+                    });
+                },
+                error : function (data) {
+                    console.log('error');
+                    console.log(data)
+                }
+            });
         }
 
         (function(undefined) {
@@ -167,98 +239,3 @@
 
     </script>
 @endsection
-{{--//Code That not Used--}}
-{{--
-
-            //Used
-            contrast = Q("#contrast"),
-            contrastValue = Q("#contrast-value"),
-            zoom = Q("#zoom"),
-            zoomValue = Q("#zoom-value"),
-            brightness = Q("#brightness"),
-            brightnessValue = Q("#brightness-value"),
-            threshold = Q("#threshold"),
-            thresholdValue = Q("#threshold-value"),
-            sharpness = Q("#sharpness"),
-            sharpnessValue = Q("#sharpness-value"),
-            grayscale = Q("#grayscale"),
-            grayscaleValue = Q("#grayscale-value"),
-            flipVertical = Q("#flipVertical"),
-            flipVerticalValue = Q("#flipVertical-value"),
-            flipHorizontal = Q("#flipHorizontal"),
-            flipHorizontalValue = Q("#flipHorizontal-value");
-
-            Buat Efek doang pas dia selesai scan qr
-        // function fadeOut(el, v) {
-        //     el.style.opacity = 1;
-        //     (function fade() {
-        //         if ((el.style.opacity -= 0.1) < v) {
-        //             el.style.display = "none";
-        //             el.classList.add("is-hidden");
-        //         } else {
-        //             requestAnimationFrame(fade);
-        //         }
-        //     })();
-        // }
-        //
-        // function fadeIn(el, v, display) {
-        //     if (el.classList.contains("is-hidden")) {
-        //         el.classList.remove("is-hidden");
-        //     }
-        //     el.style.opacity = 0;
-        //     el.style.display = display || "block";
-        //     (function fade() {
-        //         var val = parseFloat(el.style.opacity);
-        //         if (!((val += 0.1) > v)) {
-        //             el.style.opacity = val;
-        //             requestAnimationFrame(fade);
-        //         }
-        //     })();
-        // }
-
-            Start Camera
-        // play.addEventListener("click", function() {
-        //     if (!decoder.isInitialized()) {
-        //         scannedQR[txt] = "Scanning ...";
-        //     } else {
-        //
-        //         scannedQR[txt] = "Scanning ...";
-        //         decoder.play();
-        //     }
-        // }, false);
-
-        // Page.decodeLocalImage = function() {
-        //     if (decoder.isInitialized()) {
-        //         decoder.decodeLocalImage(imageUrl.value);
-        //     }
-        //     imageUrl.value = null;
-        // };
-
-        // decodeLocal.addEventListener("click", function() {
-        //     Page.decodeLocalImage();
-        // }, false);
-
-            //Set zoom value di page
-        // Page.changeZoom = function(a) {
-        //     if (decoder.isInitialized()) {
-        //         var value = typeof a !== "undefined" ? parseFloat(a.toPrecision(2)) : zoom.value / 10;
-        //         // zoomValue[txt] = zoomValue[txt].split(":")[0] + ": " + value.toString();
-        //         decoder.options.zoom = value;
-        //         if (typeof a != "undefined") {
-        //             // zoom.value = a * 10;
-        //         }
-        //     }
-        // };
-        // var getZomm = setInterval(function() {
-        //     var a;
-        //     try {
-        //         a = decoder.getOptimalZoom();
-        //     } catch (e) {
-        //         a = 0;
-        //     }
-        //     if (!!a && a !== 0) {
-        //         Page.changeZoom(a);
-        //         clearInterval(getZomm);
-        //     }
-        // }, 500);
---}}
