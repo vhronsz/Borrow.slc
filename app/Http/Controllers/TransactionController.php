@@ -413,36 +413,71 @@ class TransactionController extends Controller
 
     public function roomMonitor(Request $req){
         $floor = 6;
+        $timeNow = (int)\date("H",strtotime(Carbon::now()));
+        $header = null;
+        $data = [];
+
         if (isset($req->floor)){
             $floor = (int)$req->floor;
         }
 
-//        dd(\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")));
+        if($timeNow >= 21){
+            return view("Borrow.Room_Monitor");
+        }
 
-        $header = null;
         if($floor === 6){
             $room = room::where("roomFloor",6)->get();
-            $header = HeaderRoomTransaction::where("roomID","like","6"."%")->where("transactionDate",\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")))->get();
-        }else{
+            $header = HeaderRoomTransaction::where("roomID","like","6"."%")
+                        ->where("transactionDate",\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")))
+                        ->where("shiftStart",$this->getClosestShift())
+                        ->get();
+        }else if($floor === 7){
             $room = room::where("roomFloor",7)->get();
-            $header = HeaderRoomTransaction::where("roomID","like","7"."%")->where("transactionDate",\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")))->get();
+            $header = HeaderRoomTransaction::where("roomID","like","7"."%")
+                        ->where("transactionDate",\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")))
+                        ->where("shiftStart",$this->getClosestShift())
+                        ->get();
         }
-        $rooms = [];
+
         foreach ($room as $r){
+            $color = "";
             foreach ($header as $h){
-                //Validasi cek apakah di jam sekarang transaksinya (Ada diantara) atau kosong
-                //lalu cek apakah transaksi sebelumnya sidah done jika sudah waktunya transaksi lain
-                //Intinya :
-                //Sedang kosong // no transaction
-                //Sedang ada transaksi // transaction on proggress
-                //Sedang ada transaksi dan peminjam selanjutnya sudah siap // transaction on progress and next transaction already taken
-                //Kunci belum kembali 20 menit setelah peminjaman berakhir // transaction not done
+                if($r->roomID === $h->roomID){
+                    $color = "#0f61ff";
+                    break;
+                }
             }
+            array_push($data,["room"=>$r,"color"=>$color]);
         }
-
-        return view("Borrow.Room_Monitor")->with("rooms",$room);
+        return view("Borrow.Room_Monitor")->with("data",$data);
     }
+    
+    public function getClosestShift(){
+        $nowHour = \date("H", strtotime(Carbon::now()));
+        $nowMinute = \date("i", strtotime(Carbon::now()));
+        $now = ($nowHour * 60) + $nowMinute;
+        $shift = 1;
 
+        for($i=1;$i<7;$i++){
+            $shiftStart = $this->getShiftStart($i);
+            $shiftHourStart = getdate(strtotime($shiftStart))["hours"];
+            $shiftMinuteStart = getdate(strtotime($shiftStart))["minutes"];
+            $timeStart = ($shiftHourStart*60)+$shiftMinuteStart;
+
+            $shiftEnd = $this->getShiftEnd($i);
+            $shiftHourEnd = getdate(strtotime($shiftEnd))["hours"];
+            $shiftMinuteEnd = getdate(strtotime($shiftEnd))["minutes"];
+            $timeEnd = ($shiftHourEnd*60)+$shiftMinuteEnd;
+
+            if($now >= $timeStart && $now <= $timeEnd){
+                return $i;
+            }
+
+        }
+        return $shift;
+    }
+    
+    
     public function fetchMonitorRoom(Request $req){
 
         if($req->data === 6 || $req->data === null){
@@ -485,19 +520,12 @@ class TransactionController extends Controller
     }
 
     /////////////////////////////////////////
-    public function dump($shift){
-        $shift = (int)$shift;
-        $shiftHour = \date("H", strtotime($this->getShiftStart($shift)));
-        $nowHour = \date("H", strtotime(Carbon::now()));
-        $shiftMinute = \date("i", strtotime($this->getShiftStart($shift)));
-        $nowMinute = \date("i", strtotime(Carbon::now()));
-
-        $shiftTime = ($shiftHour * 60) + $shiftMinute;
-        $now = ($nowHour * 60) + $nowMinute;
-
-        if($shiftTime - $now){
-
-        }
+    public function dump(){
+        $header = HeaderRoomTransaction::where("roomID","like","7"."%")
+            ->where("transactionDate",\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")))
+            ->where("shiftStart",$this->getClosestShift())
+            ->get();
+        dd($header);
     }
 
 }

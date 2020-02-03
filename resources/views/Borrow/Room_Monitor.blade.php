@@ -36,24 +36,30 @@
     <div class="Parent">
         <div id="MonitorRoomContainer">
 
+            @if(isset($data))
             <div class="itemOddContainer">
-                @foreach($rooms as $room)
-                    @if((int)$room->roomID %2 !== 0)
-                        <div class="item"}}> {{$room->roomID}}</div>
+                @foreach($data as $d)
+                    @if((int)$d["room"]->roomID %2 !== 0)
+                        <div class="item" style="background-color:{{$d["color"]}};"> {{(int)$d["room"]->roomID}}</div>
                     @endif
                 @endforeach
             </div>
 
             <div class="itemEvenContainer">
-                @foreach($rooms as $room)
-                    @if((int)$room->roomID %2 === 0)
-                        <div class="item"> {{$room->roomID}}</div>
+                @foreach($data as $d)
+                    @if((int)$d["room"]->roomID %2 === 0)
+                        <div class="item" style="background-color:{{$d["color"]}};"> {{(int)$d["room"]->roomID}}</div>
                     @endif
                 @endforeach
             </div>
-            <a href="{{url("/view/room/Room_Monitor?floor=".$rooms[0]->roomFloor)}}" style="margin-left: 5px">
+            <a href="{{url("/view/room/Room_Monitor?floor=".$data[0]["room"]->roomFloor)}}" style="margin-left: 5px">
                 <button type="button" class="btn btn-warning" style="color: #ffffff">Refresh</button>
             </a>
+            @else
+                <div>
+                    All Transaction are Done
+                </div>
+            @endif
         </div>
     </div>
 
@@ -85,9 +91,10 @@
 
             </div>
         </div>
+
         <div class="descriptionItem">
             <div id="descriptionText">
-                Transaction Over
+                Transaction Key not Returned
             </div>
             <div id="colorBox" style="background-color: #e72537">
 
