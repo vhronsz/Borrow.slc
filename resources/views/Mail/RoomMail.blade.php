@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
-    <div>
+    <h1>
         Kepada Bapak/Ibu {{$header->borrowerName}}
-    </div>
+    </h1>
+
     <div>
         Berikut kami infokan detail peminjaman ruang anda sebagai berikut :
         <ul>

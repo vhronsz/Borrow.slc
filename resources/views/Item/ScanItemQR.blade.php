@@ -111,7 +111,6 @@
 
     <script>
         function CallAjaxLoginQr(code) {
-            console.log(code)
             $("#canvasQR").css("display", "none");
             $.ajax({
                 type: "POST",
@@ -119,6 +118,7 @@
                 url : "/item/updateTransactionStatus",
                 data: {code:code},
                 success: function(data) {
+                    $("#modal-title").css("color", "green");
                     if(data.status == "Taken"){
                         $('#modal-title').text('Success')
                     }
@@ -139,8 +139,12 @@
                     });
                 },
                 error : function (data) {
-                    console.log('error');
-                    console.log(data)
+                    $("#modal-title").css("color", "red");
+                    $('#modal-title').text('Failed')
+                    $("#modal-body").text("Transaction Not Found");
+                    jQuery(function(){
+                        jQuery('#modal').click();
+                    });
                 }
             });
         }

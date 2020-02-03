@@ -428,15 +428,14 @@ class TransactionController extends Controller
         if($floor === 6){
             $room = room::where("roomFloor",6)->get();
             $header = HeaderRoomTransaction::where("roomID","like","6"."%")
-                        ->where("transactionDate",\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")))
+                        ->where("transactionDate","like","%".\date("Y-m-d",strtotime(Carbon::now()))."%")
                         ->get();
         }else if($floor === 7){
             $room = room::where("roomFloor",7)->get();
             $header = HeaderRoomTransaction::where("roomID","like","7"."%")
-                        ->where("transactionDate",\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")))
+                        ->where("transactionDate","like","%".\date("Y-m-d",strtotime(Carbon::now()))."%")
                         ->get();
         }
-
         foreach ($room as $r){
             $color = "";
             foreach ($header as $h){

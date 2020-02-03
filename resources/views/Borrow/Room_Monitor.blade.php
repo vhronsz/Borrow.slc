@@ -35,7 +35,6 @@
 
     <div class="Parent">
         <div id="MonitorRoomContainer">
-
             @if(isset($data))
             <div class="itemOddContainer">
                 @foreach($data as $d)

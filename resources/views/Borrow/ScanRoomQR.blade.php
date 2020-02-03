@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <div class="well" style="position: relative;display: inline-block;">
+        <div class="well" id="canvasQR" style="position: relative;display: inline-block;">
             <canvas width="320px" height="240px" id="webcodecam-canvas" style="width: 400px;height: 320px"></canvas>
             <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
             <div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
@@ -33,6 +33,67 @@
         </div>
     </div>
 
+    <div class="container">
+
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" style="display: block" data-target="#myModal" id="modal">
+            Open modal
+        </button>
+
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modal-title" style="color: green">Title</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body" id="modal-body" style="display: block">
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="modal-footer">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="dropDownSelect1"></div>
+
+    <!--===============================================================================================-->
+    <script src="{{asset("Borrow/vendor/jquery/jquery-3.2.1.min.js")}}"></script>
+    <!--===============================================================================================-->
+    <script src="{{asset("Borrow/vendor/bootstrap/js/popper.js")}}"></script>
+    <script src="{{asset("Borrow/vendor/bootstrap/js/bootstrap.min.js")}}"></script>
+    <!--===============================================================================================-->
+    <script src="{{asset("Borrow/vendor/select2/select2.min.js")}}"></script>
+    <script>
+        $(".selection-2").select2({
+            minimumResultsForSearch: 20,
+            dropdownParent: $('#dropDownSelect1')
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="{{asset("Borrow/js/main.js")}}"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
@@ -41,8 +102,17 @@
     <script type="text/javascript" src="{{ URL::asset('/qrcode/option2/js/webcodecamjs.js ') }}"></script>
 
     <script>
+        $(document).ready(function () {
+            $("#modal-footer").click(function () {
+                $("#canvasQR").css("display", "inline-block");
+            });
+        });
+    </script>
+
+    <script>
 
         function CallAjaxLoginQr(code) {
+            $("#canvasQR").css("display", "none");
             $.ajax({
                 type: "Get",
                 cache: false,
@@ -50,9 +120,26 @@
                 data: {data:code},
                 success: function(data) {
                     console.log(data);
+                    $("#modal-title").css("color", "Green");
+                    if(data.transaction.transactionStatus == "Taken"){
+                        $('#modal-title').text(data.message);
+                        $("#modal-body").text("Your Transaction :<br/>Room : "+data.transaction.roomID+"<br/>Shift Start : "+data.transaction.shiftStart+"("+data.transaction.timeStart+")<br/>Shift End : "+data.message.shiftEnd+"("+data.transaction.timeEnd+")");
+                    }
+                    else{
+                        $('#modal-title').text('Done')
+                        $("#modal-body").text("Your Transaction :<br/>Room : "+data.transaction.roomID+"<br/>Shift Start : "+data.transaction.shiftStart+"("+data.transaction.timeStart+")<br/>Shift End : "+data.message.shiftEnd+"("+data.transaction.timeEnd+")<br/>"+data.message);
+                    }
+                    jQuery(function(){
+                        jQuery('#modal').click();
+                    });
                 },
                 error : function (data) {
-                    console.log(data);
+                    $("#modal-title").css("color", "red");
+                    $('#modal-title').text('Failed')
+                    $("#modal-body").text("Transaction Not Found");
+                    jQuery(function(){
+                        jQuery('#modal').click();
+                    });
                 }
             })
         }

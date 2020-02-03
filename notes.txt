@@ -156,4 +156,9 @@ To do :
 4. Add Delete on Item History Transaction == Monday
 
 
-
+=============
+=Status 3/02=
+=============
+Add Link to new Navbar == Done
+Add Message on qr scan modal - Done-Not Tested
+Add Mail for item Borrowing - Done - Not Tested
