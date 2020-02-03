@@ -445,6 +445,10 @@ class TransactionController extends Controller
                         $color = "#e72537";
                         break;
                     }
+                    if($h->shiftStart > $this->getClosestShift() && $h->transactionStatus === "Taken"){
+                        $color = "#ffc107";
+                        break;
+                    }
                     if($this->getClosestShift() >= $h->shiftStart && $this->getClosestShift() <= $h->shiftEnd){
                         $color = "#0f61ff";
                         break;
