@@ -21,9 +21,10 @@
 @endsection
 
 @section("content")
-    <div class="MonitorRoomContainer">
-        <form action="{{url("room/Room_Monitor")}}" method="POST">
-            <select class="form-control form-control-l" type="select" name="floor" id="">
+
+    <div class="FormContainer">
+        <form action="{{url("view/room/Room_Monitor")}}" method="Get">
+            <select class="form-control form-control-l" type="select" name="floor" id="select">
                 <option disabled selected hidden>Select Floor</option>
                 <option value=6>6</option>
                 <option value=7>7</option>
@@ -31,23 +32,113 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-    <div class="MonitorRoomContainer">
-{{--        @if(isset($details))--}}
-{{--            <div>No Room</div>--}}
-{{--        @else--}}
-{{--            @foreach($details ?? '' as $detail)--}}
-{{--                @foreach($detail["StatusDetails"] as $status)--}}
-{{--                    @if(sizeof($status) !== 0)--}}
-{{--                        <div class="roomAvailable">--}}
-{{--                            <span>{{$detail["RoomName"]}}</span>--}}
-{{--                        </div>--}}
-{{--                    @elseif(sizeof($status) === 0)--}}
-{{--                        <div class="roomNotAvailable">--}}
-{{--                            <span>{{$detail["RoomName"]}}</span>--}}
-{{--                        </div>--}}
-{{--                    @endif--}}
-{{--                @endforeach--}}
-{{--            @endforeach--}}
-{{--        @endif--}}
+
+    <div class="Parent">
+        <div id="MonitorRoomContainer">
+
+            @if(isset($data))
+            <div class="itemOddContainer">
+                @foreach($data as $d)
+                    @if((int)$d["room"]->roomID %2 !== 0)
+                        <div class="item" style="background-color:{{$d["color"]}};"> {{(int)$d["room"]->roomID}}</div>
+                    @endif
+                @endforeach
+            </div>
+
+            <div class="itemEvenContainer">
+                @foreach($data as $d)
+                    @if((int)$d["room"]->roomID %2 === 0)
+                        <div class="item" style="background-color:{{$d["color"]}};"> {{(int)$d["room"]->roomID}}</div>
+                    @endif
+                @endforeach
+            </div>
+            <a href="{{url("/view/room/Room_Monitor?floor=".$data[0]["room"]->roomFloor)}}" style="margin-left: 5px">
+                <button type="button" class="btn btn-warning" style="color: #ffffff">Refresh</button>
+            </a>
+            @else
+                <div>
+                    All Transaction are Done
+                </div>
+            @endif
+        </div>
     </div>
+
+    <div id="Description">
+        Legend
+        <div class="descriptionItem">
+            <div id="descriptionText">
+                No Transaction
+            </div>
+            <div id="colorBox" style="background-color: #2ab94c">
+
+            </div>
+        </div>
+
+        <div class="descriptionItem">
+            <div id="descriptionText">
+                On Transaction
+            </div>
+            <div id="colorBox" style="background-color: #0f61ff">
+
+            </div>
+        </div>
+
+        <div class="descriptionItem">
+            <div id="descriptionText">
+                Next Shift on Queue
+            </div>
+            <div id="colorBox" style="background-color: #ffc107">
+
+            </div>
+        </div>
+
+        <div class="descriptionItem">
+            <div id="descriptionText">
+                Transaction Key not Returned
+            </div>
+            <div id="colorBox" style="background-color: #e72537">
+
+            </div>
+        </div>
+
+    </div>
+
+@endsection
+
+@section("script")
+    <script src="{{asset("Borrow/vendor/jquery/jquery-3.2.1.min.js")}}"></script>
+    <script>
+
+        let odd = $('.itemOddContainer').children();
+        let even = $('.itemEvenContainer').children();
+        let select = document.getElementById("select");
+        let value = select.options[select.selectedIndex].value;
+        let floor = 0;
+        let refreshTime = (1000*60) * 30;
+
+        window.addEventListener("load",()=>{
+            if(value === 6){
+                floor = 6;
+            }else if(value === 7){
+                floor = 7;
+            }else{
+                floor = 6;
+            }
+        });
+
+        // window.setInterval(()=>{
+        //     $.ajax({
+        //         type:"get",
+        //         url:"/transaction/getMonitorData",
+        //         data :{data:floor},
+        //         success: (data)=>{
+        //             console.log(data);
+        //         },
+        //         error: (data)=>{
+        //             console.log(data);
+        //         }
+        //     })
+        // },refreshTime);
+
+    </script>
 @endsection

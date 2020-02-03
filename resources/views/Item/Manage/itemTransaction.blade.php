@@ -82,7 +82,7 @@
                         <td>{{$detailItem["item"]["itemID"]}} - {{$detailItem["item"]["itemName"]}}</td>
                         @endforeach
                     </tr>
-                    @endforeach()
+                    @endforeach
         </tbody>
     </table>
 </div>

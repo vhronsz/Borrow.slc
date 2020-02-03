@@ -5,8 +5,7 @@
 @endsection
 
 @section("content")
-    <div id="Parent">
-        <div id="Container">
+    <div id="Parent">        <div id="Container">
             @if(isset($rooms))
                 @for($i=0;$i<10;$i++)
                     @if($rooms[$i]["roomID"] === "610")
@@ -20,7 +19,7 @@
                 @endfor
             @else
                 <div>
-                    No Room Found
+                    Transaction for this day already completed
                 </div>
             @endif
 

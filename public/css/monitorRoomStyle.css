@@ -2,50 +2,76 @@
     box-sizing: border-box;
 }
 
-#break{
-    flex-basis: 100%;
-    height: 0;
+body{
+    overflow-x: auto;
 }
 
-.MonitorRoomContainer{
+#select{
+    margin-bottom: 10px;
+}
+
+.FormContainer{
     width: 100%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin: 20px;
 }
 
-.room{
-    width: 100px;
-    height: 100px;
-    background-color:green;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 10px 10px 10px;
-    font-size: 30px;
-    color: white;
+.Parent{
+    margin: 20px;
 }
 
-.roomAvailable{
-    width: 100px;
-    height: 100px;
-    background-color:green;
+.itemOddContainer{
     display: flex;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
     align-items: center;
-    justify-content: center;
-    margin: 10px 10px 10px 10px;
-    font-size: 30px;
-    color: white;
 }
 
-.roomNotAvailable{
-    width: 100px;
-    height: 100px;
-    background-color:red;
+.itemEvenContainer{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 10px 10px 10px;
-    font-size: 30px;
-    color: white;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
 }
+
+.item{
+    min-height: 100px;
+    min-width: 100px;
+    border: 1px solid black;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+    background-color: #2ab94c
+}
+
+#Description{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    border: 2px solid black;
+    padding: 5px;
+    padding-right: 20px;
+    width: fit-content;
+}
+
+.descriptionItem{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#colorBox{
+    margin-left: 10px;
+    min-width: 15px;
+    max-width: 15px;
+    min-height: 15px;
+    max-height: 15px;
+    border: 1px solid black;
+}
+
+
+

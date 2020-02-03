@@ -17,9 +17,7 @@ Route::group(["prefix" => "view"],function(){
     });
 
     Route::group(["prefix" => "room"],function(){
-        Route::get('Borrow_Room_Form',function(){
-            return view('Borrow.Form_Borrow');
-        });
+        Route::get('Borrow_Room',"TransactionController@borrowForm");
         Route::get('/Home',function(){
             return view('Borrow.ScanRoomQR');
         });
@@ -30,7 +28,7 @@ Route::group(["prefix" => "view"],function(){
         Route::post('Room_Availability',"TransactionController@roomAvailability");
     });
 
-    Route::group(["prefix" => "item"],function(){
+    Route::group(["prefix" => "item"],function(  ){
         Route::get('/ScanItem',function(){
             return view('Item.ScanItemQR');
         });
@@ -60,13 +58,15 @@ Route::group(["prefix" => "transaction"],function (){
     Route::get('/Update_Room_Transaction','TransactionController@updateRoom');
     Route::get('/Send_Room_Email',"TransactionController@sendRoomMail");
     Route::get('/Delete_Room_Transaction/{id}',"TransactionController@deleteRoomTransaction");
+    Route::get('/getMonitorData',"TransactionController@fetchMonitorRoom");
+
 
     Route::post("/Add_Item_Transaction","TransactionController@addItemTransaction");
     Route::get('/Update_Item_Transaction','TransactionController@updateItemTransaction');
 });
 
 Route::group(["prefix"=>"migration"],function(){
-    Route::get("Test_Migration","TransactionController@getDataFromMessier");
+    Route::get("Migrate_Today","TransactionController@getDataFromMessier");
 });
 
 ////////////////

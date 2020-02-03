@@ -139,9 +139,21 @@ Status 31/01
 Transaction History
 Room Monitor
 
-
-
-
+=============
+=Status 1/02=
+=============
+To do :
+1. Room Monitoring Function
+    Flow :
+        Get current shift
+        Check if there is a transaction on current shift
+        if there is a transaction set the color
+        pass to view component
+        to add :
+            Able to know if the next shift is already checked in
+2. Fix Validation on QR Room -- Done (Lupa udah ada)
+3. Add Message on scan QR (Show Transaction Info)
+4. Add Delete on Item History Transaction == Monday
 
 
 

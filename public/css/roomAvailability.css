@@ -1,0 +1,73 @@
+*{
+    box-sizing: border-box;
+}
+
+#break{
+    flex-basis: 100%;
+    height: 0;
+}
+
+.Parent{
+    margin: 20px;
+}
+
+#select{
+    margin-bottom: 10px;
+}
+
+.MonitorRoomContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.room{
+    width: 100px;
+    height: 100px;
+    background-color:green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 10px 10px 10px;
+    font-size: 30px;
+    color: white;
+}
+
+.roomAvailable{
+    width: 100px;
+    height: 100px;
+    background-color:green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 10px 10px 10px;
+    font-size: 30px;
+    color: white;
+}
+
+.roomNotAvailable{
+    width: 100px;
+    height: 100px;
+    background-color:red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 10px 10px 10px;
+    font-size: 30px;
+    color: white;
+}
+
+.itemOddContainer{
+    display: flex;
+    overflow: hidden;
+}
+
+.item{
+    min-height: 100px;
+    min-width: 100px;
+    border: 1px solid black;
+    margin-left: 5px;
+    margin-right: 5px;
+}

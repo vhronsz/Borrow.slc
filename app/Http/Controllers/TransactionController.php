@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\HeaderItemTransaction;
 use App\HeaderRoomTransaction;
 use App\Mail\BorrowRoomMail;
+use App\room;
 use Carbon\Carbon;
 use Faker\Provider\Uuid;
 use GuzzleHttp\Client;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\File;
@@ -19,6 +21,11 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class TransactionController extends Controller
 {
+    public function borrowForm(){
+        $room = room::get();
+        return view("Borrow.Form_Borrow")->with("room",$room);
+    }
+
     public function getShiftStart($shift){
         $time = null;
         if($shift === 1){
@@ -59,7 +66,7 @@ class TransactionController extends Controller
         return $time;
     }
 
-    public function getEndShift($index,$data){
+    public function getTransactionEnd($index,$data){
         $totalShift = 0;
         //Index Start from 0 - 6
         while($index+1 <= 6){
@@ -76,32 +83,6 @@ class TransactionController extends Controller
             $index++;
         }
         return $totalShift;
-    }
-
-    public function getSameDay($day){
-        if(Carbon::now()->diffInDays($day) === 0){
-            return true;
-        }
-        return false;
-    }
-
-    public function getTime($shift)
-    {
-        $shiftTime = \date("h", strtotime($this->getShiftStart($shift)));
-        $now = \date("h", strtotime(Carbon::now()));
-        if($now >= $shiftTime){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    public function getTimeDone($shift){
-        if(Carbon::now()->diffInSeconds($this->getShiftEnd($shift)) >= 1795){
-            return true;
-        }
-
-        return false;
     }
 
     public  function addRoom(Request $req){
@@ -252,31 +233,119 @@ class TransactionController extends Controller
     public function updateRoom(Request $req){
         $header = HeaderRoomTransaction::where("roomTransactionID",$req->data)->first();
         if($header){
-            //Check if transaction is on the same day
-            if($header->transactionStatus === "Registered" && $this->getSameDay($header->transactionDate)){
-                $header->transactionStatus = "Taken";
-                $header->save();
+            //Validasi apkakah harinya sudah sama dan cek apakah waktu sekarang sudah 20 menit sbeelum shift mulai
+            if($this->getSameDay($header->transactionDate)){
+                if($header->transactionStatus === "Done"){
+                    return response()->json([
+                        "message" => "Thank you your transaction is done",
+                        "transaction" => $header,
+                        "color" => "green"
+                    ]);
+                }
+                else if($header->transactionStatus === "Registered" && $this->getTimeStart($header->shiftStart)){
+                    $header->transactionStatus = "Taken";
+                    $header->save();
+
+                    return response()->json([
+                        "message" => "Your Scheduled Transaction :",
+                        "transaction" => $header,
+                        "color" => "green"
+                    ]);
+
+                }
+                else if (
+                    //Check if the time already pass the transaction time and check if 30 minutes already passed
+                    $header->transactionStatus === "Taken" &&
+                    $this->getHour($header->shiftStart) &&
+                    ($this->getTimeDone($header->shiftStart) ||
+                        $this->getTimeDone($header->shiftEnd))
+                )
+                {
+                    $header->transactionStatus = "Done";
+                    $header->save();
+                    return response()->json([
+                        "message" => "Thank you your transaction is done",
+                        "transaction" => $header,
+                        "color" => "green"
+                    ]);
+                }
+
+            }else{
+                return response()->json([
+                    "message" => "Sorry your transaction has not happen",
+                    "transaction" => $header,
+                    "color" => "green"
+                ]);
             }
-            //Check if the time already pass the transaction time and check if 30 minutes already passed
-            else if($header->transactionStatus === "Taken" && $this->getTime($header->shiftStart) && $this->getTimeDone($header->shiftStart) || $this->getTimeDone($header->shiftEnd)){
-                $header->transactionStatus = "Done";
-                $header->save();
-            }
-            //Add Shift and Room
-            return response()->json([
-                "message"=>"Transaction Updated",
-                "status"=>$header->transactionStatus,
-                "color"=>"green",
-                "time"=>Carbon::now()->diffInSeconds($header->updated_at)
-            ]);
-        }else{
+        }
+        else{
             return response()->json([
                 "message"=>"Transaction Not Found",
-                "color"=>"red","id"=>$req->data
+                "color"=>"red",
+                "id"=>$req->data
             ]);
         }
 
     }
+
+    public function getSameDay($day){
+        $dateNow = getdate(strtotime(Carbon::now()))["yday"];
+        $dateTransaction = getdate(strtotime($day))["yday"];
+        if($dateTransaction <= $dateNow){
+            return true;
+        }
+        return false;
+    }
+
+    public function getHour($shift)
+    {
+        $shift = (int) $shift;
+        $shiftTime = \date("H", strtotime($this->getShiftStart($shift)));
+        $now = \date("H", strtotime(Carbon::now()));
+        if($now >= $shiftTime){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function getTimeStart($shift){
+        $shift = (int)$shift;
+        $shiftHour = \date("H", strtotime($this->getShiftStart($shift)));
+        $nowHour = \date("H", strtotime(Carbon::now()));
+        $shiftMinute = \date("i", strtotime($this->getShiftStart($shift)));
+        $nowMinute = \date("i", strtotime(Carbon::now()));
+
+        $shiftTime = ($shiftHour * 60) + $shiftMinute;
+        $now = ($nowHour * 60) + $nowMinute;
+
+
+        if($shiftTime - $now > -1){
+            if($shiftTime - $now <= 60){
+                return true;
+            }
+        }else{
+            return true;
+        }
+    }
+
+    public function getTimeDone($shift){
+        $shift = (int)$shift;
+        $shiftHour = \date("H", strtotime($this->getShiftEnd($shift)));
+        $nowHour = \date("H", strtotime(Carbon::now()));
+        $shiftMinute = \date("i", strtotime($this->getShiftEnd($shift)));
+        $nowMinute = \date("i", strtotime(Carbon::now()));
+
+        $shiftTime = ($shiftHour * 60) + $shiftMinute;
+        $now = ($nowHour * 60) + $nowMinute;
+
+        if($now-$shiftTime>=29){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 
     public function getDataFromMessier(){
         $date = date("m/d/y",time());
@@ -320,7 +389,7 @@ class TransactionController extends Controller
                     //Get Shift end from all transaction
                     //Check if current index is not the last index and the next index is not null
                     if($index<6 && $tdata["StatusDetails"][$index][0]){
-                        $totalShift = $this->getEndShift($index,$tdata["StatusDetails"]);
+                        $totalShift = $this->getTransactionEnd($index,$tdata["StatusDetails"]);
                         $header->shiftEnd = $header->shiftStart + $totalShift;
                         $index = $header->shiftEnd;
                     }
@@ -343,17 +412,107 @@ class TransactionController extends Controller
     }
 
     public function roomMonitor(Request $req){
-        $floor = 1;
+        $floor = 6;
+        $timeNow = (int)\date("H",strtotime(Carbon::now()));
+        $header = null;
+        $data = [];
+
         if (isset($req->floor)){
             $floor = (int)$req->floor;
         }
-        $header = null;
-        if($floor === 1){
+
+        if($timeNow >= 21){
+            return view("Borrow.Room_Monitor");
+        }
+
+        if($floor === 6){
+            $room = room::where("roomFloor",6)->get();
+            $header = HeaderRoomTransaction::where("roomID","like","6"."%")
+                        ->where("transactionDate",\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")))
+                        ->get();
+        }else if($floor === 7){
+            $room = room::where("roomFloor",7)->get();
+            $header = HeaderRoomTransaction::where("roomID","like","7"."%")
+                        ->where("transactionDate",\date("Y-m-d H:i:s",strtotime("2020-02-01 0:0:0")))
+                        ->get();
+        }
+
+        foreach ($room as $r){
+            $color = "";
+            foreach ($header as $h){
+                if($r->roomID === $h->roomID){
+                    if($h->shiftEnd < $this->getClosestShift() && $this->getMinuteDifference($h->shiftEnd) && $h->transactionStatus === "Taken"){
+                        $color = "#e72537";
+                        break;
+                    }
+                    if($h->shiftStart > $this->getClosestShift() && $h->transactionStatus === "Taken"){
+                        $color = "#ffc107";
+                        break;
+                    }
+                    if($this->getClosestShift() >= $h->shiftStart && $this->getClosestShift() <= $h->shiftEnd){
+                        $color = "#0f61ff";
+                        break;
+                    }
+                }
+            }
+            array_push($data,["room"=>$r,"color"=>$color]);
+        }
+        return view("Borrow.Room_Monitor")->with("data",$data);
+    }
+    
+    public function getClosestShift(){
+        $nowHour = \date("H", strtotime(Carbon::now()));
+        $nowMinute = \date("i", strtotime(Carbon::now()));
+        $now = ($nowHour * 60) + $nowMinute;
+        $shift = 1;
+        for($i=1;$i<7;$i++){
+            $shiftStart = $this->getShiftStart($i);
+            $shiftHourStart = getdate(strtotime($shiftStart))["hours"];
+            $shiftMinuteStart = getdate(strtotime($shiftStart))["minutes"];
+            $timeStart = ($shiftHourStart*60)+$shiftMinuteStart;
+
+            $shiftEnd = $this->getShiftEnd($i);
+            $shiftHourEnd = getdate(strtotime($shiftEnd))["hours"];
+            $shiftMinuteEnd = getdate(strtotime($shiftEnd))["minutes"];
+            $timeEnd = ($shiftHourEnd*60)+$shiftMinuteEnd;
+
+            if($now >= $timeStart && $now <= $timeEnd){
+                return $i;
+            }
+
+        }
+        return $shift;
+    }
+
+    public function getMinuteDifference($shift){
+        $nowHour = \date("H", strtotime(Carbon::now()));
+        $nowMinute = \date("i", strtotime(Carbon::now()));
+        $now = ($nowHour * 60) + $nowMinute;
+
+        $shiftEnd = $this->getShiftEnd($shift);
+        $shiftHourEnd = getdate(strtotime($shiftEnd))["hours"];
+        $shiftMinuteEnd = getdate(strtotime($shiftEnd))["minutes"];
+        $timeEnd = ($shiftHourEnd*60)+$shiftMinuteEnd;
+
+        if($now - $timeEnd >20){
+            return true;
+        }
+        return false;
+    }
+
+    
+    public function fetchMonitorRoom(Request $req){
+
+        if($req->data === 6 || $req->data === null){
             $header = HeaderRoomTransaction::where("roomID","like","6"."%")->get();
         }else{
             $header = HeaderRoomTransaction::where("roomID","like","7"."%")->get();
         }
-        return view("Borrow.Room_Monitor")->with("rooms",$header);
+
+        return response()->json([
+            "message" => "Success",
+            "floor" => $header
+        ]);
     }
 
     public function roomAvailability(Request $req){
@@ -383,13 +542,9 @@ class TransactionController extends Controller
         return \redirect('/view/room/History_Room');
     }
 
-
-
-
     /////////////////////////////////////////
     public function dump(){
-        $qr = QrCode::format("png")->size(300)->generate("asd");
-        return view("testing.qrtesting")->with("qr",$qr);
+
     }
 
 }
