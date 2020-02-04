@@ -23,6 +23,7 @@
     <!--===============================================================================================-->
 </head>
 <body>
+@include('Master.navBar')
 <div class="container">
     <h2>Item Transaction</h2>
     <p>Detail of Item Transaction on the table below : </p>

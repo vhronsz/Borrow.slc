@@ -24,7 +24,7 @@
 </head>
 
 <body>
-
+@include('Master.navBar')
 	<div class="bg-contact3" style="background-image: {{asset('Borrow/images/bg-01.jpg')}};">
 		<div class="container-contact3">
 			<div class="wrap-contact3">
