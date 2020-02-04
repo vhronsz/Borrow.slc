@@ -121,9 +121,17 @@
                 success: function(data) {
                     console.log(data);
                     $("#modal-title").css("color", "Green");
-                    if(data.transaction.transactionStatus == "Taken"){
+                    if(data.message == "Transaction Not Found"){
+                        $("#modal-title").css("color", "red");
+                        $('#modal-title').text('Failed')
+                        $("#modal-body").text("Transaction Not Found");
+                        jQuery(function(){
+                            jQuery('#modal').click();
+                        });
+                    }
+                    else if(data.transaction.transactionStatus == "Taken") {
                         $('#modal-title').text(data.message);
-                        $("#modal-body").text("Your Transaction :<br/>Room : "+data.transaction.roomID+"<br/>Shift Start : "+data.transaction.shiftStart+"("+data.transaction.timeStart+")<br/>Shift End : "+data.message.shiftEnd+"("+data.transaction.timeEnd+")");
+                        $("#modal-body").text("Your Transaction :<br/>Room : " + data.transaction.roomID + "<br/>Shift Start : " + data.transaction.shiftStart + "(" + data.transaction.timeStart + ")<br/>Shift End : " + data.transaction.shiftEnd + "(" + data.transaction.timeEnd + ")");
                     }
                     else{
                         $('#modal-title').text('Done')
