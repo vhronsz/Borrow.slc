@@ -130,12 +130,16 @@
                         });
                     }
                     else if(data.transaction.transactionStatus == "Taken") {
+                        console.log(data)
                         $('#modal-title').text(data.message);
                         $("#modal-body").text("Your Transaction :<br/>Room : " + data.transaction.roomID + "<br/>Shift Start : " + data.transaction.shiftStart + "(" + data.transaction.timeStart + ")<br/>Shift End : " + data.transaction.shiftEnd + "(" + data.transaction.timeEnd + ")");
                     }
-                    else{
+                    else if(data.transaction.transactionStatus == "Done") {
                         $('#modal-title').text('Done')
                         $("#modal-body").text("Your Transaction :<br/>Room : "+data.transaction.roomID+"<br/>Shift Start : "+data.transaction.shiftStart+"("+data.transaction.timeStart+")<br/>Shift End : "+data.message.shiftEnd+"("+data.transaction.timeEnd+")<br/>"+data.message);
+                    }else if(data.message == "Sorry your transaction has not happen"){
+                        $('#modal-title').text("Sorry");
+                        $("#modal-body").text(data.message);
                     }
                     jQuery(function(){
                         jQuery('#modal').click();

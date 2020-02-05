@@ -255,10 +255,11 @@ class TransactionController extends Controller
                 }
                 else if (
                     //Check if the time already pass the transaction time and check if 30 minutes already passed
-                    $header->transactionStatus === "Taken" &&
-                    $this->getHour($header->shiftStart) &&
-                    ($this->getTimeDone($header->shiftStart) ||
-                        $this->getTimeDone($header->shiftEnd))
+                    $header->transactionStatus === "Taken"
+//                    &&
+//                    $this->getHour($header->shiftStart) &&
+//                    ($this->getTimeDone($header->shiftStart) ||
+//                        $this->getTimeDone($header->shiftEnd))
                 )
                 {
                     $header->transactionStatus = "Done";
@@ -268,8 +269,13 @@ class TransactionController extends Controller
                         "transaction" => $header,
                         "color" => "green"
                     ]);
+                }else{
+                    return response()->json([
+                        "message" => "Sorry your transaction has not happen",
+                        "transaction" => $header,
+                        "color" => "green"
+                    ]);
                 }
-
             }else{
                 return response()->json([
                     "message" => "Sorry your transaction has not happen",

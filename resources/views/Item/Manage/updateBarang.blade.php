@@ -22,7 +22,6 @@
 	<link rel="stylesheet" type="text/css" href="{{asset("/Borrow/css/main.css")}}">
 	<!--===============================================================================================-->
 </head>
-
 <body>
 @include('Master.navBar')
 	<div class="bg-contact3" style="background-image: {{asset('Borrow/images/bg-01.jpg')}};">
